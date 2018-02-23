@@ -1,6 +1,0 @@
-1.a. If the cell contains a flower, it just jumps onto the flower and turn the flower into a rock when it leaves. If it's a rock, the jumper jumps onto the rock and turns the rock into a flower when it gets off that location. 
-  b. If the location two spots in front is out of bounds, then the jumper turns 90 degrees clockwise.
-  c. If the jumper is facing an edge, it turns 90 degrees clockwise.
-  d. If the spot two spots in front of the jumper is an actor(not a jumper, rock or a flower), the jumper jumps on the other actor and when it leaves, the other actor is turned into a Jumper facing the direction of the first jumper plus 90 degrees clockwise.
-  e. If the spot two spots in front of that the jumper is another jumper, the two jumpers remove themselves from the grid, and replace themselves with rocks were they were.
-  f. N/A
