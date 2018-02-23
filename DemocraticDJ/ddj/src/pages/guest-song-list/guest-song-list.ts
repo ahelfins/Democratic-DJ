@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { AddSongPage } from "../add-song/add-song";
 
 /**
  * Generated class for the GuestSongListPage page.
@@ -14,8 +15,10 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'guest-song-list.html',
 })
 export class GuestSongListPage {
+  addSongButton: any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+    this.addSongButton = AddSongPage;
   }
 
   ionViewDidLoad() {

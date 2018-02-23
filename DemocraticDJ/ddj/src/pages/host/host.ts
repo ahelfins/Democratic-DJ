@@ -27,10 +27,19 @@ export class HostPage {
     console.log('ionViewDidLoad HostPage');
   }
 
+  makeId() {
+    var text = "";
+    var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+
+    for (var i = 0; i < 5; i++)
+      text += possible.charAt(Math.floor(Math.random() * possible.length));
+
+    return text;
+  }
+
   genCode() {
     this.languageShow = !this.languageShow;
     this.languageHide = !this.languageHide;
-    document.getElementById('roomCode').textContent = '500';
-    return 500;
+    document.getElementById('roomCode').textContent = this.makeId();
   }
 }

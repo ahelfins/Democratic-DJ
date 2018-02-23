@@ -15,13 +15,57 @@
         <entry file="file://$PROJECT_DIR$/ddj/src/pages/guest-song-list/guest-song-list.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="336">
-              <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+              <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="18" selection-end-column="12" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="host.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="host-song-list.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/ddj/src/pages/host-song-list/host-song-list.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="420">
+              <caret line="20" column="0" lean-forward="true" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="host-song-list.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ddj/src/pages/host-song-list/host-song-list.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="420">
+              <caret line="20" column="37" lean-forward="false" selection-start-line="20" selection-start-column="37" selection-end-line="20" selection-end-column="37" />
+              <folding>
+                <element signature="e#0#42#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="guest-song-list.scss" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ddj/src/pages/guest-song-list/guest-song-list.scss">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="21">
+              <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="guest-song-list.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ddj/src/pages/guest-song-list/guest-song-list.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="420">
+              <caret line="20" column="20" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#42#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="host.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ddj/src/pages/host/host.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="378">
@@ -34,8 +78,8 @@
       <file leaf-file-name="host.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ddj/src/pages/host/host.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="17" column="5" lean-forward="true" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
+            <state relative-caret-position="435">
+              <caret line="33" column="21" lean-forward="false" selection-start-line="33" selection-start-column="21" selection-end-line="33" selection-end-column="21" />
               <folding>
                 <element signature="e#0#42#0" expanded="true" />
               </folding>
@@ -59,9 +103,12 @@
         <option value="$PROJECT_DIR$/ddj/src/pages/host-guest/host-guest.html" />
         <option value="$PROJECT_DIR$/ddj/src/pages/guest/guest.html" />
         <option value="$PROJECT_DIR$/ddj/src/pages/guest/guest.ts" />
-        <option value="$PROJECT_DIR$/ddj/src/pages/guest-song-list/guest-song-list.html" />
-        <option value="$PROJECT_DIR$/ddj/src/pages/host/host.ts" />
         <option value="$PROJECT_DIR$/ddj/src/pages/host/host.html" />
+        <option value="$PROJECT_DIR$/ddj/src/pages/host/host.ts" />
+        <option value="$PROJECT_DIR$/ddj/src/pages/guest-song-list/guest-song-list.html" />
+        <option value="$PROJECT_DIR$/ddj/src/pages/host-song-list/host-song-list.html" />
+        <option value="$PROJECT_DIR$/ddj/src/pages/guest-song-list/guest-song-list.ts" />
+        <option value="$PROJECT_DIR$/ddj/src/pages/host-song-list/host-song-list.ts" />
       </list>
     </option>
   </component>
@@ -131,30 +178,6 @@
               <item name="ddj" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="pages" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="DemocraticDJ" type="b2602c69:ProjectViewProjectNode" />
-              <item name="DemocraticDJ" type="462c0819:PsiDirectoryNode" />
-              <item name="ddj" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="pages" type="462c0819:PsiDirectoryNode" />
-              <item name="guest" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="DemocraticDJ" type="b2602c69:ProjectViewProjectNode" />
-              <item name="DemocraticDJ" type="462c0819:PsiDirectoryNode" />
-              <item name="ddj" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="pages" type="462c0819:PsiDirectoryNode" />
-              <item name="guest-song-list" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="DemocraticDJ" type="b2602c69:ProjectViewProjectNode" />
-              <item name="DemocraticDJ" type="462c0819:PsiDirectoryNode" />
-              <item name="ddj" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="pages" type="462c0819:PsiDirectoryNode" />
-              <item name="host" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="DemocraticDJ" type="b2602c69:ProjectViewProjectNode" />
@@ -306,12 +329,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1519342613786</updated>
-      <workItem from="1519342631846" duration="6490000" />
+      <workItem from="1519342631846" duration="8271000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="6490000" />
+    <option name="totallyTimeSpent" value="8271000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
@@ -497,24 +520,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ddj/src/pages/host-song-list/host-song-list.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ddj/src/pages/host-song-list/host-song-list.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#42#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ddj/src/app/app.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -543,18 +548,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ddj/src/pages/guest-song-list/guest-song-list.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ddj/src/pages/host/host.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="17" column="5" lean-forward="true" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
+        <state relative-caret-position="435">
+          <caret line="33" column="21" lean-forward="false" selection-start-line="33" selection-start-column="21" selection-end-line="33" selection-end-column="21" />
           <folding>
             <element signature="e#0#42#0" expanded="true" />
           </folding>
@@ -565,6 +562,50 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="378">
           <caret line="18" column="46" lean-forward="false" selection-start-line="18" selection-start-column="46" selection-end-line="18" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ddj/src/pages/guest-song-list/guest-song-list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="18" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ddj/src/pages/guest-song-list/guest-song-list.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="21">
+          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ddj/src/pages/guest-song-list/guest-song-list.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="20" column="20" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#42#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ddj/src/pages/host-song-list/host-song-list.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="20" column="37" lean-forward="false" selection-start-line="20" selection-start-column="37" selection-end-line="20" selection-end-column="37" />
+          <folding>
+            <element signature="e#0#42#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ddj/src/pages/host-song-list/host-song-list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="20" column="0" lean-forward="true" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
           <folding />
         </state>
       </provider>
