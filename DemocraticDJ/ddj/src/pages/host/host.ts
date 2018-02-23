@@ -16,6 +16,8 @@ import { HostSongListPage } from "../host-song-list/host-song-list";
 })
 export class HostPage {
   GenRoomButton: any;
+  public languageShow: boolean = false;
+  public languageHide: boolean = true;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     this.GenRoomButton = HostSongListPage;
@@ -25,4 +27,10 @@ export class HostPage {
     console.log('ionViewDidLoad HostPage');
   }
 
+  genCode() {
+    this.languageShow = !this.languageShow;
+    this.languageHide = !this.languageHide;
+    document.getElementById('roomCode').textContent = '500';
+    return 500;
+  }
 }
