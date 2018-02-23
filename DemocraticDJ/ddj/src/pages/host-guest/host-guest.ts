@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { HostPage } from '../host/host'
+import { HostPage } from '../host/host';
+import { GuestPage } from '../guest/guest';
 
 /**
  * Generated class for the HostGuestPage page.
@@ -16,9 +17,11 @@ import { HostPage } from '../host/host'
 })
 export class HostGuestPage {
   HostButton: any;
+  GuestButton: any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     this.HostButton = HostPage;
+    this.GuestButton = GuestPage;
   }
 
   ionViewDidLoad() {

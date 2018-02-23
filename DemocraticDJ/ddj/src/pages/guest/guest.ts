@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { HostSongListPage } from "../host-song-list/host-song-list";
+import { GuestSongListPage } from '../guest-song-list/guest-song-list';
 
 /**
- * Generated class for the HostPage page.
+ * Generated class for the GuestPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
@@ -11,18 +11,18 @@ import { HostSongListPage } from "../host-song-list/host-song-list";
 
 @IonicPage()
 @Component({
-  selector: 'page-host',
-  templateUrl: 'host.html',
+  selector: 'page-guest',
+  templateUrl: 'guest.html',
 })
-export class HostPage {
-  GenRoomButton: any;
+export class GuestPage {
+  EnterRoomButton: any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
-    this.GenRoomButton = HostSongListPage;
+    this.EnterRoomButton = GuestSongListPage;
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad HostPage');
+    console.log('ionViewDidLoad GuestPage');
   }
 
 }

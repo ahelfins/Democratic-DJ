@@ -8,12 +8,24 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { HostGuestPage } from '../pages/host-guest/host-guest';
 import { HostPage } from '../pages/host/host';
+import { GuestPage } from '../pages/guest/guest';
+import { GuestSongListPage } from '../pages/guest-song-list/guest-song-list';
+import { HostSongListPage } from '../pages/host-song-list/host-song-list';
+import { AddSongPage } from '../pages/add-song/add-song';
+
+
+
+
 
 @NgModule({
   declarations: [
     MyApp,
     HostGuestPage,
-    HostPage
+    HostPage,
+    GuestPage,
+    GuestSongListPage,
+    HostSongListPage,
+    AddSongPage
   ],
   imports: [
     BrowserModule,
@@ -22,8 +34,12 @@ import { HostPage } from '../pages/host/host';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
+    HostGuestPage,
     HostPage,
-    HostGuestPage
+    GuestPage,
+    GuestSongListPage,
+    HostSongListPage,
+    AddSongPage
   ],
   providers: [
     StatusBar,
