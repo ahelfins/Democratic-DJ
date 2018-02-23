@@ -1,0 +1,88 @@
+********************************Hard coded ints:**********************
+
+Functional Test: 
+1 1 2 3 5 8 13 
+true
+false
+Caught exception from a bad insert (this is a good thing). Message: Bad index: 10
+Caught exception from a bad remove (this is also a good thing). Message: Bad index: 10
+1 1 2 3 5 8 13 
+true
+The test took 2 milliseconds.
+And -679640 bytes of memory.
+
+
+Efficiency Test 10,000: 
+The test took 93 milliseconds.
+And -595904 bytes of memory.
+
+
+Efficiency Test 100,000: 
+The test took 6702 milliseconds.
+And 124096 bytes of memory.
+
+
+*****************************************Generics:*************************************
+
+Functional Test (with Integer): 
+1 1 2 3 5 8 13 
+true
+false
+Caught exception from a bad insert (this is a good thing). Message: Bad index: 10
+Caught exception from a bad remove (this is also a good thing). Message: Bad index: 10
+1 1 2 3 5 8 13 
+true
+The test took 2 milliseconds.
+And -679952 bytes of memory.
+
+Efficiency Test 10,000: 
+The test took 514 milliseconds.
+And 133984 bytes of memory.
+
+
+Efficiency Test 100,000: 
+The test took 52421 milliseconds.
+And 2607024 bytes of memory.
+
+
+*******************************************ArrayList:******************************
+
+Efficiency Test 10,000:
+The test took 45 milliseconds.
+And 135376 bytes of memory.
+
+Efficiency Test 100,000: 
+The test took 3763 milliseconds.
+And 2270768 bytes of memory.
+
+****************************************ArrayList Tester Mod 1**************************
+
+With the modified test 
+For 100,000:
+Runtime: 2000 ms
+Memory usage: 2200000
+Rationale: Since the additions in this test will not be random, I thought the runtime and memory would both go down because it does not need to run a separate Math.Random function and they only need to store the number from the for loop. 
+
+**************************************ArrayList Results Mod 1 (insert and remove at beginning)********************************
+
+The test took 7821 milliseconds.
+And 2467168 bytes of memory.
+
+The time got significantly longer (about 2 times as long), and the memory usage got slightly greater as well.
+This could possibly be because the insert and remove methods with this version have to insert and remove data where they will have to shift the most things possible (from the beginning). 
+On the other hand, when it was random, the insert or remove could have been in a location where it just happened to not take as long (like the middle or the end). 
+
+****************************************ArrayList Results Mod 2 (insert and remove at end)*******************************
+
+The test took 15 milliseconds.
+And 2467488 bytes of memory.
+
+With insert and remove at the end it is so much faster, ridiculously. It is very significant, less than half the time for this. 
+Memory is still about the same.
+
+**********************************************Analysis************************************
+
+My data from Generics for 10,000 was comparable to the ArrayList data for 100,000 (although it even took longer!)
+For both tests, the memory used in the ArrayList was close to the memory used for mine, but the ArrayLists were much faster. 
+My hard coded int data was faster on all fronts and took less memory. 
+

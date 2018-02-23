@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SimSchool>
+   <Person>
+      <name>Coach Bob</name>
+      <age>27</age>
+      <gender>M</gender>
+   </Person>
+   <Student>
+      <name>Lynne Brooke</name>
+      <age>16</age>
+      <gender>F</gender>
+      <ID>HS95129</ID>
+      <GPA>3.5</GPA>
+   </Student>
+   <Teacher>
+      <name>Duke Java</name>
+      <age>34</age>
+      <gender>M</gender>
+      <subject>Computer Science</subject>
+      <salary>50000.0</salary>
+   </Teacher>
+   <CollegeStudent>
+      <name>Ima Frosh</name>
+      <age>18</age>
+      <gender>F</gender>
+      <ID>UCB123</ID>
+      <GPA>4.0</GPA>
+      <year>1</year>
+      <major>English</major>
+   </CollegeStudent>
+   <Person>
+      <name>Louise Garces</name>
+      <age>36</age>
+      <gender>F</gender>
+   </Person>
+   <Student>
+      <name>Cooper Tino</name>
+      <age>15</age>
+      <gender>M</gender>
+      <ID>HS95130</ID>
+      <GPA>3.7</GPA>
+   </Student>
+   <Teacher>
+      <name>Adam Smith</name>
+      <age>34</age>
+      <gender>M</gender>
+      <subject>Economics</subject>
+      <salary>60000.0</salary>
+   </Teacher>
+   <CollegeStudent>
+      <name>Tim Williams Jr</name>
+      <age>20</age>
+      <gender>M</gender>
+      <ID>UCD546</ID>
+      <GPA>3.2</GPA>
+      <year>3</year>
+      <major>Computer Science</major>
+   </CollegeStudent>
+</SimSchool>
+
