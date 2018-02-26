@@ -14,12 +14,23 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'add-song.html',
 })
 export class AddSongPage {
+  public songName : any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad AddSongPage');
+  }
+
+  setSong(songName) {
+    this.songName = songName;
+  }
+
+  getSong() {
+    this.songName = document.getElementsByName('songName').item;
+    return this.songName;
+
   }
 
 }
