@@ -4,17 +4,18 @@
   See http://ionicframework.com/docs/components/#navigation for more info on
   Ionic pages and navigation.
 -->
-<ion-header>
-
-  <ion-navbar>
-    <ion-title>hostGuest</ion-title>
-  </ion-navbar>
-
-</ion-header>
-
-
 <ion-content padding>
-  <button ion-button [navPush]="HostButton">Host</button>
-  <button ion-button [navPush]="GuestButton">Guest</button>
-
+  <div class="center">
+    <div class="grid-container">
+      <div class="grid-item">
+        <img src="../../assets/imgs/logo.png" alt="logo">
+      </div>
+      <div class="grid-item">
+        <button ion-button block [navPush]="HostButton" >Host</button>
+      </div>
+      <div class="grid-item">
+        <button ion-button block [navPush]="GuestButton" >Guest</button>
+      </div>
+    </div>
+  </div>
 </ion-content>
