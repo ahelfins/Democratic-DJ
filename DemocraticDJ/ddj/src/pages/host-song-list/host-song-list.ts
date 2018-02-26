@@ -16,6 +16,7 @@ import { AddSongPage } from "../add-song/add-song";
 })
 export class HostSongListPage {
   addSongButton: any;
+  public songName: AddSongPage;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     this.addSongButton = AddSongPage;
