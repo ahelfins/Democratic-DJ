@@ -1,3 +1,14 @@
 page-host {
-
+  ion-row {
+    justify-content: center;
+  }
+  ion-grid {
+    height: 100%;
+    #codeRow{
+      height: 10%;
+    }
+    #blank {
+      height: 25%
+    }
+  }
 }

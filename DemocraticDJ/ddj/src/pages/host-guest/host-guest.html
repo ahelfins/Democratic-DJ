@@ -5,17 +5,17 @@
   Ionic pages and navigation.
 -->
 <ion-content padding>
-  <div class="center">
-    <div class="grid-container">
-      <div class="grid-item">
+  <ion-grid>
+    <ion-col>
+      <ion-row>
         <img src="../../assets/imgs/logo.png" alt="logo">
-      </div>
-      <div class="grid-item">
+      </ion-row>
+      <ion-row>
         <button ion-button block [navPush]="HostButton" >Host</button>
-      </div>
-      <div class="grid-item">
+      </ion-row>
+      <ion-row>
         <button ion-button block [navPush]="GuestButton" >Guest</button>
-      </div>
-    </div>
-  </div>
+      </ion-row>
+    </ion-col>
+  </ion-grid>
 </ion-content>
