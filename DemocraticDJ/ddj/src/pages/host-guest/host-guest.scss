@@ -1,18 +1,6 @@
 page-host-guest {
-  .center {
-    margin: auto;
-    width: 50%;
-    padding: 10px;
-  }
-  .grid-container {
-    display: grid;
-    grid-template-columns: auto;
-    grid-template-rows: auto auto auto;
-    justify-items: center;
-    align-items: center;
-  }
-  .grid-item {
-    justify-items: center;
-    align-items: center;
+
+  ion-row {
+    justify-content: center;
   }
 }

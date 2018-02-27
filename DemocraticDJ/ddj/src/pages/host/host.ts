@@ -18,6 +18,7 @@ export class HostPage {
   GenRoomButton: any;
   public languageShow: boolean = false;
   public languageHide: boolean = true;
+  public id: string;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     this.GenRoomButton = HostSongListPage;
@@ -40,6 +41,7 @@ export class HostPage {
   genCode() {
     this.languageShow = !this.languageShow;
     this.languageHide = !this.languageHide;
+    this.id = this.makeId()
     document.getElementById('roomCode').textContent = this.makeId();
   }
 }
