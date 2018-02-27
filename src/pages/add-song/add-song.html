@@ -1,0 +1,25 @@
+<!--
+  Generated template for the AddSongPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>addSong</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-input
+    placeholder="Song Name"
+    type="text"
+    [(ngModel)]="song.name"
+    name="songName">
+  </ion-input>
+  <button ion-button type="submit" (click)="setSong(song.name);">Add to Song List</button>
+  <!-- <button ion-button [navPush]="GenRoomButton">Generate Room</button> -->
+</ion-content>

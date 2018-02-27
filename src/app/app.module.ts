@@ -6,11 +6,27 @@ import { StatusBar } from '@ionic-native/status-bar';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
+import { HostGuestPage } from '../pages/host-guest/host-guest';
+import { HostPage } from '../pages/host/host';
+import { GuestPage } from '../pages/guest/guest';
+import { GuestSongListPage } from '../pages/guest-song-list/guest-song-list';
+import { HostSongListPage } from '../pages/host-song-list/host-song-list';
+import { AddSongPage } from '../pages/add-song/add-song';
+import { FirebaseProvider } from '../providers/firebase/firebase';
+
+
+
+
 
 @NgModule({
   declarations: [
     MyApp,
-    HomePage
+    HostGuestPage,
+    HostPage,
+    GuestPage,
+    GuestSongListPage,
+    HostSongListPage,
+    AddSongPage
   ],
   imports: [
     BrowserModule,
@@ -19,12 +35,19 @@ import { HomePage } from '../pages/home/home';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage
+    HostGuestPage,
+    HostPage,
+    GuestPage,
+    GuestSongListPage,
+    HostSongListPage,
+    AddSongPage
   ],
   providers: [
+    AddSongPage,
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    FirebaseProvider
   ]
 })
 export class AppModule {}
