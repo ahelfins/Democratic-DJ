@@ -28,4 +28,6 @@ export class HostGuestPage {
     console.log('ionViewDidLoad HostGuestPage');
   }
 
+
+
 }
