@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { HTTP } from '@ionic-native/http';
 
 /**
  * Generated class for the AddSongPage page.
@@ -15,8 +16,11 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class AddSongPage {
   public songName : any;
+  public id: string;
+  public languageShow: boolean = false;
+  public languageHide: boolean = true;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private http: HTTP) {
   }
 
   ionViewDidLoad() {
@@ -31,6 +35,13 @@ export class AddSongPage {
     this.songName = document.getElementsByName('songName').item;
     return this.songName;
 
+  }
+
+  genSite() {
+    this.languageShow = !this.languageShow;
+    this.languageHide = !this.languageHide;
+    this.id = this.http.get('http://ionic.io', {}, {});
+    document.getElementById('websiteGet').textContent = this.id;
   }
 
 }
