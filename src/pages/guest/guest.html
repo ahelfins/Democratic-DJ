@@ -14,6 +14,20 @@
 
 
 <ion-content padding>
-  <ion-input placeholder="Room Code" type="text"></ion-input>
-  <button ion-button [navPush]="EnterRoomButton">Enter Room</button>
+  <ion-grid>
+    <ion-col>
+      <ion-row id="blank1">
+      </ion-row>
+      <ion-row>
+        <ion-item>
+          <ion-input placeholder="Room Code" type="text"></ion-input>
+        </ion-item>
+      </ion-row>
+      <ion-row id="blank2">
+      </ion-row>
+      <ion-row>
+        <button ion-button block [navPush]="EnterRoomButton">Enter Room</button>
+      </ion-row>
+    </ion-col>
+  </ion-grid>
 </ion-content>

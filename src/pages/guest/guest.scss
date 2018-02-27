@@ -1,3 +1,15 @@
 page-guest {
+  ion-grid {
+    height: 100%;
 
+    ion-row {
+      justify-content: center;
+    }
+    #blank1{
+      height: 25vh;
+    }
+    #blank2 {
+      height: 10vh;
+    }
+  }
 }

@@ -14,7 +14,22 @@
 
 
 <ion-content padding>
-  <h1 id="roomCode"></h1>
-  <button ion-button (click)="genCode();">Generate Room Code</button>
-  <button ion-button [navPush]="GenRoomButton">Generate Room</button>
+  <ion-grid>
+    <ion-col>
+      <ion-row id="blank">
+      </ion-row>
+      <ion-row>
+        <h1 text-center>Your room's code is: </h1>
+      </ion-row>
+      <ion-row id="codeRow">
+        <h1 text-center id="roomCode"></h1>
+      </ion-row>
+      <ion-row>
+        <button ion-button block (click)="genCode();">Generate Room Code</button>
+      </ion-row>
+      <ion-row>
+        <button ion-button block [navPush]="GenRoomButton">Generate Room</button>
+      </ion-row>
+    </ion-col>
+  </ion-grid>
 </ion-content>

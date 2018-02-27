@@ -12,7 +12,6 @@ import { GuestPage } from '../pages/guest/guest';
 import { GuestSongListPage } from '../pages/guest-song-list/guest-song-list';
 import { HostSongListPage } from '../pages/host-song-list/host-song-list';
 import { AddSongPage } from '../pages/add-song/add-song';
-import { FirebaseProvider } from '../providers/firebase/firebase';
 
 
 
@@ -46,8 +45,7 @@ import { FirebaseProvider } from '../providers/firebase/firebase';
     AddSongPage,
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler},
-    FirebaseProvider
+    {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
 export class AppModule {}
