@@ -46,7 +46,7 @@ import { AddSongPage } from '../pages/add-song/add-song';
     AddSongPage,
     StatusBar,
     SplashScreen,
-    HTTP, 
+    HTTP,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
