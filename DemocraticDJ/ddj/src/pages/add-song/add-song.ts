@@ -16,7 +16,7 @@ import { HTTP } from '@ionic-native/http';
 })
 export class AddSongPage {
   public songName : any;
-  public id: Promise<HTTPResponse>;
+  //public id: Promise<HTTPResponse>;
   public languageShow: boolean = false;
   public languageHide: boolean = true;
 
