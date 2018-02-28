@@ -16,7 +16,7 @@ import { HTTP } from '@ionic-native/http';
 })
 export class AddSongPage {
   public songName : any;
-  public id: Promise;
+  public id: Promise<HTTPResponse>;
   public languageShow: boolean = false;
   public languageHide: boolean = true;
 
@@ -40,8 +40,8 @@ export class AddSongPage {
   genSite() {
     this.languageShow = !this.languageShow;
     this.languageHide = !this.languageHide;
-    this.id = this.http.get('http://ionic.io', {}, {});
-    document.getElementById('websiteGet').textContent = this.id;
+    // this.id = this.http.get('http://ionic.io', {}, {});
+    // document.getElementById('websiteGet').textContent = this.id;
   }
 
 }
