@@ -12,7 +12,7 @@ import { HostGuestPage } from '../pages/host-guest/host-guest';
 })
 export class MyApp {
   rootPage:any = HostGuestPage;
-  items: FirebaseListObservable<any>;
+  //items: FirebaseListObservable<any>;
 
 
   constructor(platform: Platform, statusBar: StatusBar,
