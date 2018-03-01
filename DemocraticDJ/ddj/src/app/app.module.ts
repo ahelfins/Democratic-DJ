@@ -4,7 +4,7 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 import { HTTP } from '@ionic-native/http';
-
+import { AngularFireModule } from 'angularfire2';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { HostGuestPage } from '../pages/host-guest/host-guest';
@@ -14,6 +14,13 @@ import { GuestSongListPage } from '../pages/guest-song-list/guest-song-list';
 import { HostSongListPage } from '../pages/host-song-list/host-song-list';
 import { AddSongPage } from '../pages/add-song/add-song';
 
+export const firebaseConfig = {
+    apiKey: "AIzaSyBH06qobgXssEN8T3DUxrMIHHJnLUdJuOo",
+    authDomain: "democraticdj-4982f.firebaseapp.com",
+    databaseURL: "https://democraticdj-4982f.firebaseio.com",
+    storageBucket: "democraticdj-4982f.appspot.com",
+    messagingSenderId: "395147360380"
+};
 
 
 
@@ -30,7 +37,8 @@ import { AddSongPage } from '../pages/add-song/add-song';
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    AngularFireModule.initializeApp(firebaseConfig)
   ],
   bootstrap: [IonicApp],
   entryComponents: [
