@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { HostSongListPage } from "../host-song-list/host-song-list";
+import {AngularFire, FirebaseListObservable } from 'angularfire2';
+import * as firebase from 'firebase';
 
 /**
  * Generated class for the HostPage page.
