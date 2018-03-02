@@ -20,13 +20,18 @@
       </ion-row>
       <ion-row>
         <ion-item>
-          <ion-input placeholder="Room Code" type="text"></ion-input>
+          <ion-label floating>Room Code</ion-label>
+          <ion-input id='roomInput' type="text" [(ngModel)]="roomCode"></ion-input>
         </ion-item>
       </ion-row>
       <ion-row id="blank2">
       </ion-row>
       <ion-row>
-        <button ion-button block [navPush]="EnterRoomButton">Enter Room</button>
+        <!-- <button ion-button block [navPush]="EnterRoomButton" (click)="getRoomInput()">Enter Room</button> -->
+        <button ion-button block (click)="getRoomInput()">Enter Room</button>
+      </ion-row>
+      <ion-row>
+        <p id='output'></p>
       </ion-row>
     </ion-col>
   </ion-grid>
