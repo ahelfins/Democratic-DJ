@@ -53,18 +53,33 @@ export class GuestPage {
     // for(let room of this.roomList) {
     //   console.log(room);
     // }
-
-    this.currentRoom = this.afDB.list('/rooms', ref => ref.orderByChild('id').equalTo(roomInput));
+    //this.currentRoom = this.afDB.list('/rooms', ref => ref.orderByChild('id').equalTo(roomInput));
     //const currentRoomObservable = this.currentRoom;
     //currentRoomObservable.subscribe();
     //document.getElementById('output').textContent = this.roomList[0];
     //console.log(this.currentRoom.get(0));
+    let idList = [];
 
     this.afDB.list("/rooms").valueChanges().subscribe(list =>{ list.forEach(item => {
       console.log(item.key, item.id)});
     });
 
+    this.afDB.list("/rooms").valueChanges().subscribe(list =>{ list.forEach(item => {
+      idList.push(item.id)});
+    });
+
     console.log(this.room);
+    console.log(idList);
+    //
+    // for(let roomId of idList) {
+    //   console.log(roomId);
+    //   if(roomId === roomInput) {
+    //     this.navCtrl.push(GuestSongListPage, {roomId: roomId});
+    //     console.log("Correct Room Code");
+    //   }
+    // }
+
+
     //document.getElementById('output').textContent = this.rooms['-L6YbbGuRaf8oMtSsj-2'].id;
   }
 

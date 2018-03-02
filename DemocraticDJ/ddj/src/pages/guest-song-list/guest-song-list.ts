@@ -19,6 +19,8 @@ export class GuestSongListPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     this.addSongButton = AddSongPage;
+    var roomId = this.navParams.get('roomId');
+    console.log(roomId);
   }
 
   ionViewDidLoad() {
