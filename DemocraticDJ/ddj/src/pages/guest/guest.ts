@@ -31,6 +31,7 @@ export class GuestPage {
     this.EnterRoomButton = GuestSongListPage;
     this.roomList = this.afDB.list('/rooms');
     this.room = this.roomList.valueChanges();
+
   }
 
   ionViewDidLoad() {
@@ -39,28 +40,93 @@ export class GuestPage {
   }
 
   getRoomInput() {
+
     var roomInput = this.roomCode;
 
-    let idList = [];
+    // var idList = new Array();
+    let idList: Array<String> = new Array<String>(3);
 
-    this.afDB.list("/rooms").valueChanges().subscribe(list =>{ list.forEach(item => {
-      console.log(item.key, item.id)});
+    // this.afDB.list("/rooms").valueChanges()
+    //   .subscribe(list  => {
+    //     list.forEach((item) => {
+    //       // console.log(item.key, item.id)});
+    //       console.log(item)});
+    // });
+
+
+    let i = 0;
+    this.afDB.list("/rooms").valueChanges()
+      .subscribe(list =>{
+        list.forEach(item => {
+          //idList.push(item.id)});
+          console.log(item.id);
+
+          console.log("pushed to idList");
+          //idList.push(item.id);
+          idList[i] = item.id;
+          i++;
+          console.log("idList[0] ", idList[0]);
+          console.log("idList[1] ",idList[1]);
+          console.log("idList[2] ",idList[2]);
+
+        });
     });
 
-    this.afDB.list("/rooms").valueChanges().subscribe(list =>{ list.forEach(item => {
-      idList.push(item.id)});
-    });
+    // -L6YbbGuRaf8oMtSsj-2
 
-    console.log(this.room);
+    //console.log(this.room);
+    //console.log(idList[0].getElementById('id'));
+    //0:{id: "5jaPp"}
+    //1:{id: "P7DiP"}
+    //2:{id: "oKFPU"}
     console.log(idList);
+    //let iter = idList.values()
+
+
+
+    // console.log("Start Loop");
+
+    // idList.forEach((item, index) => {
+    //   console.log("visiting idList");
+    //   console.log(item);
+    //   console.log(index);
+    // });
     //
+
+
+    console.log("Executing isCorrectRoomInput()");
+
+
+    this.isCorrectRoomInput(roomInput, idList);
+
+
+
+    console.log("Finished isCorrectRoomInput()");
+
+    // console.log("roomInput", roomInput);
+    // let found = idList.indexOf(roomInput);
+    // console.log("found", found);
+    // this.navCtrl.push(GuestSongListPage, {roomId: roomInput});
+
     // for(let roomId of idList) {
-    //   console.log(roomId);
+    //   console.log("inside the loop", roomId)
+    //   //console.log(roomId);
     //   if(roomId === roomInput) {
     //     this.navCtrl.push(GuestSongListPage, {roomId: roomId});
     //     console.log("Correct Room Code");
     //   }
     // }
+
+  }
+
+  isCorrectRoomInput(roomInput: string, idList: String[]) {
+    console.log("Inside START isCorrectRoomInput()");
+    //roomInput = this.roomCode;
+    console.log("roomInput", roomInput);
+    let found = idList.indexOf(roomInput);
+    console.log("found", found);
+    this.navCtrl.push(GuestSongListPage, {roomId: roomInput});
+    console.log("Inside END isCorrectRoomInput()");
 
   }
 
