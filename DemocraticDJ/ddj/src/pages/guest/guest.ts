@@ -41,23 +41,6 @@ export class GuestPage {
   getRoomInput() {
     var roomInput = this.roomCode;
 
-
-    // let response = this.afDB.list('/rooms', {
-    //   query: {
-    //     orderByChild: 'id',
-    //     equalTo: roomInput
-    //   }
-    // });
-    //.map(room => room).subscribe(room => console.log(room));
-
-    // for(let room of this.roomList) {
-    //   console.log(room);
-    // }
-    //this.currentRoom = this.afDB.list('/rooms', ref => ref.orderByChild('id').equalTo(roomInput));
-    //const currentRoomObservable = this.currentRoom;
-    //currentRoomObservable.subscribe();
-    //document.getElementById('output').textContent = this.roomList[0];
-    //console.log(this.currentRoom.get(0));
     let idList = [];
 
     this.afDB.list("/rooms").valueChanges().subscribe(list =>{ list.forEach(item => {
@@ -79,8 +62,6 @@ export class GuestPage {
     //   }
     // }
 
-
-    //document.getElementById('output').textContent = this.rooms['-L6YbbGuRaf8oMtSsj-2'].id;
   }
 
 }
