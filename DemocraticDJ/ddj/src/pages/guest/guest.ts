@@ -22,6 +22,7 @@ export class GuestPage {
   roomCode: string = "";
   roomList: AngularFireList<any>;
   room: Observable<any[]>;
+  idList: Array<String>;
   //currentRoom: AngularFireList<any>;
 
   constructor(
@@ -33,12 +34,34 @@ export class GuestPage {
     this.EnterRoomButton = GuestSongListPage;
     this.roomList = this.afDB.list('/rooms');
     this.room = this.roomList.valueChanges();
-
+    this.idList = new Array<String>(2);
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad GuestPage');
+    this.makeIdList();
+  }
 
+  makeIdList() {
+    let i = 0;
+    this.afDB.list("/rooms").valueChanges()
+      .subscribe(list =>{
+        list.forEach(item => {
+          //idList.push(item.id)});
+          console.log(item['id']+" pushed to idList");
+          //idList.push(item.id);
+          this.idList[i] = item['id'];
+          i++;
+          // console.log("idList[0] ", this.idList[0]);
+          // console.log("idList[1] ", this.idList[1]);
+          // console.log("idList[2] ", this.idList[2]);
+          // console.log("idList[3] ", this.idList[3]);
+          console.log(this.idList)
+
+
+        });
+        // this.isCorrectRoomInput(this.roomCode, idList);
+      });
   }
 
   getRoomInput() {
@@ -46,7 +69,6 @@ export class GuestPage {
     // var roomInput = this.roomCode;
 
     // var idList = new Array();
-    let idList: Array<String> = new Array<String>(2);
 
     // this.afDB.list("/rooms").valueChanges()
     //   .subscribe(list  => {
@@ -56,25 +78,7 @@ export class GuestPage {
     // });
 
 
-    let i = 0;
-    this.afDB.list("/rooms").valueChanges()
-      .subscribe(list =>{
-        list.forEach(item => {
-          //idList.push(item.id)});
-          console.log(item['id']+" pushed to idList");
-          //idList.push(item.id);
-          idList[i] = item['id'];
-          i++;
-          console.log("idList[0] ", idList[0]);
-          console.log("idList[1] ",idList[1]);
-          console.log("idList[2] ",idList[2]);
-          console.log("idList[3] ",idList[3]);
-          console.log(idList)
 
-
-        });
-        this.isCorrectRoomInput(this.roomCode, idList);
-      });
 
     // -L6YbbGuRaf8oMtSsj-2
 

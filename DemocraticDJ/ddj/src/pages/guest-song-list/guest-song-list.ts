@@ -16,15 +16,16 @@ import { AddSongPage } from "../add-song/add-song";
 })
 export class GuestSongListPage {
   addSongButton: any;
+  roomId: string;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     this.addSongButton = AddSongPage;
-    var roomId = this.navParams.get('roomId');
-    console.log(roomId);
+    this.roomId = this.navParams.get('roomId');
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad GuestSongListPage');
+    console.log('Current room: '+this.roomId);
   }
 
 }

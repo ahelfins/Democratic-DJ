@@ -28,7 +28,7 @@
       </ion-row>
       <ion-row>
         <!-- <button ion-button block [navPush]="EnterRoomButton" (click)="getRoomInput()">Enter Room</button> -->
-        <button ion-button block (click)="getRoomInput()">Enter Room</button>
+        <button ion-button block (click)="isCorrectRoomInput(this.roomCode, this.idList)">Enter Room</button>
       </ion-row>
       <ion-row>
         <p id='output'></p>
