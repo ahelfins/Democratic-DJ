@@ -18,7 +18,7 @@ import { Observable } from 'rxjs/Observable';
 })
 export class GuestPage {
   EnterRoomButton: any;
-  roomCode: string;
+  roomCode: string = "";
   roomList: AngularFireList<any>;
   room: Observable<any[]>;
   //currentRoom: AngularFireList<any>;
@@ -41,10 +41,10 @@ export class GuestPage {
 
   getRoomInput() {
 
-    var roomInput = this.roomCode;
+    // var roomInput = this.roomCode;
 
     // var idList = new Array();
-    let idList: Array<String> = new Array<String>(3);
+    let idList: Array<String> = new Array<String>(2);
 
     // this.afDB.list("/rooms").valueChanges()
     //   .subscribe(list  => {
@@ -59,18 +59,20 @@ export class GuestPage {
       .subscribe(list =>{
         list.forEach(item => {
           //idList.push(item.id)});
-          console.log(item.id);
-
-          console.log("pushed to idList");
+          console.log(item['id']+" pushed to idList");
           //idList.push(item.id);
-          idList[i] = item.id;
+          idList[i] = item['id'];
           i++;
           console.log("idList[0] ", idList[0]);
           console.log("idList[1] ",idList[1]);
           console.log("idList[2] ",idList[2]);
+          console.log("idList[3] ",idList[3]);
+          console.log(idList)
+
 
         });
-    });
+        this.isCorrectRoomInput(this.roomCode, idList);
+      });
 
     // -L6YbbGuRaf8oMtSsj-2
 
@@ -79,7 +81,6 @@ export class GuestPage {
     //0:{id: "5jaPp"}
     //1:{id: "P7DiP"}
     //2:{id: "oKFPU"}
-    console.log(idList);
     //let iter = idList.values()
 
 
@@ -94,14 +95,12 @@ export class GuestPage {
     //
 
 
-    console.log("Executing isCorrectRoomInput()");
-
-
-    this.isCorrectRoomInput(roomInput, idList);
+    // console.log("Executing isCorrectRoomInput()");
 
 
 
-    console.log("Finished isCorrectRoomInput()");
+
+    // console.log("Finished isCorrectRoomInput()");
 
     // console.log("roomInput", roomInput);
     // let found = idList.indexOf(roomInput);
@@ -120,12 +119,13 @@ export class GuestPage {
   }
 
   isCorrectRoomInput(roomInput: string, idList: String[]) {
-    console.log("Inside START isCorrectRoomInput()");
+    console.log("Inside START isCorrectRoomInput(" + roomInput +", " + idList +")");
     //roomInput = this.roomCode;
     console.log("roomInput", roomInput);
     let found = idList.indexOf(roomInput);
     console.log("found", found);
-    this.navCtrl.push(GuestSongListPage, {roomId: roomInput});
+
+      this.navCtrl.push(GuestSongListPage, {roomId: roomInput});
     console.log("Inside END isCorrectRoomInput()");
 
   }
