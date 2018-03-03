@@ -64,7 +64,7 @@ export class GuestPage {
       });
   }
 
-  getRoomInput() {
+  //getRoomInput() {
 
     // var roomInput = this.roomCode;
 
@@ -122,7 +122,7 @@ export class GuestPage {
     //   }
     // }
 
-  }
+  //}
 
   isCorrectRoomInput(roomInput: string, idList: String[]) {
     console.log("Inside START isCorrectRoomInput(" + roomInput +", " + idList +")");

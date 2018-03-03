@@ -16,14 +16,18 @@ import { AddSongPage } from "../add-song/add-song";
 })
 export class HostSongListPage {
   addSongButton: any;
+  roomId: string;
   public songName: AddSongPage;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     this.addSongButton = AddSongPage;
+    this.roomId = this.navParams.get('roomId');
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad HostSongListPage');
+    console.log('Current room: ' +this.roomId);
+    document.getElementById('room').textContent = "Room: "+this.roomId;
   }
 
 }

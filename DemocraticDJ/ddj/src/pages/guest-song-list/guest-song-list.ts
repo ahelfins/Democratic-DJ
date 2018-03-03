@@ -26,6 +26,7 @@ export class GuestSongListPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad GuestSongListPage');
     console.log('Current room: '+this.roomId);
+    document.getElementById('room').textContent = "Room: "+this.roomId;
   }
 
 }
