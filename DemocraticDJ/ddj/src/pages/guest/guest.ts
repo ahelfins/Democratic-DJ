@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { GuestSongListPage } from '../guest-song-list/guest-song-list';
 import { AngularFireDatabase, AngularFireList } from 'angularfire2/database';
 import { Observable } from 'rxjs/Observable';
+import { AlertController } from 'ionic-angular';
 
 /**
  * Generated class for the GuestPage page.
@@ -26,7 +27,8 @@ export class GuestPage {
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
-    public afDB: AngularFireDatabase) {
+    public afDB: AngularFireDatabase,
+    public alertCtrl: AlertController) {
 
     this.EnterRoomButton = GuestSongListPage;
     this.roomList = this.afDB.list('/rooms');
@@ -125,7 +127,16 @@ export class GuestPage {
     let found = idList.indexOf(roomInput);
     console.log("found", found);
 
+    if (found >= 0) {     //if roomCode matches a room, push to room, otherwise show an alert
       this.navCtrl.push(GuestSongListPage, {roomId: roomInput});
+    } else {
+      let alert = this.alertCtrl.create({
+        title: 'Room not found!',
+        message: 'The room code provided did not match any current rooms.',
+        buttons: ["OK"]
+      });
+      alert.present();
+    }
     console.log("Inside END isCorrectRoomInput()");
 
   }
