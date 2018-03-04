@@ -19,12 +19,12 @@
   </ion-fab>
 
   <ion-list>
-    <ion-item-sliding #item>
+    <ion-item-sliding #item [ngStyle]="{'background-color': darkgrey}">
       <ion-item>
         Song
       </ion-item>
       <ion-item-options side="left">
-        <button ion-button color="danger" (click)="delete(item)">Delete</button>
+        <button ion-button class="delete" (click)="delete(item)">Delete</button>
       </ion-item-options>
 
       <ion-item-options side="right">
