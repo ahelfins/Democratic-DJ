@@ -16,7 +16,7 @@ import { AddSongPage } from "../add-song/add-song";
 })
 export class GuestSongListPage {
   addSongButton: any;
-  roomId: string;
+  public roomId: string;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     this.addSongButton = AddSongPage;

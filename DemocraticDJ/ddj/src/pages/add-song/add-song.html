@@ -17,10 +17,9 @@
 <ion-content padding class="background">
   <ion-input
     placeholder="Song Name"
-    type="text">
-    <!-- [(ngModel)]="song.name"
-    name="songName"> -->
+    type="text" [(ngModel)]="songName">
   </ion-input>
-  <button ion-button type="submit" (click)="setSong(song.name);">Add to Song List</button>
+  <button ion-button type="submit" (click)="setSong(songName);">Add to Song List</button>
+  <button ion-button block [navPush]="GuestSongListButton" class="button">See Song List</button>
   <!-- <button ion-button [navPush]="GenRoomButton">Generate Room</button> -->
 </ion-content>
