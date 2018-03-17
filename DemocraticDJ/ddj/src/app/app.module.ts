@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { Pro } from '@ionic/pro';
+// import { Pro } from '@ionic/pro';
 import { Injectable, Injector } from '@angular/core';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
@@ -17,9 +17,9 @@ import { GuestSongListPage } from '../pages/guest-song-list/guest-song-list';
 import { HostSongListPage } from '../pages/host-song-list/host-song-list';
 import { AddSongPage } from '../pages/add-song/add-song';
 
-Pro.init('f756908f', {
-  appVersion: '0.0.1'
-})
+// Pro.init('f756908f', {
+//   appVersion: '0.0.1'
+// })
 
 export const firebaseConfig = {
     apiKey: "AIzaSyBH06qobgXssEN8T3DUxrMIHHJnLUdJuOo",
@@ -29,26 +29,26 @@ export const firebaseConfig = {
     messagingSenderId: "395147360380"
 };
 
-@Injectable()
-export class MyErrorHandler implements ErrorHandler {
-  ionicErrorHandler: IonicErrorHandler;
-
-  constructor(injector: Injector) {
-    try {
-      this.ionicErrorHandler = injector.get(IonicErrorHandler);
-    } catch(e) {
-      // Unable to get the IonicErrorHandler provider, ensure
-      // IonicErrorHandler has been added to the providers list below
-    }
-  }
-
-  handleError(err: any): void {
-    Pro.monitoring.handleNewError(err);
-    // Remove this if you want to disable Ionic's auto exception handling
-    // in development mode.
-    this.ionicErrorHandler && this.ionicErrorHandler.handleError(err);
-  }
-}
+// @Injectable()
+// export class MyErrorHandler implements ErrorHandler {
+//   ionicErrorHandler: IonicErrorHandler;
+//
+//   constructor(injector: Injector) {
+//     try {
+//       this.ionicErrorHandler = injector.get(IonicErrorHandler);
+//     } catch(e) {
+//       // Unable to get the IonicErrorHandler provider, ensure
+//       // IonicErrorHandler has been added to the providers list below
+//     }
+//   }
+//
+//   handleError(err: any): void {
+//     Pro.monitoring.handleNewError(err);
+//     // Remove this if you want to disable Ionic's auto exception handling
+//     // in development mode.
+//     this.ionicErrorHandler && this.ionicErrorHandler.handleError(err);
+//   }
+// }
 
 @NgModule({
   declarations: [
@@ -80,10 +80,10 @@ export class MyErrorHandler implements ErrorHandler {
     AddSongPage,
     StatusBar,
     SplashScreen,
-    IonicErrorHandler,
-    [{ provide: ErrorHandler, useClass: MyErrorHandler }]
-    // HTTP,
-    // {provide: ErrorHandler, useClass: IonicErrorHandler}
+    // IonicErrorHandler,
+    // [{ provide: ErrorHandler, useClass: MyErrorHandler }]
+    // // HTTP,
+    // // {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
 export class AppModule {}
