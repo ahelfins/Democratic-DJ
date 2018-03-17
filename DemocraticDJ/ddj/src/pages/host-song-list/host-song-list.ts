@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { AddSongPage } from "../add-song/add-song";
+import { AngularFireDatabase, AngularFireList } from 'angularfire2/database';
+import { Observable } from 'rxjs/Observable';
+
 
 /**
  * Generated class for the HostSongListPage page.
@@ -19,9 +22,17 @@ export class HostSongListPage {
   roomId: string;
   public songName: AddSongPage;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  songList: Observable<any>
+
+
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, public afDB: AngularFireDatabase) {
     this.addSongButton = AddSongPage;
     this.roomId = this.navParams.get('roomId');
+
+    this.songList = afDB.list('songList').valueChanges();
+
+
   }
 
   ionViewDidLoad() {
