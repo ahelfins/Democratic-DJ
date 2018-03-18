@@ -19,6 +19,7 @@ import { HostSongListPage} from '../host-song-list/host-song-list';
 })
 export class AddSongPage {
   GuestSongListButton : any;
+  HostSongListButton : any;
   public songName : String;
 
   // public songList: Array<String>;
@@ -31,6 +32,7 @@ export class AddSongPage {
     // this.roomList = this.afDB.list('/rooms');
     // this.rooms = this.roomList.valueChanges();
     this.GuestSongListButton = GuestSongListPage;
+    this.HostSongListButton = HostSongListPage;
     // this.songList = new Array<String>(2);
     // this.roomCode = GuestSongListPage.roomCode;
     this.songList = afDB.list('/songs');

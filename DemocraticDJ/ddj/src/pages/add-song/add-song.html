@@ -23,6 +23,7 @@
     [(ngModel)]="songName">
   </ion-input>
   <button ion-button type="submit" (click)="addSongToList(songName);">Add to Song List</button>
-  <button ion-button block [navPush]="GuestSongListButton" class="button">See Song List</button>
+  <!--<button ion-button block [navPush]="GuestSongListButton" class="button">See Guest Song List</button>-->
+  <button ion-button block [navPush]="HostSongListButton" class="button">See Host Song List</button>
   <!-- <button ion-button [navPush]="GenRoomButton">Generate Room</button> -->
 </ion-content>
