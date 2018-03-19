@@ -21,7 +21,6 @@ export class HostSongListPage {
   addSongButton: any;
   roomId: string;
   public songName: AddSongPage;
-
   songList: AngularFireList<any>;
   song: Observable<any[]>;
 
@@ -33,9 +32,6 @@ export class HostSongListPage {
 
     this.songList = afDB.list('/songs');
     this.song = this.songList.valueChanges();
-
-
-
   }
 
   ionViewDidLoad() {
@@ -47,7 +43,7 @@ export class HostSongListPage {
     this.afDB.list("/songs").valueChanges()
       .subscribe(list => {
         list.forEach(item => {
-          console.log(item+"pushed to songList");
+          console.log(item+" pushed to songList");
           this.songList[i] = item;
           i++;
           console.log("songList: " + this.songList);
@@ -57,6 +53,10 @@ export class HostSongListPage {
 
     console.log("song: " + this.song);
     console.log("songList: " + this.songList);
+  }
+
+  goToAddSongPage() {
+    this.navCtrl.push(AddSongPage, {roomId: this.roomId});
   }
 
 }

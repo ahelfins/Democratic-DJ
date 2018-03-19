@@ -4,6 +4,7 @@ import { AngularFireDatabase, AngularFireList } from 'angularfire2/database';
 import { Observable } from 'rxjs/Observable';
 import { GuestSongListPage } from '../guest-song-list/guest-song-list';
 import { HostSongListPage} from '../host-song-list/host-song-list';
+import {HostPage} from "../host/host";
 
 /**
  * Generated class for the AddSongPage page.
@@ -25,6 +26,7 @@ export class AddSongPage {
   // public songList: Array<String>;
   songList: AngularFireList<any>;
   song: Observable<any[]>;
+  roomId : string;
 
   // roomCode : String;
   //songList : AngularFireList<any>
@@ -33,14 +35,24 @@ export class AddSongPage {
     // this.rooms = this.roomList.valueChanges();
     this.GuestSongListButton = GuestSongListPage;
     this.HostSongListButton = HostSongListPage;
+
+    this.roomId = this.navParams.get('roomId');
     // this.songList = new Array<String>(2);
     // this.roomCode = GuestSongListPage.roomCode;
+    // this.roomCode = afDB.object('/rooms/' + key);
+
+
     this.songList = afDB.list('/songs');
     this.song = this.songList.valueChanges();
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad AddSongPage');
+    console.log('Add Song Room: ' + this.roomId);
+    document.getElementById('roomCode').textContent = "Add Song Room: "+this.roomId;
+    document.getElementById('roomCode').textContent = "12345";
+    console.log(document.getElementById('roomCode').textContent);
+    console.log(document.getElementById('roomCode'));
   }
 
   addSongToList(songName) {
@@ -59,7 +71,7 @@ export class AddSongPage {
     // this.navCtrl.push(HostSongListPage, song);
 
     let i = 0;
-    this.afDB.list("/songs").valueChanges()
+    this.afDB.list("/rooms/{this.roomCode}/songs").valueChanges()
       .subscribe(songList => {
         songList.push(this.songName);
         // songList.forEach(song => {

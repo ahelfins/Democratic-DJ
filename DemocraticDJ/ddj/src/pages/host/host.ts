@@ -45,6 +45,10 @@ export class HostPage {
     this.makeIdList();
   }
 
+  getId() {
+    return this.id;
+  }
+
   makeId() {
     var text = "";
     var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
