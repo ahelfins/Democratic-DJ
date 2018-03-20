@@ -16,6 +16,7 @@ import { GuestPage } from '../pages/guest/guest';
 import { GuestSongListPage } from '../pages/guest-song-list/guest-song-list';
 import { HostSongListPage } from '../pages/host-song-list/host-song-list';
 import { AddSongPage } from '../pages/add-song/add-song';
+import { FirebaseProvider } from "../providers/firebase/firebase"
 
 // Pro.init('f756908f', {
 //   appVersion: '0.0.1'
@@ -80,6 +81,7 @@ export const firebaseConfig = {
     AddSongPage,
     StatusBar,
     SplashScreen,
+    FirebaseProvider
     // IonicErrorHandler,
     // [{ provide: ErrorHandler, useClass: MyErrorHandler }]
     // // HTTP,
