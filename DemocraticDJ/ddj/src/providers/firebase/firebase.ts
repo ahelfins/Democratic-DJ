@@ -26,7 +26,11 @@ export class FirebaseProvider {
   }
 
   pushSong(songName, roomCode){
-    this.afDB.list('/rooms/${roomCode}').push(songName);
+    this.afDB.list('/rooms/{ ${ roomCode }.$key }/songs/').push(songName);
+    /*
+    TODO: Use first line of goToSongPage in host.ts like approach to find roomKey
+    instead of roomCode!
+    */
     console.log("Attempted to push: " + songName);
   }
 

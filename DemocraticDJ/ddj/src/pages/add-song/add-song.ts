@@ -4,7 +4,9 @@ import { AngularFireDatabase, AngularFireList } from 'angularfire2/database';
 import { Observable } from 'rxjs/Observable';
 import { GuestSongListPage } from '../guest-song-list/guest-song-list';
 import { HostSongListPage} from '../host-song-list/host-song-list';
-import {HostPage} from "../host/host";
+import { HostPage } from "../host/host";
+import { FirebaseProvider } from "../../providers/firebase/firebase"
+
 
 /**
  * Generated class for the AddSongPage page.
@@ -21,16 +23,19 @@ import {HostPage} from "../host/host";
 export class AddSongPage {
   GuestSongListButton : any;
   HostSongListButton : any;
-  public songName : String;
+  //public songName : String;
 
   // public songList: Array<String>;
   songList: AngularFireList<any>;
-  song: Observable<any[]>;
+  // song: Observable<any[]>;
   roomId : string;
 
   // roomCode : String;
   //songList : AngularFireList<any>
-  constructor(public navCtrl: NavController, public navParams: NavParams, public afDB: AngularFireDatabase) {
+  constructor(public navCtrl: NavController,
+  public navParams: NavParams,
+  public afDB: AngularFireDatabase,
+  public fBProvider: FirebaseProvider) {
     // this.roomList = this.afDB.list('/rooms');
     // this.rooms = this.roomList.valueChanges();
     this.GuestSongListButton = GuestSongListPage;
@@ -42,8 +47,9 @@ export class AddSongPage {
     // this.roomCode = afDB.object('/rooms/' + key);
 
 
-    this.songList = afDB.list('/songs');
-    this.song = this.songList.valueChanges();
+    //this.songList = afDB.list('${roomId}/songs');
+
+    // this.song = this.songList.valueChanges();
   }
 
   ionViewDidLoad() {
@@ -55,38 +61,42 @@ export class AddSongPage {
     console.log(document.getElementById('roomCode'));
   }
 
+
+
   addSongToList(songName) {
 
-    this.songName = songName;
-    this.songList.push(this.songName);
-    // const list = afDB.list(`/rooms/${this.roomCode}`);
-    // const newSongListRef = list.push({});
-    // newSongListRef.set( songList : this.songList);
-    console.log('Added song ' + this.songName);
+    this.fBProvider.pushSong(songName, this.roomId);
 
-    // let song = {
-    //   title: this.songName
-    // };
+    // this.songName = songName;
+    // this.songList.push(this.songName);
+    // // const list = afDB.list(`/rooms/${this.roomCode}`);
+    // // const newSongListRef = list.push({});
+    // // newSongListRef.set( songList : this.songList);
+    // console.log('Added song ' + this.songName);
     //
-    // this.navCtrl.push(HostSongListPage, song);
-
-    let i = 0;
-    this.afDB.list("/rooms/{this.roomCode}/songs").valueChanges()
-      .subscribe(songList => {
-        songList.push(this.songName);
-        // songList.forEach(song => {
-        //   console.log("Added song" + this.songName);
-        //   this.songList[i] = this.songName;
-        //   i++;
-        //   console.log("SongList: "+this.songList);
-        // });
-
-          // DEBUG: print out songs in the songList
-          songList.forEach(song => {
-            console.log(song);
-          });
-
-      });
+    // // let song = {
+    // //   title: this.songName
+    // // };
+    // //
+    // // this.navCtrl.push(HostSongListPage, song);
+    //
+    // let i = 0;
+    // this.afDB.list("/rooms/{this.roomCode}/songs").valueChanges()
+    //   .subscribe(songList => {
+    //     songList.push(this.songName);
+    //     // songList.forEach(song => {
+    //     //   console.log("Added song" + this.songName);
+    //     //   this.songList[i] = this.songName;
+    //     //   i++;
+    //     //   console.log("SongList: "+this.songList);
+    //     // });
+    //
+    //       // DEBUG: print out songs in the songList
+    //       songList.forEach(song => {
+    //         console.log(song);
+    //       });
+    //
+    //   });
 
 
   }
