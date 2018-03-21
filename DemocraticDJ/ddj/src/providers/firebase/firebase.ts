@@ -26,7 +26,34 @@ export class FirebaseProvider {
   }
 
   pushSong(songName, roomCode){
-    this.afDB.list('/rooms/{ ${ roomCode }.$key }/songs/').push(songName);
+    let ref = this.afDB.database.ref("/rooms");
+    // let query = ref.orderByChild("id");
+    // console.log("ref: " + ref);
+    // //child_moved, child_added, child_removed, value
+    // ref.on('child_added', function(snap) {
+    //
+    //     console.log(snap.val())
+    //   });
+
+    ref.orderByChild("id").on("child_added", function(data) {
+      // let key = data.val().id.getKey(roomCode);
+      // console.log(key)
+      let val = data.val();
+      let id = data.val().id;
+      console.log(val);
+      console.log(id);
+    });
+
+
+
+      // // console.log(val);
+      // let roomKey = val.indexOf(roomCode);
+      // console.log(roomKey);
+
+    // this.afDB.database.ref("/rooms").orderByChild("id")
+
+
+    // this.afDB.list('/rooms/${key}/songs/').push(songName);
     /*
     TODO: Use first line of goToSongPage in host.ts like approach to find roomKey
     instead of roomCode!

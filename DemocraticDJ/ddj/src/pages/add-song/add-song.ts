@@ -56,15 +56,15 @@ export class AddSongPage {
     console.log('ionViewDidLoad AddSongPage');
     console.log('Add Song Room: ' + this.roomId);
     document.getElementById('roomCode').textContent = "Add Song Room: "+this.roomId;
-    document.getElementById('roomCode').textContent = "12345";
-    console.log(document.getElementById('roomCode').textContent);
-    console.log(document.getElementById('roomCode'));
+    // document.getElementById('roomCode').textContent = "12345";
+    console.log("textContent: " + document.getElementById('roomCode').textContent);
+    console.log("element: "+document.getElementById('roomCode'));
   }
 
 
 
   addSongToList(songName) {
-
+    console.log("songName: " + songName + ", and roomCode: " +this.roomId)
     this.fBProvider.pushSong(songName, this.roomId);
 
     // this.songName = songName;

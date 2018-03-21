@@ -24,8 +24,6 @@ export class HostSongListPage {
   songList: AngularFireList<any>;
   song: Observable<any[]>;
 
-
-
   constructor(public navCtrl: NavController, public navParams: NavParams, public afDB: AngularFireDatabase) {
     this.addSongButton = AddSongPage;
     this.roomId = this.navParams.get('roomId');
