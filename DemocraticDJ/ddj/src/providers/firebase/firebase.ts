@@ -16,17 +16,40 @@ export class FirebaseProvider {
     console.log('Hello FirebaseProvider Provider');
   }
 
+  genRoom(roomId) {
+    // return this.afDB.list('/rooms/').set;
+    // this.afDB.list('/rooms/${key}/songs/').push(songName);
+
+    // return this.afDB.database.ref("/rooms/${roomId}");
+    this.afDB.list('/rooms/' + roomId + '/songs/');
+
+    // First argument  must be an object containing the children to replace.
+
+    // this.afDB.object('/rooms/{${this.id}}').set("subdirectory");
+    // const newRoom = this.afDB.object('/rooms/${this.id}');
+    // newRoom.set("subdirectory");
+
+    //.child('newRoom').set(roomId);
+  }
+
   getRoomDir() {
     return this.afDB.list('/rooms/');
   }
 
-  pushRoom(roomCode) {
-    // generates room with the roomCode
-    this.afDB.list('/rooms/').push(roomCode);
+  getSongList(roomCode) {
+    return this.afDB.list('/rooms/${roomCode}/songs');
   }
 
+  pushRoom(roomCode) {
+    // generates room with the roomCode
+
+    this.afDB.list('/rooms/').push(roomCode);
+  }
+  //-L88uMBnoUxi0C_88PSK
+     //id: 2xLTN
+
   pushSong(songName, roomCode){
-    let ref = this.afDB.database.ref("/rooms");
+    let ref = this.afDB.database.ref("/rooms").orderByKey;
     // let query = ref.orderByChild("id");
     // console.log("ref: " + ref);
     // //child_moved, child_added, child_removed, value
@@ -34,15 +57,15 @@ export class FirebaseProvider {
     //
     //     console.log(snap.val())
     //   });
-
-    ref.orderByChild("id").on("child_added", function(data) {
-      // let key = data.val().id.getKey(roomCode);
-      // console.log(key)
-      let val = data.val();
-      let id = data.val().id;
-      console.log(val);
-      console.log(id);
-    });
+    console.log(ref);
+    // ref. ("child_added", function(data) {
+    //   // let key = data.val().id.getKey(roomCode);
+    //   // console.log(key)
+    //   let val = data.val();
+    //   let id = data.val().id;
+    //   console.log(val);
+    //   console.log(id);
+    // });
 
 
 
@@ -59,6 +82,14 @@ export class FirebaseProvider {
     instead of roomCode!
     */
     console.log("Attempted to push: " + songName);
+  }
+
+  deleteRoom(roomCode) {
+
+  }
+
+  deleteSong(songName, roomCode) {
+
   }
 
   getRoomIdList(roomIdList) {

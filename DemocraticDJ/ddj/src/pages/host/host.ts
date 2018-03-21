@@ -66,8 +66,17 @@ export class HostPage {
     this.languageShow = !this.languageShow;
     this.languageHide = !this.languageHide;
     this.id = this.makeId();
-    const newRoomRef = this.roomList.push({});
-    newRoomRef.set({id:this.id});
+
+
+    //const newRoomRef = this.roomList.push({});
+    //newRoomRef.child("rooms").set(this.id);
+
+
+    // this.fBProvider.list('/rooms/').child('newRoom').setValue(this.id);
+    this.fBProvider.genRoom(this.id);
+    // this.afDB.list('/rooms/${key}/songs/').push(songName);
+
+    //newRoomRef.set({id:this.id});
     // this.id = this.rooms.push({})
     document.getElementById('roomCode').textContent = this.id;
   }
