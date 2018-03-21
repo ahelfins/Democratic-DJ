@@ -18,14 +18,14 @@
   </ion-fab>
 
   <ion-list>
-    <!--<ion-item-sliding *ngFor="let song of songList">-->
-    <ion-item-sliding  #item [ngStyle]="{'background-color': darkgrey}">
+    <ion-item-sliding [ngStyle]="{'background-color': darkgrey}" *ngFor="let song of songList">
+    <!--<ion-item-sliding  #item > -->
 
       <ion-item >
         <!--Song-->
         {{song}}
-
       </ion-item>
+      
       <ion-item-options side="left">
         <button ion-button class="delete" (click)="delete(song)">Delete</button>
       </ion-item-options>
