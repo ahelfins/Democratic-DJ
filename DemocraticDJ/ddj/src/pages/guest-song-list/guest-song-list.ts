@@ -29,4 +29,8 @@ export class GuestSongListPage {
     document.getElementById('room').textContent = "Room: "+this.roomId;
   }
 
+  goToAddSongPage() {
+    this.navCtrl.push(AddSongPage, {roomId: this.roomId});
+  }
+
 }

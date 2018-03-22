@@ -33,9 +33,9 @@ export class AddSongPage {
   // roomCode : String;
   //songList : AngularFireList<any>
   constructor(public navCtrl: NavController,
-  public navParams: NavParams,
-  public afDB: AngularFireDatabase,
-  public fBProvider: FirebaseProvider) {
+              public navParams: NavParams,
+              public afDB: AngularFireDatabase,
+              public fBProvider: FirebaseProvider) {
     // this.roomList = this.afDB.list('/rooms');
     // this.rooms = this.roomList.valueChanges();
     this.GuestSongListButton = GuestSongListPage;
