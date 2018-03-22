@@ -49,8 +49,8 @@ export class FirebaseProvider {
   //-L88uMBnoUxi0C_88PSK
      //id: 2xLTN
 
-  pushSong(songName, roomCode){
-    this.afDB.database.ref("/songs").push({name: songName, room: roomCode});
+  pushSong(songName, roomId){
+    this.afDB.database.ref("/rooms/"+roomId).child('songs').update({[songName]: "idk what to put here but i guess i have to?"});
     // let song = this.afDB.database.ref("/songs").orderByChild('name').equalTo(songName);
 
     // let query = ref.orderByChild("id");
