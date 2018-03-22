@@ -59,7 +59,7 @@ export class FirebaseProvider {
     //
     //     console.log(snap.val())
     //   });
-    console.log("ref: " + ref);
+    // console.log("ref: " + ref);
     // ref. ("child_added", function(data) {
     //   // let key = data.val().id.getKey(roomCode);
     //   // console.log(key)

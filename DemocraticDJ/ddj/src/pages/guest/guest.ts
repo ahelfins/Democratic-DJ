@@ -125,14 +125,15 @@ export class GuestPage {
   //}
 
   isCorrectRoomInput(roomInput: string, idList: String[]) {
-    console.log("Inside START isCorrectRoomInput(" + roomInput +", " + idList +")");
+    let lowerRoomInput = roomInput.toLowerCase();
+    console.log("Inside START isCorrectRoomInput(" + lowerRoomInput +", " + idList +")");
     //roomInput = this.roomCode;
-    console.log("roomInput", roomInput);
-    let found = idList.indexOf(roomInput);
+    console.log("roomInput", lowerRoomInput);
+    let found = idList.indexOf(lowerRoomInput);
     console.log("found", found);
 
     if (found >= 0) {     //if roomCode matches a room, push to room, otherwise show an alert
-      this.navCtrl.push(GuestSongListPage, {roomId: roomInput});
+      this.navCtrl.push(GuestSongListPage, {roomId: idList[found]});
     } else {
       let alert = this.alertCtrl.create({
         title: 'Room not found!',
