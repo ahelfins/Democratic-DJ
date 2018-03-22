@@ -17,11 +17,12 @@ export class FirebaseProvider {
   }
 
   genRoom(roomId) {
+    this.afDB.database.ref('/').child('rooms').child(roomId).set({roomId: roomId});
     // return this.afDB.list('/rooms/').set;
     // this.afDB.list('/rooms/${key}/songs/').push(songName);
 
     // return this.afDB.database.ref("/rooms/${roomId}");
-    this.afDB.list('/rooms/' + roomId + '/songs/');
+    // this.afDB.list('/rooms/' + roomId + '/songs/');
 
     // First argument  must be an object containing the children to replace.
 
