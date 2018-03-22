@@ -17,7 +17,7 @@ export class FirebaseProvider {
   }
 
   genRoom(roomId) {
-    this.afDB.database.ref('/').child('rooms').child(roomId).set({roomId: roomId});
+    this.afDB.database.ref('/').child('rooms').child(roomId).set({id: roomId});
     // return this.afDB.list('/rooms/').set;
     // this.afDB.list('/rooms/${key}/songs/').push(songName);
 
