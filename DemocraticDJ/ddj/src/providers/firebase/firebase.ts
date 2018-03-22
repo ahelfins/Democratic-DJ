@@ -49,7 +49,9 @@ export class FirebaseProvider {
      //id: 2xLTN
 
   pushSong(songName, roomCode){
-    let ref = this.afDB.database.ref("/rooms").orderByKey;
+    this.afDB.database.ref("/songs").push({name: songName, room: roomCode});
+    // let song = this.afDB.database.ref("/songs").orderByChild('name').equalTo(songName);
+
     // let query = ref.orderByChild("id");
     // console.log("ref: " + ref);
     // //child_moved, child_added, child_removed, value
@@ -57,7 +59,7 @@ export class FirebaseProvider {
     //
     //     console.log(snap.val())
     //   });
-    console.log(ref);
+    console.log("ref: " + ref);
     // ref. ("child_added", function(data) {
     //   // let key = data.val().id.getKey(roomCode);
     //   // console.log(key)
