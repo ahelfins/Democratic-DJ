@@ -55,10 +55,14 @@ export class AddSongPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad AddSongPage');
     console.log('Add Song Room: ' + this.roomId);
-    document.getElementById('roomCode').textContent = "Add Song Room: "+this.roomId;
+    // console.log(document.getElementsByClassName("toolbar"))
+    // console.log(document)
+
+
+    document.getElementById('roomCodeAddSong').textContent = "Add Song Room: "+this.roomId;
     // document.getElementById('roomCode').textContent = "12345";
-    console.log("textContent: " + document.getElementById('roomCode').textContent);
-    console.log("element: "+document.getElementById('roomCode'));
+    // console.log("textContent: " + document.getElementById('roomCode').textContent);
+    // console.log("element: "+document.getElementById('roomCode'));
   }
 
 

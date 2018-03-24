@@ -58,6 +58,7 @@ export class HostSongListPage {
   }
 
   goToAddSongPage() {
+    console.log("roomId going to add song page:" + this.roomId)
     this.navCtrl.push(AddSongPage, {roomId: this.roomId});
   }
   addToQueue(song) {
