@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabase } from 'angularfire2/database';
 import { Observable } from 'rxjs/Observable';
+import { Song } from '../../interfaces/song';
 
 /*
   Generated class for the FirebaseProvider provider.
@@ -49,8 +50,9 @@ export class FirebaseProvider {
   //-L88uMBnoUxi0C_88PSK
      //id: 2xLTN
 
-  pushSong(songName, roomId){
-    this.afDB.database.ref("/rooms/"+roomId).child('songs').update({[songName]: "idk what to put here but i guess i have to?"});
+  pushSong(song, roomId){
+    // this.afDB.database.ref("/rooms/"+roomId).child('songs').update({[songName]: "idk what to put here but i guess i have to?"});
+    this.afDB.database.ref("/rooms/"+roomId).child('songs').update({song});
     // let song = this.afDB.database.ref("/songs").orderByChild('name').equalTo(songName);
 
     // let query = ref.orderByChild("id");
@@ -84,7 +86,7 @@ export class FirebaseProvider {
     TODO: Use first line of goToSongPage in host.ts like approach to find roomKey
     instead of roomCode!
     */
-    console.log("Attempted to push: " + songName);
+    console.log("Attempted to push: " + song);
   }
 
   deleteRoom(roomCode) {

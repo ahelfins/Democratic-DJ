@@ -5,8 +5,8 @@ import { Observable } from 'rxjs/Observable';
 import { GuestSongListPage } from '../guest-song-list/guest-song-list';
 import { HostSongListPage} from '../host-song-list/host-song-list';
 import { HostPage } from "../host/host";
-import { FirebaseProvider } from "../../providers/firebase/firebase"
-
+import { FirebaseProvider } from "../../providers/firebase/firebase";
+import { Song } from "../../interfaces/song";
 
 /**
  * Generated class for the AddSongPage page.
@@ -66,10 +66,11 @@ export class AddSongPage {
   }
 
 
-
-  addSongToList(songName) {
-    console.log("songName: " + songName + ", and roomCode: " +this.roomId)
-    this.fBProvider.pushSong(songName, this.roomId);
+  addSongToFB(songInput) {
+    console.log("songName: " + songInput + ", and roomCode: " +this.roomId);
+    // let songInput = document.getElementById('songInput');
+    let song: Song = {title: songInput};
+    this.fBProvider.pushSong(song, this.roomId);
 
     // this.songName = songName;
     // this.songList.push(this.songName);
