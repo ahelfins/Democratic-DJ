@@ -14,7 +14,7 @@
 
 <ion-content padding class="background">
   <ion-fab right bottom>
-    <button ion-fab (click)="goToAddSongPage()"><ion-icon name="add"></ion-icon></button>
+    <button ion-fab class="fab" (click)="goToAddSongPage()"><ion-icon name="add"></ion-icon></button>
   </ion-fab>
 
   <ion-list>
@@ -25,7 +25,7 @@
         <!--Song-->
         {{song}}
       </ion-item>
-      
+
       <ion-item-options side="left">
         <button ion-button class="delete" (click)="delete(song)">Delete</button>
       </ion-item-options>

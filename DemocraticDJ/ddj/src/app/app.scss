@@ -15,21 +15,49 @@
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
 
+//.ion-fab[middle]:hover {
+//  background-color: #29801c !important;
+//}
+
+.back-button {
+  color: map-get($colors, text);
+}
+
+.fab {
+  background-color: map-get($colors, button);
+}
+
+//.fab:hover {
+//  background-color: map-get($colors, hover) !important;
+//}
+
 .button {
-  background-color: #18d403;
+  background-color: map-get($colors, button);
 }
-.button:hover {
-  background-color: #29801c !important;
-}
+
+//.button:hover {
+//  background-color: map-get($colors, hover) !important;
+//}
+
 .background {
-  background-color: darkgrey;
+  background-color: map-get($colors, background);
+  color: map-get($colors, text);
 }
+
+.ion-navbar {
+  color: map-get($colors, text);
+}
+
 .toolbar-background {
-  background-color: #626262;
+  background-color: #323232;
+  color: map-get($colors, text);
 }
+
 .item {
-  background-color: darkgrey;
+  background-color: map-get($colors, background);
+  color: map-get($colors, text);
 }
+
 .delete {
   background-color: #f53d3d;
 }
