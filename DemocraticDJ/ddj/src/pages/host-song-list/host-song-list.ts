@@ -45,7 +45,7 @@ export class HostSongListPage {
     console.log('Current room: ' +this.roomId);
     // document.getElementById('room').textContent = "Room: "+this.roomId;
     // document.getElementById('room').textContent = "Room: "+ this.sDProvider.getRoomCode();
-    this.title = "Room: "+ this.roomId
+    this.title = "Host: "+ this.roomId
     //this.songList.valueChanges();
 
 

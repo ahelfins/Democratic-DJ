@@ -30,7 +30,7 @@ export class GuestSongListPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad GuestSongListPage');
     console.log('Current room: '+this.roomId);
-    this.title = "Room: "+this.roomId;
+    this.title = "Guest: "+this.roomId;
   }
 
   goToAddSongPage() {
