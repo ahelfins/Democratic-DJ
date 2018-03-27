@@ -4,6 +4,7 @@ import { AddSongPage } from "../add-song/add-song";
 import { AngularFireDatabase, AngularFireList } from 'angularfire2/database';
 import { Observable } from 'rxjs/Observable';
 import { FirebaseProvider } from "../../providers/firebase/firebase"
+import { SessionDataProvider } from "../../providers/session-data/session-data";
 
 
 /**
@@ -22,14 +23,16 @@ export class HostSongListPage {
   addSongButton: any;
   roomId: string;
   public songName: AddSongPage;
-  //songList: AngularFireList<any>;
-  songList: any;
+  songList: AngularFireList<any>;
   song: Observable<any[]>;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public afDB: AngularFireDatabase, public fBProvider: FirebaseProvider) {
+  constructor(public navCtrl: NavController,
+    public navParams: NavParams,
+    public afDB: AngularFireDatabase,
+    public fBProvider: FirebaseProvider,
+    private sDProvider: SessionDataProvider) {
     this.addSongButton = AddSongPage;
     this.roomId = this.navParams.get('roomId');
-    this.songList = [{title:'Hello'}, {title:'Sal Tlay Ka Siti'}, {title:'You and Me (But Mostly Me)'}];
 
     //this.songList = fBProvider.getSongList(this.roomId);
     //this.song = this.songList.valueChanges();
@@ -38,8 +41,8 @@ export class HostSongListPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad HostSongListPage');
     console.log('Current room: ' +this.roomId);
-    document.getElementById('room').textContent = "Room: "+this.roomId;
-
+    // document.getElementById('room').textContent = "Room: "+this.roomId;
+    document.getElementById('room').textContent = "Room: "+ this.sDProvider.getRoomCode();
     //this.songList.valueChanges();
 
 
@@ -64,19 +67,11 @@ export class HostSongListPage {
     this.navCtrl.push(AddSongPage, {roomId: this.roomId});
   }
   addToQueue(song) {
-    //add to Spotify here
+    this.fBProvider.pushSong(song, this.roomId);
 
   }
   delete(song) {
-    //remove from Spotify here
-    //also remove from firebase List
-    let index = this.songList.indexOf(song);
-    if(index > -1){
-      this.songList.splice(index, 1);
-    }
-  }
-  add(song){
-    this.songList.push(song);
+
   }
 
 }
