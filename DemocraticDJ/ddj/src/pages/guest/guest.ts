@@ -49,7 +49,6 @@ export class GuestPage {
       .subscribe(list =>{
         list.forEach(item => {
           //idList.push(item.id)});
-          console.log(item['id']+" pushed to idList");
           //idList.push(item.id);
           this.idList[i] = item['id'];
           i++;
@@ -57,12 +56,10 @@ export class GuestPage {
           // console.log("idList[1] ", this.idList[1]);
           // console.log("idList[2] ", this.idList[2]);
           // console.log("idList[3] ", this.idList[3]);
-          console.log(this.idList);
-
-
         });
         // this.isCorrectRoomInput(this.roomCode, idList);
       });
+    console.log(this.idList);
   }
 
   //getRoomInput() {
