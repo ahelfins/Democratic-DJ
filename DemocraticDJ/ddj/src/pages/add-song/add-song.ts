@@ -30,6 +30,7 @@ export class AddSongPage {
   songList: AngularFireList<any>;
   // song: Observable<any[]>;
   roomId : string;
+  title: string;
 
   // roomCode : String;
   //songList : AngularFireList<any>
@@ -43,7 +44,7 @@ export class AddSongPage {
     this.GuestSongListButton = GuestSongListPage;
     this.HostSongListButton = HostSongListPage;
 
-    this.roomId = this.navParams.get('roomId');
+    this.roomId = this.sDProvider.getRoomCode();
     // this.songList = new Array<String>(2);
     // this.roomCode = GuestSongListPage.roomCode;
     // this.roomCode = afDB.object('/rooms/' + key);
@@ -61,7 +62,7 @@ export class AddSongPage {
     // console.log(document)
 
 
-    document.getElementById('roomCodeAddSong').textContent = "Add Song Room: "+this.roomId;
+    // document.getElementById('roomCodeAddSong').textContent = "Add Song Room: "+this.roomId;
     // document.getElementById('roomCode').textContent = "12345";
     // console.log("textContent: " + document.getElementById('roomCode').textContent);
     // console.log("element: "+document.getElementById('roomCode'));

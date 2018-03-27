@@ -25,6 +25,7 @@ export class HostSongListPage {
   public songName: AddSongPage;
   songList: AngularFireList<any>;
   song: Observable<any[]>;
+  title: String;
 
   constructor(public navCtrl: NavController,
     public navParams: NavParams,
@@ -32,7 +33,8 @@ export class HostSongListPage {
     public fBProvider: FirebaseProvider,
     private sDProvider: SessionDataProvider) {
     this.addSongButton = AddSongPage;
-    this.roomId = this.navParams.get('roomId');
+    this.roomId = this.sDProvider.getRoomCode();
+
 
     //this.songList = fBProvider.getSongList(this.roomId);
     //this.song = this.songList.valueChanges();
@@ -42,7 +44,8 @@ export class HostSongListPage {
     console.log('ionViewDidLoad HostSongListPage');
     console.log('Current room: ' +this.roomId);
     // document.getElementById('room').textContent = "Room: "+this.roomId;
-    document.getElementById('room').textContent = "Room: "+ this.sDProvider.getRoomCode();
+    // document.getElementById('room').textContent = "Room: "+ this.sDProvider.getRoomCode();
+    this.title = "Room: "+ this.roomId
     //this.songList.valueChanges();
 
 

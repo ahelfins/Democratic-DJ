@@ -18,18 +18,19 @@ import { SessionDataProvider } from "../../providers/session-data/session-data";
 export class GuestSongListPage {
   addSongButton: any;
   public roomId: string;
+  title: String;
 
   constructor(public navCtrl: NavController,
-    public navParams: NavParams,
-    private sDProvider: SessionDataProvider) {
+              public navParams: NavParams,
+              private sDProvider: SessionDataProvider) {
     this.addSongButton = AddSongPage;
-    this.roomId = this.navParams.get('roomId');
+    this.roomId = this.sDProvider.getRoomCode();
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad GuestSongListPage');
     console.log('Current room: '+this.roomId);
-    document.getElementById('room').textContent = "Room: "+this.roomId;
+    this.title = "Room: "+this.roomId;
   }
 
   goToAddSongPage() {
