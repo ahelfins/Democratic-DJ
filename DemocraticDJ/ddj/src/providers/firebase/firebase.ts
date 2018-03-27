@@ -58,7 +58,7 @@ export class FirebaseProvider {
 
   pushSong(song, roomId){
     // this.songs.push(song);
-    this.afDB.list("rooms/"+roomId+"/songs").push(song)
+    this.afDB.database.ref("rooms/"+roomId).child("songs").update({song});
     // this.afDB.database.ref("/rooms"+roomId).child('songs')
     // this.afDB.database.ref("/rooms/"+roomId).child('songs').update({[songName]: "idk what to put here but i guess i have to?"});
     // this.afDB.database.ref("/rooms/"+roomId).child('songs')
@@ -107,12 +107,12 @@ export class FirebaseProvider {
 
   }
 
-  getRoomIdList(roomIdList) {
+  getRoomIdList() {
     //fetches a list of roomCodes (roomIds) that would be used to verify if the
     //user is trying to enter the correct room
     let i = 0;
-    let idList = roomIdList;
-    return this.afDB.list("/rooms").valueChanges()
+    let idList = new Array();
+    this.afDB.list("/rooms").valueChanges()
       .subscribe(list =>{
         list.forEach(item => {
           //idList.push(item.id)});
@@ -127,6 +127,7 @@ export class FirebaseProvider {
           //console.log(idList);
         });
       });
+    return idList;
   }
 
 }

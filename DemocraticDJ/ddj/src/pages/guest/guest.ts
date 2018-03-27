@@ -5,6 +5,7 @@ import { AngularFireDatabase, AngularFireList } from 'angularfire2/database';
 import { Observable } from 'rxjs/Observable';
 import { AlertController } from 'ionic-angular';
 import { SessionDataProvider } from "../../providers/session-data/session-data";
+import { FirebaseProvider } from "../../providers/firebase/firebase";
 /**
  * Generated class for the GuestPage page.
  *
@@ -30,17 +31,18 @@ export class GuestPage {
     public navParams: NavParams,
     public afDB: AngularFireDatabase,
     public alertCtrl: AlertController,
-    private sDProvider: SessionDataProvider) {
+    private sDProvider: SessionDataProvider,
+    public fBProvider: FirebaseProvider) {
 
     this.EnterRoomButton = GuestSongListPage;
     this.roomList = this.afDB.list('/rooms');
     this.room = this.roomList.valueChanges();
-    this.idList = new Array<String>(2);
+    this.idList = new Array<String>();
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad GuestPage');
-    this.makeIdList();
+    this.idList = this.fBProvider.getRoomIdList();
   }
 
   makeIdList() {

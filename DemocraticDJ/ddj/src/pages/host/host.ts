@@ -48,7 +48,7 @@ export class HostPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad HostPage');
     //this.makeIdList();
-    this.fBProvider.getRoomIdList(this.idList); //populate idList with possible r
+    this.idList = this.fBProvider.getRoomIdList(); //populate idList with possible r
   }
 
   getId() {
