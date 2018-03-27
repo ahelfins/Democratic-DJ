@@ -3,10 +3,341 @@
   <component name="ChangeListManager">
     <list default="true" id="dc176be3-03ba-49bd-b23c-3054f0bd4aba" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/.idea/DemocraticDJ.iml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/.idea/inspectionProfiles/Project_Default.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/.idea/modules.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/.idea/workspace.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/ddj/.editorconfig" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/ddj/.gitignore" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/ddj/config.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/ddj/ionic.config.json" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/ddj/package-lock.json" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/ddj/package.json" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/ddj/resources/README.md" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/ddj/resources/android/icon/drawable-hdpi-icon.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/ddj/resources/android/icon/drawable-ldpi-icon.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/ddj/resources/android/icon/drawable-mdpi-icon.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/ddj/resources/android/icon/drawable-xhdpi-icon.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/ddj/resources/android/icon/drawable-xxhdpi-icon.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/ddj/resources/android/icon/drawable-xxxhdpi-icon.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/ddj/resources/android/splash/drawable-land-hdpi-screen.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/ddj/resources/android/splash/drawable-land-ldpi-screen.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/ddj/resources/android/splash/drawable-land-mdpi-screen.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/ddj/resources/android/splash/drawable-land-xhdpi-screen.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/ddj/resources/android/splash/drawable-land-xxhdpi-screen.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/ddj/resources/android/splash/drawable-land-xxxhdpi-screen.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/ddj/resources/android/splash/drawable-port-hdpi-screen.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/ddj/resources/android/splash/drawable-port-ldpi-screen.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/ddj/resources/android/splash/drawable-port-mdpi-screen.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/ddj/resources/android/splash/drawable-port-xhdpi-screen.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/ddj/resources/android/splash/drawable-port-xxhdpi-screen.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/ddj/resources/android/splash/drawable-port-xxxhdpi-screen.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/ddj/resources/icon.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/ddj/resources/ios/icon/icon-1024.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/ddj/resources/ios/icon/icon-40.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/ddj/resources/ios/icon/icon-40@2x.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/ddj/resources/ios/icon/icon-40@3x.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/ddj/resources/ios/icon/icon-50.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/ddj/resources/ios/icon/icon-50@2x.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/ddj/resources/ios/icon/icon-60.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/ddj/resources/ios/icon/icon-60@2x.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/ddj/resources/ios/icon/icon-60@3x.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/ddj/resources/ios/icon/icon-72.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/ddj/resources/ios/icon/icon-72@2x.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/ddj/resources/ios/icon/icon-76.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/ddj/resources/ios/icon/icon-76@2x.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/ddj/resources/ios/icon/icon-83.5@2x.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/ddj/resources/ios/icon/icon-small.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/ddj/resources/ios/icon/icon-small@2x.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/ddj/resources/ios/icon/icon-small@3x.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/ddj/resources/ios/icon/icon.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/ddj/resources/ios/icon/icon@2x.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/ddj/resources/ios/splash/Default-568h@2x~iphone.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/ddj/resources/ios/splash/Default-667h.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/ddj/resources/ios/splash/Default-736h.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/ddj/resources/ios/splash/Default-Landscape-736h.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/ddj/resources/ios/splash/Default-Landscape@2x~ipad.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/ddj/resources/ios/splash/Default-Landscape@~ipadpro.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/ddj/resources/ios/splash/Default-Landscape~ipad.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/ddj/resources/ios/splash/Default-Portrait@2x~ipad.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/ddj/resources/ios/splash/Default-Portrait@~ipadpro.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/ddj/resources/ios/splash/Default-Portrait~ipad.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/ddj/resources/ios/splash/Default@2x~iphone.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/ddj/resources/ios/splash/Default@2x~universal~anyany.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/ddj/resources/ios/splash/Default~iphone.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/ddj/resources/splash.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/ddj/src/app/app.component.ts" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/ddj/src/app/app.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/ddj/src/app/app.module.ts" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/ddj/src/app/app.scss" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/ddj/src/app/main.ts" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/ddj/src/assets/icon/favicon.ico" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/ddj/src/assets/imgs/logo.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/ddj/src/index.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/ddj/src/manifest.json" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/ddj/src/pages/add-song/add-song.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/ddj/src/pages/add-song/add-song.module.ts" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/ddj/src/pages/add-song/add-song.scss" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/ddj/src/pages/add-song/add-song.ts" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/ddj/src/pages/guest-song-list/guest-song-list.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/ddj/src/pages/guest-song-list/guest-song-list.module.ts" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/ddj/src/pages/guest-song-list/guest-song-list.scss" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/ddj/src/pages/guest-song-list/guest-song-list.ts" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/ddj/src/pages/guest/guest.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/ddj/src/pages/guest/guest.module.ts" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/ddj/src/pages/guest/guest.scss" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/ddj/src/pages/guest/guest.ts" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/ddj/src/pages/home/home.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/ddj/src/pages/home/home.scss" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/ddj/src/pages/home/home.ts" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/ddj/src/pages/host-guest/host-guest.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/ddj/src/pages/host-guest/host-guest.module.ts" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/ddj/src/pages/host-guest/host-guest.scss" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/ddj/src/pages/host-guest/host-guest.ts" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/ddj/src/pages/host-guest/logo.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/ddj/src/pages/host-song-list/host-song-list.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/ddj/src/pages/host-song-list/host-song-list.module.ts" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/ddj/src/pages/host-song-list/host-song-list.scss" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/ddj/src/pages/host-song-list/host-song-list.ts" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/ddj/src/pages/host/host.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/ddj/src/pages/host/host.module.ts" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/ddj/src/pages/host/host.scss" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/ddj/src/pages/host/host.ts" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/ddj/src/providers/firebase/firebase.ts" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/ddj/src/service-worker.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/ddj/src/theme/variables.scss" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/ddj/tsconfig.json" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/ddj/tslint.json" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/mvp/.editorconfig" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/mvp/.gitignore" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/mvp/config.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/mvp/ionic.config.json" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/mvp/ionic.starter.json" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/mvp/package-lock.json" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/mvp/package.json" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/mvp/resources/README.md" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/mvp/resources/android/icon/drawable-hdpi-icon.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/mvp/resources/android/icon/drawable-ldpi-icon.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/mvp/resources/android/icon/drawable-mdpi-icon.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/mvp/resources/android/icon/drawable-xhdpi-icon.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/mvp/resources/android/icon/drawable-xxhdpi-icon.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/mvp/resources/android/icon/drawable-xxxhdpi-icon.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/mvp/resources/android/splash/drawable-land-hdpi-screen.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/mvp/resources/android/splash/drawable-land-ldpi-screen.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/mvp/resources/android/splash/drawable-land-mdpi-screen.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/mvp/resources/android/splash/drawable-land-xhdpi-screen.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/mvp/resources/android/splash/drawable-land-xxhdpi-screen.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/mvp/resources/android/splash/drawable-land-xxxhdpi-screen.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/mvp/resources/android/splash/drawable-port-hdpi-screen.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/mvp/resources/android/splash/drawable-port-ldpi-screen.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/mvp/resources/android/splash/drawable-port-mdpi-screen.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/mvp/resources/android/splash/drawable-port-xhdpi-screen.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/mvp/resources/android/splash/drawable-port-xxhdpi-screen.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/mvp/resources/android/splash/drawable-port-xxxhdpi-screen.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/mvp/resources/icon.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/mvp/resources/ios/icon/icon-1024.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/mvp/resources/ios/icon/icon-40.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/mvp/resources/ios/icon/icon-40@2x.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/mvp/resources/ios/icon/icon-40@3x.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/mvp/resources/ios/icon/icon-50.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/mvp/resources/ios/icon/icon-50@2x.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/mvp/resources/ios/icon/icon-60.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/mvp/resources/ios/icon/icon-60@2x.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/mvp/resources/ios/icon/icon-60@3x.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/mvp/resources/ios/icon/icon-72.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/mvp/resources/ios/icon/icon-72@2x.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/mvp/resources/ios/icon/icon-76.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/mvp/resources/ios/icon/icon-76@2x.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/mvp/resources/ios/icon/icon-83.5@2x.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/mvp/resources/ios/icon/icon-small.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/mvp/resources/ios/icon/icon-small@2x.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/mvp/resources/ios/icon/icon-small@3x.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/mvp/resources/ios/icon/icon.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/mvp/resources/ios/icon/icon@2x.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/mvp/resources/ios/splash/Default-568h@2x~iphone.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/mvp/resources/ios/splash/Default-667h.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/mvp/resources/ios/splash/Default-736h.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/mvp/resources/ios/splash/Default-Landscape-736h.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/mvp/resources/ios/splash/Default-Landscape@2x~ipad.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/mvp/resources/ios/splash/Default-Landscape@~ipadpro.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/mvp/resources/ios/splash/Default-Landscape~ipad.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/mvp/resources/ios/splash/Default-Portrait@2x~ipad.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/mvp/resources/ios/splash/Default-Portrait@~ipadpro.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/mvp/resources/ios/splash/Default-Portrait~ipad.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/mvp/resources/ios/splash/Default@2x~iphone.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/mvp/resources/ios/splash/Default@2x~universal~anyany.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/mvp/resources/ios/splash/Default~iphone.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/mvp/resources/splash.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/mvp/src/app/app.component.ts" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/mvp/src/app/app.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/mvp/src/app/app.module.ts" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/mvp/src/app/app.scss" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/mvp/src/app/main.ts" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/mvp/src/assets/icon/favicon.ico" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/mvp/src/assets/imgs/logo.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/mvp/src/index.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/mvp/src/manifest.json" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/mvp/src/pages/choose-user/choose-user.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/mvp/src/pages/choose-user/choose-user.module.ts" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/mvp/src/pages/choose-user/choose-user.scss" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/mvp/src/pages/choose-user/choose-user.ts" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/mvp/src/pages/home/home.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/mvp/src/pages/home/home.scss" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/mvp/src/pages/home/home.ts" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/mvp/src/service-worker.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/mvp/src/theme/variables.scss" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/mvp/tsconfig.json" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/mvp/tslint.json" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/testFile.txt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/todo/.bowerrc" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/todo/.editorconfig" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/todo/.gitignore" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/todo/bower.json" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/todo/config.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/todo/gulpfile.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/todo/hooks/README.md" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/todo/hooks/after_prepare/010_add_platform_class.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/todo/ionic.config.json" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/todo/ionic.starter.json" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/todo/package-lock.json" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/todo/package.json" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/todo/resources/README.md" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/todo/resources/android/icon/drawable-hdpi-icon.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/todo/resources/android/icon/drawable-ldpi-icon.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/todo/resources/android/icon/drawable-mdpi-icon.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/todo/resources/android/icon/drawable-xhdpi-icon.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/todo/resources/android/icon/drawable-xxhdpi-icon.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/todo/resources/android/icon/drawable-xxxhdpi-icon.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/todo/resources/android/splash/drawable-land-hdpi-screen.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/todo/resources/android/splash/drawable-land-ldpi-screen.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/todo/resources/android/splash/drawable-land-mdpi-screen.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/todo/resources/android/splash/drawable-land-xhdpi-screen.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/todo/resources/android/splash/drawable-land-xxhdpi-screen.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/todo/resources/android/splash/drawable-land-xxxhdpi-screen.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/todo/resources/android/splash/drawable-port-hdpi-screen.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/todo/resources/android/splash/drawable-port-ldpi-screen.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/todo/resources/android/splash/drawable-port-mdpi-screen.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/todo/resources/android/splash/drawable-port-xhdpi-screen.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/todo/resources/android/splash/drawable-port-xxhdpi-screen.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/todo/resources/android/splash/drawable-port-xxxhdpi-screen.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/todo/resources/icon.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/todo/resources/icon.png.md5" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/todo/resources/ios/icon/icon-1024.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/todo/resources/ios/icon/icon-40.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/todo/resources/ios/icon/icon-40@2x.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/todo/resources/ios/icon/icon-40@3x.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/todo/resources/ios/icon/icon-50.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/todo/resources/ios/icon/icon-50@2x.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/todo/resources/ios/icon/icon-60.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/todo/resources/ios/icon/icon-60@2x.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/todo/resources/ios/icon/icon-60@3x.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/todo/resources/ios/icon/icon-72.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/todo/resources/ios/icon/icon-72@2x.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/todo/resources/ios/icon/icon-76.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/todo/resources/ios/icon/icon-76@2x.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/todo/resources/ios/icon/icon-83.5@2x.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/todo/resources/ios/icon/icon-small.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/todo/resources/ios/icon/icon-small@2x.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/todo/resources/ios/icon/icon-small@3x.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/todo/resources/ios/icon/icon.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/todo/resources/ios/icon/icon@2x.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/todo/resources/ios/splash/Default-568h@2x~iphone.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/todo/resources/ios/splash/Default-667h.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/todo/resources/ios/splash/Default-736h.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/todo/resources/ios/splash/Default-Landscape-736h.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/todo/resources/ios/splash/Default-Landscape@2x~ipad.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/todo/resources/ios/splash/Default-Landscape@~ipadpro.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/todo/resources/ios/splash/Default-Landscape~ipad.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/todo/resources/ios/splash/Default-Portrait@2x~ipad.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/todo/resources/ios/splash/Default-Portrait@~ipadpro.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/todo/resources/ios/splash/Default-Portrait~ipad.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/todo/resources/ios/splash/Default@2x~iphone.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/todo/resources/ios/splash/Default@2x~universal~anyany.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/todo/resources/ios/splash/Default~iphone.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/todo/resources/splash.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/todo/resources/splash.png.md5" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/todo/scss/ionic.app.scss" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/todo/www/css/ionic.app.css" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/todo/www/css/ionic.app.min.css" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/todo/www/css/style.css" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/todo/www/img/ionic.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/todo/www/index.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/todo/www/js/app.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/todo/www/lib/ionic/.bower.json" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/todo/www/lib/ionic/README.md" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/todo/www/lib/ionic/bower.json" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/todo/www/lib/ionic/css/ionic.css" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/todo/www/lib/ionic/css/ionic.min.css" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/todo/www/lib/ionic/fonts/ionicons.eot" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/todo/www/lib/ionic/fonts/ionicons.svg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/todo/www/lib/ionic/fonts/ionicons.ttf" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/todo/www/lib/ionic/fonts/ionicons.woff" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/todo/www/lib/ionic/js/ionic-angular.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/todo/www/lib/ionic/js/ionic-angular.min.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/todo/www/lib/ionic/js/ionic.bundle.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/todo/www/lib/ionic/js/ionic.bundle.min.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/todo/www/lib/ionic/js/ionic.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/todo/www/lib/ionic/js/ionic.min.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/todo/www/lib/ionic/scss/_action-sheet.scss" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/todo/www/lib/ionic/scss/_animations.scss" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/todo/www/lib/ionic/scss/_backdrop.scss" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/todo/www/lib/ionic/scss/_badge.scss" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/todo/www/lib/ionic/scss/_bar.scss" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/todo/www/lib/ionic/scss/_button-bar.scss" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/todo/www/lib/ionic/scss/_button.scss" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/todo/www/lib/ionic/scss/_checkbox.scss" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/todo/www/lib/ionic/scss/_form.scss" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/todo/www/lib/ionic/scss/_grid.scss" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/todo/www/lib/ionic/scss/_items.scss" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/todo/www/lib/ionic/scss/_list.scss" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/todo/www/lib/ionic/scss/_loading.scss" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/todo/www/lib/ionic/scss/_menu.scss" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/todo/www/lib/ionic/scss/_mixins.scss" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/todo/www/lib/ionic/scss/_modal.scss" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/todo/www/lib/ionic/scss/_platform.scss" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/todo/www/lib/ionic/scss/_popover.scss" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/todo/www/lib/ionic/scss/_popup.scss" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/todo/www/lib/ionic/scss/_progress.scss" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/todo/www/lib/ionic/scss/_radio.scss" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/todo/www/lib/ionic/scss/_range.scss" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/todo/www/lib/ionic/scss/_refresher.scss" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/todo/www/lib/ionic/scss/_reset.scss" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/todo/www/lib/ionic/scss/_scaffolding.scss" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/todo/www/lib/ionic/scss/_select.scss" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/todo/www/lib/ionic/scss/_slide-box.scss" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/todo/www/lib/ionic/scss/_slides.scss" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/todo/www/lib/ionic/scss/_spinner.scss" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/todo/www/lib/ionic/scss/_tabs.scss" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/todo/www/lib/ionic/scss/_toggle.scss" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/todo/www/lib/ionic/scss/_transitions.scss" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/todo/www/lib/ionic/scss/_type.scss" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/todo/www/lib/ionic/scss/_util.scss" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/todo/www/lib/ionic/scss/_variables.scss" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/todo/www/lib/ionic/scss/ionic.scss" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/todo/www/lib/ionic/scss/ionicons/_ionicons-font.scss" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/todo/www/lib/ionic/scss/ionicons/_ionicons-icons.scss" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/todo/www/lib/ionic/scss/ionicons/_ionicons-variables.scss" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/todo/www/lib/ionic/scss/ionicons/ionicons.scss" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/todo/www/lib/ionic/scss/tsconfig.json" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/todo/www/manifest.json" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/DemocraticDJ/todo/www/service-worker.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/config.xml" afterPath="$PROJECT_DIR$/DemocraticDJ/ddj/config.xml" />
       <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/package-lock.json" afterPath="$PROJECT_DIR$/DemocraticDJ/ddj/package-lock.json" />
       <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/package.json" afterPath="$PROJECT_DIR$/DemocraticDJ/ddj/package.json" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" afterPath="$PROJECT_DIR$/package-lock.json" />
-      <change beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/src/app/app.component.ts" afterPath="$PROJECT_DIR$/DemocraticDJ/ddj/src/app/app.component.ts" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/src/app/app.module.ts" afterPath="$PROJECT_DIR$/DemocraticDJ/ddj/src/app/app.module.ts" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/src/app/app.scss" afterPath="$PROJECT_DIR$/DemocraticDJ/ddj/src/app/app.scss" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/src/pages/add-song/add-song.html" afterPath="$PROJECT_DIR$/DemocraticDJ/ddj/src/pages/add-song/add-song.html" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/src/pages/add-song/add-song.ts" afterPath="$PROJECT_DIR$/DemocraticDJ/ddj/src/pages/add-song/add-song.ts" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/src/pages/guest-song-list/guest-song-list.html" afterPath="$PROJECT_DIR$/DemocraticDJ/ddj/src/pages/guest-song-list/guest-song-list.html" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/src/pages/guest-song-list/guest-song-list.ts" afterPath="$PROJECT_DIR$/DemocraticDJ/ddj/src/pages/guest-song-list/guest-song-list.ts" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/src/pages/guest/guest.html" afterPath="$PROJECT_DIR$/DemocraticDJ/ddj/src/pages/guest/guest.html" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/src/pages/guest/guest.ts" afterPath="$PROJECT_DIR$/DemocraticDJ/ddj/src/pages/guest/guest.ts" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/src/pages/host-song-list/host-song-list.html" afterPath="$PROJECT_DIR$/DemocraticDJ/ddj/src/pages/host-song-list/host-song-list.html" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/src/pages/host-song-list/host-song-list.ts" afterPath="$PROJECT_DIR$/DemocraticDJ/ddj/src/pages/host-song-list/host-song-list.ts" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/src/pages/host/host.html" afterPath="$PROJECT_DIR$/DemocraticDJ/ddj/src/pages/host/host.html" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/src/pages/host/host.ts" afterPath="$PROJECT_DIR$/DemocraticDJ/ddj/src/pages/host/host.ts" />
+      <change beforePath="$PROJECT_DIR$/DemocraticDJ/ddj/src/providers/firebase/firebase.ts" afterPath="$PROJECT_DIR$/DemocraticDJ/ddj/src/providers/firebase/firebase.ts" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -36,11 +367,9 @@
       <file leaf-file-name="add-song.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/DemocraticDJ/ddj/src/pages/add-song/add-song.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="29" column="90" lean-forward="false" selection-start-line="29" selection-start-column="90" selection-end-line="29" selection-end-column="90" />
-              <folding>
-                <marker date="1519846340356" expanded="true" signature="464:780" ph="..." />
-              </folding>
+            <state relative-caret-position="459">
+              <caret line="27" column="100" lean-forward="false" selection-start-line="27" selection-start-column="100" selection-end-line="27" selection-end-column="100" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -58,9 +387,12 @@
       <file leaf-file-name="host.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/DemocraticDJ/ddj/src/pages/host/host.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="22" column="37" lean-forward="false" selection-start-line="22" selection-start-column="37" selection-end-line="22" selection-end-column="37" />
-              <folding />
+            <state relative-caret-position="459">
+              <caret line="32" column="14" lean-forward="false" selection-start-line="32" selection-start-column="14" selection-end-line="32" selection-end-column="14" />
+              <folding>
+                <marker date="1521828618343" expanded="true" signature="3160:3303" ph="{&quot;title&quot;: 'Room not found!'...}" />
+                <marker date="1521828618343" expanded="true" signature="3334:3338" ph="{...}" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -68,7 +400,7 @@
       <file leaf-file-name="variables.scss" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/DemocraticDJ/ddj/src/theme/variables.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="714">
+            <state relative-caret-position="731">
               <caret line="43" column="0" lean-forward="false" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
               <folding />
             </state>
@@ -78,11 +410,9 @@
       <file leaf-file-name="app.component.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/DemocraticDJ/ddj/src/app/app.component.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="527">
-              <caret line="31" column="0" lean-forward="false" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
-              <folding>
-                <element signature="e#0#32#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="391">
+              <caret line="29" column="0" lean-forward="false" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -150,6 +480,8 @@
     <handled-path value="$PROJECT_DIR$/DemocraticDJ/node_modules" />
     <handled-path value="$PROJECT_DIR$/DemocraticDJ/todo/node_modules" />
     <handled-path value="$PROJECT_DIR$/node_modules" />
+    <handled-path value="$PROJECT_DIR$/platforms/android/cordova/node_modules" />
+    <handled-path value="$PROJECT_DIR$/platforms/browser/cordova/node_modules" />
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="-7" />
@@ -172,6 +504,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -194,10 +527,9 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="Scratches" />
       <pane id="AndroidView" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -616,6 +948,8 @@
       <workItem from="1519678934074" duration="356000" />
       <workItem from="1519747415408" duration="3424000" />
       <workItem from="1519846455425" duration="2236000" />
+      <workItem from="1521747813768" duration="486000" />
+      <workItem from="1522008737534" duration="570000" />
     </task>
     <task id="LOCAL-00001" summary="Added Choose-User activity">
       <created>1519242881692</created>
@@ -649,11 +983,10 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="15655000" />
+    <option name="totallyTimeSpent" value="16711000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="0" width="974" height="1057" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -668,7 +1001,7 @@
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2986871" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3118162" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32932165" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1017,11 +1350,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/DemocraticDJ/ddj/src/pages/add-song/add-song.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="29" column="90" lean-forward="false" selection-start-line="29" selection-start-column="90" selection-end-line="29" selection-end-column="90" />
-          <folding>
-            <marker date="1519846340356" expanded="true" signature="464:780" ph="..." />
-          </folding>
+        <state relative-caret-position="459">
+          <caret line="27" column="100" lean-forward="false" selection-start-line="27" selection-start-column="100" selection-end-line="27" selection-end-column="100" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1035,15 +1366,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/DemocraticDJ/ddj/src/pages/host/host.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="22" column="37" lean-forward="false" selection-start-line="22" selection-start-column="37" selection-end-line="22" selection-end-column="37" />
-          <folding />
+        <state relative-caret-position="459">
+          <caret line="32" column="14" lean-forward="false" selection-start-line="32" selection-start-column="14" selection-end-line="32" selection-end-column="14" />
+          <folding>
+            <marker date="1521828618343" expanded="true" signature="3160:3303" ph="{&quot;title&quot;: 'Room not found!'...}" />
+            <marker date="1521828618343" expanded="true" signature="3334:3338" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/DemocraticDJ/ddj/src/theme/variables.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="714">
+        <state relative-caret-position="731">
           <caret line="43" column="0" lean-forward="false" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
           <folding />
         </state>
@@ -1069,17 +1403,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/DemocraticDJ/ddj/src/app/app.component.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="31" column="0" lean-forward="false" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#32#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="391">
+          <caret line="29" column="0" lean-forward="false" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
