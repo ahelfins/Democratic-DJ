@@ -9,7 +9,6 @@ import { HTTP } from '@ionic-native/http';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { MyApp } from './app.component';
-import { HomePage } from '../pages/home/home';
 import { HostGuestPage } from '../pages/host-guest/host-guest';
 import { HostPage } from '../pages/host/host';
 import { GuestPage } from '../pages/guest/guest';
