@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { AddSongPage } from "../add-song/add-song";
+import { SessionDataProvider } from "../../providers/session-data/session-data";
 
 /**
  * Generated class for the GuestSongListPage page.
@@ -18,7 +19,9 @@ export class GuestSongListPage {
   addSongButton: any;
   public roomId: string;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController,
+    public navParams: NavParams,
+    private sDProvider: SessionDataProvider) {
     this.addSongButton = AddSongPage;
     this.roomId = this.navParams.get('roomId');
   }

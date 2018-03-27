@@ -7,6 +7,7 @@ import { HostSongListPage} from '../host-song-list/host-song-list';
 import { HostPage } from "../host/host";
 import { FirebaseProvider } from "../../providers/firebase/firebase";
 import { Song } from "../../interfaces/song";
+import { SessionDataProvider } from "../../providers/session-data/session-data";
 
 /**
  * Generated class for the AddSongPage page.
@@ -35,7 +36,8 @@ export class AddSongPage {
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
               public afDB: AngularFireDatabase,
-              public fBProvider: FirebaseProvider) {
+              public fBProvider: FirebaseProvider,
+              private sDProvider: SessionDataProvider) {
     // this.roomList = this.afDB.list('/rooms');
     // this.rooms = this.roomList.valueChanges();
     this.GuestSongListButton = GuestSongListPage;

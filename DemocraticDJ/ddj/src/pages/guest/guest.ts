@@ -4,7 +4,7 @@ import { GuestSongListPage } from '../guest-song-list/guest-song-list';
 import { AngularFireDatabase, AngularFireList } from 'angularfire2/database';
 import { Observable } from 'rxjs/Observable';
 import { AlertController } from 'ionic-angular';
-
+import { SessionDataProvider } from "../../providers/session-data/session-data";
 /**
  * Generated class for the GuestPage page.
  *
@@ -29,7 +29,8 @@ export class GuestPage {
     public navCtrl: NavController,
     public navParams: NavParams,
     public afDB: AngularFireDatabase,
-    public alertCtrl: AlertController) {
+    public alertCtrl: AlertController,
+    private sDProvider: SessionDataProvider) {
 
     this.EnterRoomButton = GuestSongListPage;
     this.roomList = this.afDB.list('/rooms');

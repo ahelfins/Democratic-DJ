@@ -30,7 +30,7 @@ export class HostSongListPage {
     public navParams: NavParams,
     public afDB: AngularFireDatabase,
     public fBProvider: FirebaseProvider,
-    public sDProvider: SessionDataProvider) {
+    private sDProvider: SessionDataProvider) {
     this.addSongButton = AddSongPage;
     this.roomId = this.navParams.get('roomId');
 

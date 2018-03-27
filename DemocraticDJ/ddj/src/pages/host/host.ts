@@ -38,7 +38,7 @@ export class HostPage {
     public afDB: AngularFireDatabase,
     public alertCtrl: AlertController,
     public fBProvider: FirebaseProvider,
-    public sDProvider: SessionDataProvider) {
+    private sDProvider: SessionDataProvider) {
       this.GenRoomButton = HostSongListPage;
       this.roomList = this.afDB.list('/rooms');
       this.rooms = this.roomList.valueChanges();
