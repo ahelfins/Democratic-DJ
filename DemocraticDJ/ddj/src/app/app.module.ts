@@ -16,7 +16,8 @@ import { GuestSongListPage } from '../pages/guest-song-list/guest-song-list';
 import { HostSongListPage } from '../pages/host-song-list/host-song-list';
 import { AddSongPage } from '../pages/add-song/add-song';
 import { FirebaseProvider } from "../providers/firebase/firebase"
-
+import { SessionDataProvider } from '../providers/session-data/session-data';
+import { HttpClient, HttpClientModule } from '@angular/common/http'
 // Pro.init('f756908f', {
 //   appVersion: '0.0.1'
 // })
@@ -64,7 +65,8 @@ export const firebaseConfig = {
     BrowserModule,
     IonicModule.forRoot(MyApp),
     AngularFireModule.initializeApp(firebaseConfig),
-    AngularFireDatabaseModule
+    AngularFireDatabaseModule,
+    HttpClientModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -80,7 +82,9 @@ export const firebaseConfig = {
     AddSongPage,
     StatusBar,
     SplashScreen,
-    FirebaseProvider
+    FirebaseProvider,
+    SessionDataProvider,
+    HttpClientModule
     // IonicErrorHandler,
     // [{ provide: ErrorHandler, useClass: MyErrorHandler }]
     // // HTTP,

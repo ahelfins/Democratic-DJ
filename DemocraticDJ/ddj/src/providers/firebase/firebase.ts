@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { AngularFireModule } from 'angularfire2';
-import { AngularFireDatabase } from 'angularfire2/database';
+import { AngularFireDatabase, AngularFireList } from 'angularfire2/database';
 import { Observable } from 'rxjs/Observable';
 import { Song } from '../../interfaces/song';
 
@@ -11,8 +11,11 @@ import { Song } from '../../interfaces/song';
   See https://angular.io/guide/dependency-injection for more info on providers
   and Angular DI.
 */
+
+
 @Injectable()
 export class FirebaseProvider {
+  songs: AngularFireList<Song>;
   constructor(public afDB: AngularFireDatabase) {
     console.log('Hello FirebaseProvider Provider');
   }
@@ -42,7 +45,7 @@ export class FirebaseProvider {
   }
 
   getSongList(roomCode) {
-    return this.afDB.list('/rooms/${roomCode}/songs');
+    return this.afDB.list('/rooms/${roomCode}/${this.songs}');
   }
 
   pushRoom(roomCode) {
@@ -54,8 +57,12 @@ export class FirebaseProvider {
      //id: 2xLTN
 
   pushSong(song, roomId){
+    // this.songs.push(song);
+    this.afDB.list("rooms/"+roomId+"/songs").push(song)
+    // this.afDB.database.ref("/rooms"+roomId).child('songs')
     // this.afDB.database.ref("/rooms/"+roomId).child('songs').update({[songName]: "idk what to put here but i guess i have to?"});
-    this.afDB.database.ref("/rooms/"+roomId).child('songs').update({song});
+    // this.afDB.database.ref("/rooms/"+roomId).child('songs')
+    //
     // let song = this.afDB.database.ref("/songs").orderByChild('name').equalTo(songName);
 
     // let query = ref.orderByChild("id");

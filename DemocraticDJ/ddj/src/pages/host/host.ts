@@ -4,6 +4,8 @@ import { HostSongListPage } from "../host-song-list/host-song-list";
 import { AngularFireDatabase, AngularFireList } from 'angularfire2/database';
 import { Observable } from 'rxjs/Observable';
 import { FirebaseProvider } from "../../providers/firebase/firebase"
+import { SessionDataProvider } from "../../providers/session-data/session-data";
+
 
 
 //import * as firebase from 'firebase';
@@ -35,7 +37,8 @@ export class HostPage {
     public navParams: NavParams,
     public afDB: AngularFireDatabase,
     public alertCtrl: AlertController,
-    public fBProvider: FirebaseProvider) {
+    public fBProvider: FirebaseProvider,
+    private sDProvider: SessionDataProvider) {
       this.GenRoomButton = HostSongListPage;
       this.roomList = this.afDB.list('/rooms');
       this.rooms = this.roomList.valueChanges();
@@ -107,6 +110,7 @@ export class HostPage {
   goToSongPage():void {
     let found = this.idList.indexOf(this.id);
     if (found >= 0) {
+      this.sDProvider.setRoomCode(this.id);
       this.navCtrl.push(HostSongListPage, {roomId: this.id});
     } else {
       let alert = this.alertCtrl.create({
