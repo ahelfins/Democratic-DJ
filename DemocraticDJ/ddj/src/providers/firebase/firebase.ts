@@ -58,7 +58,7 @@ export class FirebaseProvider {
 
   pushSong(song, roomId){
     // this.songs.push(song);
-    this.afDB.database.ref("rooms/"+roomId).child("songs").update({song});
+    this.afDB.list("rooms/"+roomId+"/songs").push(song);
     // this.afDB.database.ref("/rooms"+roomId).child('songs')
     // this.afDB.database.ref("/rooms/"+roomId).child('songs').update({[songName]: "idk what to put here but i guess i have to?"});
     // this.afDB.database.ref("/rooms/"+roomId).child('songs')
@@ -115,9 +115,6 @@ export class FirebaseProvider {
     this.afDB.list("/rooms").valueChanges()
       .subscribe(list =>{
         list.forEach(item => {
-          //idList.push(item.id)});
-          console.log(item['id']+" pushed to idList");
-          //idList.push(item.id);
           idList[i] = item['id'];
           i++;
           // console.log("idList[0] ", this.idList[0]);
