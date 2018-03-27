@@ -17,14 +17,23 @@
 
 <ion-content padding class="background">
   <!--TODO: id could be redundant, test and remove if so-->
-  <ion-input
-    id="songInput"
-    placeholder="Song Name"
-    type="text"
-    [(ngModel)]="songName">
-  </ion-input>
-  <button ion-button type="submit" (click)="addSongToFB(songName);">Add to Song List</button>
-  <!--<button ion-button block [navPush]="GuestSongListButton" class="button">See Guest Song List</button>-->
-  <button ion-button block [navPush]="HostSongListButton" class="button">See Host Song List</button>
-  <!-- <button ion-button [navPush]="GenRoomButton">Generate Room</button> -->
+
+  <ion-grid>
+    <ion-col>
+      <ion-row id="blank1"></ion-row>
+      <ion-row>
+        <ion-item>
+          <ion-label floating>Song Name</ion-label>
+          <ion-input class="input" id="songInput" type="text" [(ngModel)]="songName"></ion-input>
+        </ion-item>
+      </ion-row>
+      <ion-row id="blank2"></ion-row>
+      <ion-row>
+        <button ion-button block type="submit" (click)="addSongToFB(songName);" (click)="goToSongListPage()">Add to Song List</button>
+      </ion-row>
+      <!--<ion-row>
+        <button ion-button block [navPush]="HostSongListButton" class="button">See Host Song List</button>
+      </ion-row>-->
+    </ion-col>
+  </ion-grid>
 </ion-content>

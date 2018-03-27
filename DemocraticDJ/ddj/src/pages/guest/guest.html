@@ -7,7 +7,7 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>guest</ion-title>
+    <ion-title>Guest</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -16,17 +16,15 @@
 <ion-content padding class="background">
   <ion-grid>
     <ion-col>
-      <ion-row id="blank1">
-      </ion-row>
+      <ion-row id="blank1"></ion-row>
       <ion-row>
         <ion-item>
-          <ion-input id='roomInput' type="text" placeholder="Room Code" [(ngModel)]="roomCode"></ion-input>
+          <ion-label floating>Room Code</ion-label>
+          <ion-input class="input" id='roomInput' type="text" [(ngModel)]="roomCode"></ion-input>
         </ion-item>
       </ion-row>
-      <ion-row id="blank2">
-      </ion-row>
+      <ion-row id="blank2"></ion-row>
       <ion-row>
-        <!-- <button ion-button block [navPush]="EnterRoomButton" (click)="getRoomInput()">Enter Room</button> -->
         <button ion-button block (click)="isCorrectRoomInput(this.roomCode, this.idList)">Enter Room</button>
       </ion-row>
       <ion-row>

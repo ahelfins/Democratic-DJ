@@ -14,18 +14,20 @@
 
 <ion-content padding class="background">
   <ion-fab right bottom>
-    <button ion-fab (click)="goToAddSongPage()"><ion-icon name="add"></ion-icon></button>
+    <button ion-fab class="fab" (click)="goToAddSongPage()"><ion-icon name="add"></ion-icon></button>
   </ion-fab>
 
   <ion-list>
-    <ion-item-sliding [ngStyle]="{'background-color': darkgrey}" *ngFor="let song of songList">
-    <!--<ion-item-sliding  #item > -->
+    <!--<ion-item-sliding [ngStyle]="{'background-color': darkgrey}" *ngFor="let song of songList">
+    <ion-item-sliding  #item > -->
+    <ion-item-sliding *ngFor="let song of songList">
 
       <ion-item >
         <!--Song-->
-        {{song}}
+        {{song.title}}
+        <!--{{song.name}} or whatever it is in firebase. We'll need to see if you can iterate through angularfirelist if we keep using that for songs, and m,aybe make a songList like we do for idList-->
       </ion-item>
-      
+
       <ion-item-options side="left">
         <button ion-button class="delete" (click)="delete(song)">Delete</button>
       </ion-item-options>

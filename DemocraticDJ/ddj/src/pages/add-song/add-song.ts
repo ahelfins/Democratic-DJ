@@ -106,6 +106,11 @@ export class AddSongPage {
 
   }
 
+  goToSongListPage(){
+    //if host, go to host song list page, otherwise GuestSongListPage
+    console.log("Trying to go to Song List page with "+this.roomId);
+    this.navCtrl.push(HostSongListPage, {roomId: this.roomId});
+  }
 
 
   // getSong() {

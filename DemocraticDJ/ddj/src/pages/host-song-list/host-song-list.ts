@@ -22,12 +22,14 @@ export class HostSongListPage {
   addSongButton: any;
   roomId: string;
   public songName: AddSongPage;
-  songList: AngularFireList<any>;
+  //songList: AngularFireList<any>;
+  songList: any;
   song: Observable<any[]>;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public afDB: AngularFireDatabase, public fBProvider: FirebaseProvider) {
     this.addSongButton = AddSongPage;
     this.roomId = this.navParams.get('roomId');
+    this.songList = [{title:'Hello'}, {title:'Sal Tlay Ka Siti'}, {title:'You and Me (But Mostly Me)'}];
 
     //this.songList = fBProvider.getSongList(this.roomId);
     //this.song = this.songList.valueChanges();
@@ -62,11 +64,19 @@ export class HostSongListPage {
     this.navCtrl.push(AddSongPage, {roomId: this.roomId});
   }
   addToQueue(song) {
-    this.fBProvider.pushSong(song, this.roomId);
+    //add to Spotify here
 
   }
   delete(song) {
-
+    //remove from Spotify here
+    //also remove from firebase List
+    let index = this.songList.indexOf(song);
+    if(index > -1){
+      this.songList.splice(index, 1);
+    }
+  }
+  add(song){
+    this.songList.push(song);
   }
 
 }
