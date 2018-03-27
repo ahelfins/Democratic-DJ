@@ -29,11 +29,11 @@
       </ion-row>
       <ion-row id="blank2"></ion-row>
       <ion-row>
-        <button ion-button block type="submit" (click)="addSongToFB(songName);">Add to Song List</button>
+        <button ion-button block type="submit" (click)="addSongToFB(songName);" (click)="goToSongListPage()">Add to Song List</button>
       </ion-row>
-      <ion-row>
+      <!--<ion-row>
         <button ion-button block [navPush]="HostSongListButton" class="button">See Host Song List</button>
-      </ion-row>
+      </ion-row>-->
     </ion-col>
   </ion-grid>
 </ion-content>
