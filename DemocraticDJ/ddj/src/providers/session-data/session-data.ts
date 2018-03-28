@@ -13,18 +13,19 @@ export class SessionDataProvider {
 
   roomCode: string;
   songList: Song[];
-  hostBoolean: boolean;
+
+  hostBool: boolean;
 
   constructor(public http: HttpClient) {
     console.log('Hello SessionDataProvider Provider');
   }
 
   isHost() {
-    return this.hostBoolean
+    return this.hostBool;
   }
 
-  setHost(hostBoolean) {
-    this.hostBoolean = hostBoolean;
+  setHost(hostBoolIn) {
+    this.hostBool = hostBoolIn;
   }
 
   getRoomCode() {
