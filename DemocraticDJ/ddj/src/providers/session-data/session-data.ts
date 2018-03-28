@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Song } from '../../interfaces/song';
+import { FirebaseProvider } from '../firebase/firebase';
 
 /*
   Generated class for the SessionDataProvider provider.
@@ -15,7 +16,7 @@ export class SessionDataProvider {
   songList: Song[];
   hostBool: boolean;
 
-  constructor(public http: HttpClient) {
+  constructor(public http: HttpClient, public fBProvider: FirebaseProvider) {
     console.log('Hello SessionDataProvider Provider');
   }
 
@@ -36,6 +37,22 @@ export class SessionDataProvider {
   }
 
   getSongList() {
+    let afSongList = this.fBProvider.getSongList();
+    //fetches the songList for a particular room
+    // let i = 0;
+    // this.afDB.list("/rooms/${this.roomCode}/songs").valueChanges()
+    //   .subscribe(list =>{
+      //   list.forEach(item => {
+      //     this.songList[i] = item;
+      //     console.log("Added " + item);
+      //     i++;
+      //   });
+      // });
+      afSongList.forEach(item => {
+        this.songList[i] = item;
+        console.log("Added " + item);
+        i++;
+      });
     return this.songList;
   }
 
