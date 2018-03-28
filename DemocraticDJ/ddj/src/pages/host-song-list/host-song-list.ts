@@ -23,8 +23,9 @@ export class HostSongListPage {
   addSongButton: any;
   roomId: string;
   public songName: AddSongPage;
-  songList: AngularFireList<any>;
-  song: Observable<any[]>;
+  //songList: AngularFireList<any>;
+  songList: any;
+  //song: Observable<any[]>;
   title: String;
 
   constructor(public navCtrl: NavController,
@@ -34,7 +35,7 @@ export class HostSongListPage {
     private sDProvider: SessionDataProvider) {
     this.addSongButton = AddSongPage;
     this.roomId = this.sDProvider.getRoomCode();
-
+    this.songList = this.sDProvider.getSongList();
 
     //this.songList = fBProvider.getSongList(this.roomId);
     //this.song = this.songList.valueChanges();
@@ -45,7 +46,7 @@ export class HostSongListPage {
     console.log('Current room: ' +this.roomId);
     // document.getElementById('room').textContent = "Room: "+this.roomId;
     // document.getElementById('room').textContent = "Room: "+ this.sDProvider.getRoomCode();
-    this.title = "Host: "+ this.roomId
+    this.title = "Host: "+ this.roomId;
     //this.songList.valueChanges();
 
 
@@ -66,15 +67,24 @@ export class HostSongListPage {
   }
 
   goToAddSongPage() {
-    console.log("roomId going to add song page:" + this.roomId)
+    console.log("roomId going to add song page:" + this.roomId);
     this.navCtrl.push(AddSongPage, {roomId: this.roomId});
   }
   addToQueue(song) {
-    this.fBProvider.pushSong(song, this.roomId);
+    //add to spotify here
 
   }
   delete(song) {
+    //remove from Spotify here
+    //also remove from firebase List
+    let index = this.songList.indexOf(song);
+    if(index > -1){
+      this.songList.splice(index, 1);
+    }
+   }
 
-  }
+  add(song){
+    this.songList.push(song);
+   }
 
 }
