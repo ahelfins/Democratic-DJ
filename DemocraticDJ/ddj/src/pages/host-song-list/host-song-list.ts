@@ -32,8 +32,8 @@ export class HostSongListPage {
     public afDB: AngularFireDatabase,
     public fBProvider: FirebaseProvider,
     private sDProvider: SessionDataProvider) {
-    this.addSongButton = AddSongPage;
-    this.roomId = this.sDProvider.getRoomCode();
+      this.addSongButton = AddSongPage;
+      this.roomId = this.sDProvider.getRoomCode();
 
 
     //this.songList = fBProvider.getSongList(this.roomId);
@@ -69,10 +69,11 @@ export class HostSongListPage {
     console.log("roomId going to add song page:" + this.roomId)
     this.navCtrl.push(AddSongPage, {roomId: this.roomId});
   }
+
   addToQueue(song) {
     this.fBProvider.pushSong(song, this.roomId);
-
   }
+
   delete(song) {
 
   }

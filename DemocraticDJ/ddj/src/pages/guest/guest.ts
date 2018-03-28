@@ -134,6 +134,7 @@ export class GuestPage {
 
     if (found >= 0) {     //if roomCode matches a room, push to room, otherwise show an alert
       this.sDProvider.setRoomCode(lowerRoomInput);
+      this.sDProvider.setHost(false);
       this.navCtrl.push(GuestSongListPage, {roomId: idList[found]});
     } else {
       let alert = this.alertCtrl.create({

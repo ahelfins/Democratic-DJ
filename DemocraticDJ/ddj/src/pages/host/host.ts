@@ -111,6 +111,7 @@ export class HostPage {
     let found = this.idList.indexOf(this.id);
     if (found >= 0) {
       this.sDProvider.setRoomCode(this.id);
+      this.sDProvider.setHost(true);
       this.navCtrl.push(HostSongListPage, {roomId: this.id});
     } else {
       let alert = this.alertCtrl.create({

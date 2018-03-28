@@ -30,7 +30,9 @@ export class GuestSongListPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad GuestSongListPage');
     console.log('Current room: '+this.roomId);
+    console.log('Host?: '+this.sDProvider.isHost());
     this.title = "Guest: "+this.roomId;
+
   }
 
   goToAddSongPage() {
