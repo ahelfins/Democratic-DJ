@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Song } from '../../interfaces/song';
 
 /*
   Generated class for the SessionDataProvider provider.
@@ -11,9 +12,19 @@ import { Injectable } from '@angular/core';
 export class SessionDataProvider {
 
   roomCode: string;
+  songList: Song[];
+  isHost: boolean;
 
   constructor(public http: HttpClient) {
     console.log('Hello SessionDataProvider Provider');
+  }
+
+  isHost() {
+    return this.isHost;
+  }
+  
+  setHost(hostBoolean) {
+    this.isHost = hostBoolean;
   }
 
   getRoomCode() {
@@ -22,6 +33,14 @@ export class SessionDataProvider {
 
   setRoomCode(roomCodeIn) {
     this.roomCode = roomCodeIn;
+  }
+
+  getSongList() {
+    return this.songList;
+  }
+
+  addToLocalSongList(newSong) {
+    this.songList.add(newSong);
   }
 
 }
