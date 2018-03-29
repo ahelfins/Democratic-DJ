@@ -1,17 +1,14 @@
 import { Component } from '@angular/core';
-import {AlertController, IonicPage, NavController, NavParams} from 'ionic-angular';
+import {AlertController, IonicPage, NavController} from 'ionic-angular';
 import { HostSongListPage } from "../host-song-list/host-song-list";
 import { AngularFireDatabase, AngularFireList } from 'angularfire2/database';
 import { Observable } from 'rxjs/Observable';
 import { FirebaseProvider } from "../../providers/firebase/firebase"
 import { SessionDataProvider } from "../../providers/session-data/session-data";
 
-
-
-//import * as firebase from 'firebase';
-
 /**
- * Generated class for the HostPage page.
+ * Generated class for the HostPage page. Host can generate a room (song list page)
+ * and is given the roomCode of the generated room.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
@@ -34,7 +31,6 @@ export class HostPage {
 
   constructor(
     public navCtrl: NavController,
-    public navParams: NavParams,
     public afDB: AngularFireDatabase,
     public alertCtrl: AlertController,
     public fBProvider: FirebaseProvider,
@@ -47,10 +43,13 @@ export class HostPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad HostPage');
-    //this.makeIdList();
-    this.idList = this.fBProvider.getRoomIdList(); //populate idList with possible r
+    this.idList = this.fBProvider.getRoomIdList(); //populate idList with possible roomIds
   }
 
+  /**
+   * Getter for the roomId.
+   * @returns {string}
+   */
   getId() {
     return this.id;
   }
@@ -70,46 +69,19 @@ export class HostPage {
     this.languageHide = !this.languageHide;
     this.id = this.makeId();
 
-
-    //const newRoomRef = this.roomList.push({});
-    //newRoomRef.child("rooms").set(this.id);
-
-
-    // this.fBProvider.list('/rooms/').child('newRoom').setValue(this.id);
     this.fBProvider.genRoom(this.id);
-    // this.afDB.list('/rooms/${key}/songs/').push(songName);
 
-    //newRoomRef.set({id:this.id});
-    // this.id = this.rooms.push({})
     document.getElementById('roomCode').textContent = this.id;
   }
 
-
-
-  // makeIdList() {
-  //   let i = 0;
-  //   this.afDB.list("/rooms").valueChanges()
-  //     .subscribe(list =>{
-  //       list.forEach(item => {
-  //         //idList.push(item.id)});
-  //         console.log(item['id']+" pushed to idList");
-  //         //idList.push(item.id);
-  //         this.idList[i] = item['id'];
-  //         i++;
-  //         // console.log("idList[0] ", this.idList[0]);
-  //         // console.log("idList[1] ", this.idList[1]);
-  //         // console.log("idList[2] ", this.idList[2]);
-  //         // console.log("idList[3] ", this.idList[3]);
-  //         console.log(this.idList)
-  //
-  //
-  //       });
-  //     });
-  // }
-
+  /**
+   * Takes the user to the respective SongListPage (HostSongListPage or GuestSongListPage).
+   */
   goToSongPage():void {
+    // check if a room with the given name exists
     let found = this.idList.indexOf(this.id);
     if (found >= 0) {
+      // Get necessary info (roomCode and user type) from the Session Data Provider
       this.sDProvider.setRoomCode(this.id);
       this.sDProvider.setHost(true);
       this.navCtrl.push(HostSongListPage, {roomId: this.id});

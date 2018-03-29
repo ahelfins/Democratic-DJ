@@ -4,7 +4,8 @@ import { HostPage } from '../host/host';
 import { GuestPage } from '../guest/guest';
 
 /**
- * Generated class for the HostGuestPage page.
+ * Generated class for the HostGuestPage page. A user can select either 'host'
+ * or 'guest'.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
@@ -19,7 +20,7 @@ export class HostGuestPage {
   HostButton: any;
   GuestButton: any;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController) {
     this.HostButton = HostPage;
     this.GuestButton = GuestPage;
   }
