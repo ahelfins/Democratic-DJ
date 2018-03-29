@@ -24,11 +24,9 @@ export class GuestPage {
   roomList: AngularFireList<any>;
   room: Observable<any[]>;
   idList: Array<String>;
-  //currentRoom: AngularFireList<any>;
 
   constructor(
     public navCtrl: NavController,
-    public navParams: NavParams,
     public afDB: AngularFireDatabase,
     public alertCtrl: AlertController,
     private sDProvider: SessionDataProvider,
@@ -50,84 +48,21 @@ export class GuestPage {
     this.afDB.list("/rooms").valueChanges()
       .subscribe(list =>{
         list.forEach(item => {
-          //idList.push(item.id)});
-          //idList.push(item.id);
           this.idList[i] = item['id'];
           i++;
-          // console.log("idList[0] ", this.idList[0]);
-          // console.log("idList[1] ", this.idList[1]);
-          // console.log("idList[2] ", this.idList[2]);
-          // console.log("idList[3] ", this.idList[3]);
         });
-        // this.isCorrectRoomInput(this.roomCode, idList);
       });
     console.log(this.idList);
   }
 
-  //getRoomInput() {
-
-    // var roomInput = this.roomCode;
-
-    // var idList = new Array();
-
-    // this.afDB.list("/rooms").valueChanges()
-    //   .subscribe(list  => {
-    //     list.forEach((item) => {
-    //       // console.log(item.key, item.id)});
-    //       console.log(item)});
-    // });
-
-
-
-
-    // -L6YbbGuRaf8oMtSsj-2
-
-    //console.log(this.room);
-    //console.log(idList[0].getElementById('id'));
-    //0:{id: "5jaPp"}
-    //1:{id: "P7DiP"}
-    //2:{id: "oKFPU"}
-    //let iter = idList.values()
-
-
-
-    // console.log("Start Loop");
-
-    // idList.forEach((item, index) => {
-    //   console.log("visiting idList");
-    //   console.log(item);
-    //   console.log(index);
-    // });
-    //
-
-
-    // console.log("Executing isCorrectRoomInput()");
-
-
-
-
-    // console.log("Finished isCorrectRoomInput()");
-
-    // console.log("roomInput", roomInput);
-    // let found = idList.indexOf(roomInput);
-    // console.log("found", found);
-    // this.navCtrl.push(GuestSongListPage, {roomId: roomInput});
-
-    // for(let roomId of idList) {
-    //   console.log("inside the loop", roomId)
-    //   //console.log(roomId);
-    //   if(roomId === roomInput) {
-    //     this.navCtrl.push(GuestSongListPage, {roomId: roomId});
-    //     console.log("Correct Room Code");
-    //   }
-    // }
-
-  //}
-
+  /**
+   * Checks if the user input of room code is one of the room codes in the Firebase.
+   * @param roomInput
+   * @param idList
+   */
   isCorrectRoomInput(roomInput: string, idList: String[]) {
-    let lowerRoomInput = roomInput.toLowerCase();
+    let lowerRoomInput = roomInput.toLowerCase(); // Make the input case-insensitive
     console.log("Inside START isCorrectRoomInput(" + lowerRoomInput +", " + idList +")");
-    //roomInput = this.roomCode;
     console.log("roomInput", lowerRoomInput);
     let found = idList.indexOf(lowerRoomInput);
     console.log("found", found);
