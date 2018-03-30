@@ -34,7 +34,7 @@ export class FirebaseProvider {
   }
 
   getSongList(roomCode) {
-    return this.afDB.list('/rooms/${roomCode}/${this.songs}');
+    return this.afDB.list('/rooms/'+roomCode+'/songs');
   }
 
   /**

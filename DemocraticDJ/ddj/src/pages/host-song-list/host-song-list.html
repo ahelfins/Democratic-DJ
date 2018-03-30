@@ -23,9 +23,7 @@
     <ion-item-sliding *ngFor="let song of songList">
 
       <ion-item >
-        <!--Song-->
-        {{song.title}}
-        <!--{{song.name}} or whatever it is in firebase. We'll need to see if you can iterate through angularfirelist if we keep using that for songs, and m,aybe make a songList like we do for idList-->
+        {{song}}
       </ion-item>
 
       <ion-item-options side="left">

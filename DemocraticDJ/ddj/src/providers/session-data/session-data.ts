@@ -38,27 +38,23 @@ export class SessionDataProvider {
   }
 
   getSongList() {
-    let afSongList = this.fBProvider.getSongList();
-    //fetches the songList for a particular room
-    // let i = 0;
-    // this.afDB.list("/rooms/${this.roomCode}/songs").valueChanges()
-    //   .subscribe(list =>{
-      //   list.forEach(item => {
-      //     this.songList[i] = item;
-      //     console.log("Added " + item);
-      //     i++;
-      //   });
-      // });
-      afSongList.forEach(item => {
-        this.songList[i] = item;
-        console.log("Added " + item);
-        i++;
+    let afSongList = this.fBProvider.getSongList(this.roomCode);
+    let i = 0;
+    this.songList = new Array();
+    afSongList.valueChanges()
+      .subscribe(list =>{
+        list.forEach(item => {
+          this.songList[i] = item['title'];
+          console.log("I is: "+ i);
+          i++;
+        });
       });
+    console.log("about to return song list: "+this.songList);
     return this.songList;
   }
 
   addToLocalSongList(newSong) {
-    // this.songList.add(newSong);
+    // this.songList.add(newSong)
   }
 
 }

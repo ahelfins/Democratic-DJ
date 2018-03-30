@@ -36,6 +36,7 @@ export class HostSongListPage {
     this.addSongButton = AddSongPage;
     this.roomId = this.sDProvider.getRoomCode(); //Gets the roomId from the Session Data Provider
     this.songList = this.sDProvider.getSongList();
+    //console.log("song list is " + this.songList);
     //this.songList = fBProvider.getSongList(this.roomId);
     //this.song = this.songList.valueChanges();
   }
@@ -85,14 +86,14 @@ export class HostSongListPage {
   delete(song) {
     //remove from Spotify here
     //also remove from firebase List
-    let index = this.songList.indexOf(song);
-    if(index > -1){
-      this.songList.splice(index, 1);
-    }
+   //  let index = this.songList.indexOf(song);
+   //  if(index > -1){
+   //    this.songList.splice(index, 1);
+   //  }
    }
 
-  add(song){
-    this.songList.push(song);
-   }
+  // add(song){
+  //   this.songList.push(song);
+  //  }
 
 }
