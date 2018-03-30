@@ -4,7 +4,9 @@ import { AddSongPage } from "../add-song/add-song";
 import { SessionDataProvider } from "../../providers/session-data/session-data";
 
 /**
- * Generated class for the GuestSongListPage page.
+ * Generated class for the GuestSongListPage page. Displays the room-specific
+ * song list for Guest (Identical to Host's but NOT has a functionality to add
+ * songs to Spotify Queue.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
@@ -30,7 +32,9 @@ export class GuestSongListPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad GuestSongListPage');
     console.log('Current room: '+this.roomId);
+    console.log('Host?: '+this.sDProvider.isHost());
     this.title = "Guest: "+this.roomId;
+
   }
 
   goToAddSongPage() {

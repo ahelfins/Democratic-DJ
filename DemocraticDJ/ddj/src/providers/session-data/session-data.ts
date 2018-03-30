@@ -3,17 +3,18 @@ import { Injectable } from '@angular/core';
 import { Song } from '../../interfaces/song';
 import { FirebaseProvider } from '../firebase/firebase';
 
-/*
-  Generated class for the SessionDataProvider provider.
-
-  See https://angular.io/guide/dependency-injection for more info on providers
-  and Angular DI.
+/**
+ *Generated class for the SessionDataProvider provider.
+ *
+ * See https://angular.io/guide/dependency-injection for more info on providers
+ * and Angular DI.
 */
 @Injectable()
 export class SessionDataProvider {
 
   roomCode: string;
   songList: Song[];
+
   hostBool: boolean;
 
   constructor(public http: HttpClient, public fBProvider: FirebaseProvider) {
@@ -57,7 +58,7 @@ export class SessionDataProvider {
   }
 
   addToLocalSongList(newSong) {
-    this.songList.add(newSong);
+    // this.songList.add(newSong);
   }
 
 }
