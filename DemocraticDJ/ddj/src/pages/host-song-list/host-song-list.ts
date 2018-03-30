@@ -1,8 +1,6 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController} from 'ionic-angular';
 import { AddSongPage } from "../add-song/add-song";
-import { AngularFireDatabase, AngularFireList } from 'angularfire2/database';
-import { Observable } from 'rxjs/Observable';
 import { FirebaseProvider } from "../../providers/firebase/firebase"
 import { SessionDataProvider } from "../../providers/session-data/session-data";
 
@@ -24,10 +22,7 @@ import { SessionDataProvider } from "../../providers/session-data/session-data";
 export class HostSongListPage {
   addSongButton: any;
   roomId: string;
-  public songName: AddSongPage;
-  //songList: AngularFireList<any>;
   songList: any;
-  //song: Observable<any[]>;
   title: String;
 
   constructor(public navCtrl: NavController,
@@ -35,9 +30,6 @@ export class HostSongListPage {
     private sDProvider: SessionDataProvider) {
     this.addSongButton = AddSongPage;
     this.roomId = this.sDProvider.getRoomCode(); //Gets the roomId from the Session Data Provider
-    //console.log("song list is " + this.songList);
-    //this.songList = fBProvider.getSongList(this.roomId);
-    //this.song = this.songList.valueChanges();
   }
 
   ionViewDidLoad() {

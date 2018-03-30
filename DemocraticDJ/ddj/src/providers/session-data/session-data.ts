@@ -11,13 +11,10 @@ import { FirebaseProvider } from '../firebase/firebase';
 */
 @Injectable()
 export class SessionDataProvider {
-
   roomCode: string;
-  songList: Song[];
-
   hostBool: boolean;
 
-  constructor(public http: HttpClient, public fBProvider: FirebaseProvider) {
+  constructor(public http: HttpClient) {
     console.log('Hello SessionDataProvider Provider');
   }
 
@@ -36,27 +33,4 @@ export class SessionDataProvider {
   setRoomCode(roomCodeIn) {
     this.roomCode = roomCodeIn;
   }
-
-  // getSongList() {
-  //   let afSongList = this.fBProvider.getAngularSongList(this.roomCode);
-  //
-  //
-  //   let i = 0;
-  //   this.songList = new Array();
-  //   afSongList.valueChanges()
-  //     .subscribe(list =>{
-  //       list.forEach(item => {
-  //         this.songList[i] = item['title'];
-  //         console.log("I is: "+ i);
-  //         i++;
-  //       });
-  //     });
-  //   console.log("about to return song list: "+this.songList);
-  //   return this.songList;
-  // }
-
-  addToLocalSongList(newSong) {
-    // this.songList.add(newSong)
-  }
-
 }
