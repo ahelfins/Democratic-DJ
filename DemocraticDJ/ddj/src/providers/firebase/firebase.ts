@@ -33,9 +33,38 @@ export class FirebaseProvider {
     return this.afDB.list('/rooms/');
   }
 
-  getSongList(roomCode) {
+  /**
+   * Getter for the list of songs from the Firebase
+   * @param roomCode
+   * @returns {AngularFireList<T>}
+   */
+  getAngularSongList(roomCode) {
     return this.afDB.list('/rooms/'+roomCode+'/songs');
   }
+
+  /**
+   * Converts an AngularFireList of songs to an array and returns it.
+   * @param roomCode
+   * @returns {Array}
+   */
+  getSongList(roomCode) {
+    let angularSongList = this.getAngularSongList(roomCode)
+
+    let songList = [];
+    let i = 0;
+    angularSongList.valueChanges()
+      .subscribe(list =>{
+        list.forEach(song => {
+          songList[i] = song;
+          console.log("I is: "+ i); //DEBUG
+          i++;
+        });
+      });
+    console.log("about to return song list: " + songList);
+    return songList;
+  }
+
+
 
   /**
    * Generates room with the roomCode
@@ -81,7 +110,7 @@ export class FirebaseProvider {
     //fetches a list of roomCodes (roomIds) that would be used to verify if the
     //user is trying to enter the correct room
     let i = 0;
-    let idList = new Array();
+    let idList = [];
     this.afDB.list("/rooms").valueChanges()
       .subscribe(list =>{
         list.forEach(item => {

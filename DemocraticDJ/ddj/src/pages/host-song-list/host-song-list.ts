@@ -35,7 +35,6 @@ export class HostSongListPage {
     private sDProvider: SessionDataProvider) {
     this.addSongButton = AddSongPage;
     this.roomId = this.sDProvider.getRoomCode(); //Gets the roomId from the Session Data Provider
-    this.songList = this.sDProvider.getSongList();
     //console.log("song list is " + this.songList);
     //this.songList = fBProvider.getSongList(this.roomId);
     //this.song = this.songList.valueChanges();
@@ -45,22 +44,8 @@ export class HostSongListPage {
     console.log('ionViewDidLoad HostSongListPage');
     console.log('Current room: ' +this.roomId);
     this.title = "Host: "+ this.roomId;
-    //this.songList.valueChanges();
+    this.songList = this.fBProvider.getSongList(this.roomId);
 
-    // let i = 0;
-    // this.afDB.list("/songs").valueChanges()
-    //   .subscribe(list => {
-    //     list.forEach(item => {
-    //       console.log(item+" pushed to songList");
-    //       this.songList[i] = item;
-    //       i++;
-    //       console.log("songList: " + this.songList);
-    //
-    //     })
-    //   })
-    //
-    // console.log("song: " + this.song);
-    // console.log("songList: " + this.songList);
   }
 
   /**
