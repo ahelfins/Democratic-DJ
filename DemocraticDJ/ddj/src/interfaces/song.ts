@@ -6,5 +6,6 @@ export interface Song {
   title: any;
   album?: any; //'?' for optional
   artist?: any;
+  upVotes: any;
+  downVotes: any;
 }
-

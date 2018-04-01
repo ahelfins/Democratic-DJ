@@ -44,4 +44,15 @@ export class GuestSongListPage {
     this.navCtrl.push(AddSongPage, {roomId: this.roomId});
   }
 
+  upVote(song){
+    console.log("Up vote for " + song.title);
+    song.upVotes++;
+    console.log(song.title + " has " + song.upVotes + " up votes.")
+  }
+  downVote(song){
+    console.log("Down vote for " + song.title);
+    song.downVotes++;
+    console.log(song.title + " has " + song.downVotes + " down votes.")
+  }
+
 }

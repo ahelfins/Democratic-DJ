@@ -20,17 +20,12 @@
 
   <ion-list>
     <!--<ion-item-sliding #item [ngStyle]="{'background-color': darkgrey}">-->
-    <ion-item-sliding *ngFor="let song of songList">
+    <ion-item *ngFor="let song of songList">
       <ion-item >
         {{song.title}}
       </ion-item>
-      <ion-item-options side="left">
-        <button ion-button class="delete" (click)="delete(item)">Delete</button>
-      </ion-item-options>
-
-      <ion-item-options side="right">
-        <button ion-button (click)="addToQueue(item)">+Queue</button>
-      </ion-item-options>
-    </ion-item-sliding>
+      <button ion-button (click)="upVote(song)">Yay</button>
+      <button ion-button (click)="downVote(song)">Boo</button>
+    </ion-item>
   </ion-list>
 </ion-content>
