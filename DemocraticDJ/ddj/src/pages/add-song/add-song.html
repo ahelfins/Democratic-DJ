@@ -31,6 +31,17 @@
       <ion-row>
         <button ion-button block type="submit" (click)="addSongToFB(songName);" (click)="goToSongListPage()">Add to Song List</button>
       </ion-row>
+      <ion-row>
+        <ion-searchbar (ionInput)="searchSpotify($event)"></ion-searchbar>
+        <div *ngIf="searchResults?.length>0">
+          <ion-list *ngFor="let i of searchResults">
+            <ion-item>
+              <h1>Name: {{i.name}} </h1>
+              <h2> {{i.popularity}} </h2>
+            </ion-item>
+          </ion-list>
+        </div>
+      </ion-row>
       <!--<ion-row>
         <button ion-button block [navPush]="HostSongListButton" class="button">See Host Song List</button>
       </ion-row>-->

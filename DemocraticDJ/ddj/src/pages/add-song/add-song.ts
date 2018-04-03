@@ -27,6 +27,7 @@ export class AddSongPage {
   // songList: AngularFireList<any>;
   roomId : string;
   title: string;
+  searchResults:any[];
 
   // roomCode : String;
   //songList : AngularFireList<any>
@@ -70,6 +71,21 @@ export class AddSongPage {
       this.navCtrl.push(GuestSongListPage, {roomId: this.roomId});
     }
   }
+
+  searchSpotify(event:any) {
+    let searchTerm = event.target.value;
+    console.log(searchTerm);
+    this.sDProvider.searchSpotify(searchTerm).subscribe(
+      data=>{
+        //this.searchResults=data.artists.items;
+        console.log(this.searchResults);
+      },
+      error=>{
+        console.log(error);
+      }
+    )
+  }
+
 
 
   // getSong() {
