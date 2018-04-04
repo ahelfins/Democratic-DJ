@@ -69,3 +69,11 @@
 .item {
   padding-left: 0;
 }
+
+.votebutton {
+  background-color: map-get($colors, background);
+}
+
+.votebutton:hover {
+  background-color: map-get($colors, background) !important;
+}

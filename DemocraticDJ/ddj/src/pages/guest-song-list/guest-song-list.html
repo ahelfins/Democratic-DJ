@@ -23,9 +23,9 @@
     <ion-item *ngFor="let song of songList">
       <ion-item >
         {{song.title}}
+        <button ion-button icon-only (click)="upVote(song)" class="votebutton"><ion-icon name="arrow-dropup-circle"></ion-icon></button>
+        <button ion-button icon-only (click)="downVote(song)" class="votebutton"><ion-icon name="arrow-dropdown-circle"></ion-icon></button>
       </ion-item>
-      <button ion-button (click)="upVote(song)">Yay</button>
-      <button ion-button (click)="downVote(song)">Boo</button>
     </ion-item>
   </ion-list>
 </ion-content>
