@@ -20,7 +20,7 @@
 
   <ion-list>
     <!--<ion-item-sliding #item [ngStyle]="{'background-color': darkgrey}">-->
-    <ion-item *ngFor="let song of songList">
+    <ion-item *ngFor="let song of songList | async">
       <ion-item >
         {{song.title}}
       </ion-item>

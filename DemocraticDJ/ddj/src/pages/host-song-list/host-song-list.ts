@@ -36,7 +36,7 @@ export class HostSongListPage {
     console.log('ionViewDidLoad HostSongListPage');
     console.log('Current room: ' +this.roomId);
     this.title = "Host: "+ this.roomId;
-    this.songList = this.fBProvider.getSongList(this.roomId);
+    this.songList = this.fBProvider.getAngularSongList(this.roomId).valueChanges();
 
   }
 
@@ -47,6 +47,8 @@ export class HostSongListPage {
     console.log("roomId going to add song page:" + this.roomId);
     this.navCtrl.push(AddSongPage, {roomId: this.roomId});
   }
+
+
 
   /**
    * Adds a song to the Queue that integrates with Spotify

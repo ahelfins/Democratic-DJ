@@ -85,6 +85,21 @@ export class FirebaseProvider {
   }
 
   /**
+    * Updates the up or down votes in firebase
+    * @param song - a Song object
+    * @param isUpVote - boolean, true if the vote is an upvote, false if down vote
+    */
+  updateVote(song, roomId, isUpVote){
+    if(isUpVote){
+      this.afDB.object("/rooms/"+roomId+"/songs/"+song.update({upVotes: +1}));
+    }
+    else{
+      console.log("song " + this.afDB.database.ref('/').child('rooms').child(roomId).child('songs').child(song.title));
+      this.afDB.database.ref('/').child('rooms').child(roomId).child('songs').child(song.title).update({downVotes: +1});
+    }
+  }
+
+  /**
    * Deletes the room when the party is over.
    * @param roomCode
    */

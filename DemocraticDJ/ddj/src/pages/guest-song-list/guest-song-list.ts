@@ -36,7 +36,7 @@ export class GuestSongListPage {
     console.log('Current room: '+this.roomId);
     console.log('Host?: '+this.sDProvider.isHost());
     this.title = "Guest: "+this.roomId;
-    this.songList = this.fBProvider.getSongList(this.roomId)
+    this.songList = this.fBProvider.getAngularSongList(this.roomId).valueChanges();
 
   }
 
@@ -47,11 +47,15 @@ export class GuestSongListPage {
   upVote(song){
     console.log("Up vote for " + song.title);
     song.upVotes++;
+    song.update(song);
+
+  //  this.fBProvider.updateVote(song, this.roomId, true);
     console.log(song.title + " has " + song.upVotes + " up votes.")
   }
   downVote(song){
     console.log("Down vote for " + song.title);
     song.downVotes++;
+  //  this.fBProvider.updateVote(song, this.roomId, false);
     console.log(song.title + " has " + song.downVotes + " down votes.")
   }
 
