@@ -35,9 +35,9 @@
   background-color: map-get($colors, button);
 }
 
-//.button:hover {
-//  background-color: map-get($colors, hover) !important;
-//}
+.button:hover {
+  background-color: map-get($colors, button) !important;
+}
 
 .background {
   background-color: map-get($colors, background);
@@ -49,7 +49,7 @@
 }
 
 .toolbar-background {
-  background-color: #323232;
+  background-color: #191419;
   color: map-get($colors, text);
 }
 

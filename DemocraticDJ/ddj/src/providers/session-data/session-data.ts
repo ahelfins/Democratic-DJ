@@ -2,7 +2,7 @@ import { HttpClient, HttpHeaders} from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Song } from '../../interfaces/song';
 import { FirebaseProvider } from '../firebase/firebase';
-import { AngularSpotify } from 'angular-spotify'
+// import { AngularSpotify } from 'angular-spotify'
 
 /**
  *Generated class for the SessionDataProvider provider.
