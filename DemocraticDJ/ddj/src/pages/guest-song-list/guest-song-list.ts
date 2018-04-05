@@ -3,6 +3,8 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { AddSongPage } from "../add-song/add-song";
 import { FirebaseProvider } from "../../providers/firebase/firebase"
 import { SessionDataProvider } from "../../providers/session-data/session-data";
+import { Observable } from 'rxjs/Observable';
+import { Song } from '../../interfaces/song';
 
 /**
  * Generated class for the GuestSongListPage page. Displays the room-specific
@@ -36,7 +38,8 @@ export class GuestSongListPage {
     console.log('Current room: '+this.roomId);
     console.log('Host?: '+this.sDProvider.isHost());
     this.title = "Guest: "+this.roomId;
-    this.songList = this.fBProvider.getAngularSongList(this.roomId).valueChanges();
+    this.songList = this.fBProvider.getAngularSongList(this.roomId).valueChanges<Song[]>() as Observable<Song[]>;
+
 
   }
 
@@ -45,13 +48,58 @@ export class GuestSongListPage {
   }
 
   upVote(song){
-    console.log("Up vote for " + song.title);
-    song.upVotes++;
-    song.update(song);
+    // console.log("Up vote for " + song.title);
+    // song.upVotes++;
+    let i = 0
+    this.songList.subscribe(list => {
+      list.forEach(item => {
+        if (item.title == song.title) {
+          console.log("title: "+item.title)
 
-  //  this.fBProvider.updateVote(song, this.roomId, true);
-    console.log(song.title + " has " + song.upVotes + " up votes.")
+          // item.upVotes++;
+          // this.fBProvider.getSongList(this.roomId).
+          // item.upVotes.set(10)
+          // // this.songList.child(item).child('upVotes').update(item.key, item['upVotes'])
+          // console.log("this.songList.object(item): "+this.songList.ref(item))
+          // this.songList.object(item).assign("upVotes", {upVotes: 1})
+          console.log("songList type: "+typeof(this.songList))
+          // const newSongRef = this.fBProvider.
+          //
+          // console.log(newSongRef)
+          item['upVotes'] = 2
+          console.log(item['upVotes'])
+          // this.songList.child(item).update({upVotes: 1})
+          // item.upVotes = item.upVotes + 1;
+          // console.log("item.upvote: "+item.upVotes)
+        }
+      });
+    });
+    // console.log("key: "+this.songList[0].valueOf());
+    // for (let i = 0; i < this.songList.size; i++) {
+    //   if (this.songList[i].title == song.title) {
+    //     console.log('songList item title: ' + this.songList[i])
+    //     console.log('song title: ' + song.title)
+    //
+    //   }
+    // }
+
+    // this.songList.forEach(item => {
+    //   console.log('songList item title: ' + item.title)
+    //   console.log('song title: ' + song.title)
+    //
+    //   if (item == song) {
+    //     console.log(item);
+    //   }
+    // })
+
+    // song.upVotes.set(song.upVotes++)
+
+    // song.update({song: song.upVotes});
+
+   // this.fBProvider.updateVote(song, this.roomId, true);
+   //  console.log(song.title + " has " + song.upVotes + " up votes.")
   }
+
   downVote(song){
     console.log("Down vote for " + song.title);
     song.downVotes++;

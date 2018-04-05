@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { AngularFireDatabase, AngularFireList } from 'angularfire2/database';
-// import { Song } from '../../interfaces/song';
+import { Song } from '../../interfaces/song';
 
 /*
   Generated class for the FirebaseProvider provider.
@@ -36,10 +36,10 @@ export class FirebaseProvider {
   /**
    * Getter for the list of songs from the Firebase
    * @param roomCode
-   * @returns {AngularFireList<T>}
+   * @returns {AngularFireList<Song[]>}
    */
   getAngularSongList(roomCode) {
-    return this.afDB.list('/rooms/'+roomCode+'/songs');
+    return this.afDB.list<Song []>('/rooms/'+roomCode+'/songs');
   }
 
   /**
