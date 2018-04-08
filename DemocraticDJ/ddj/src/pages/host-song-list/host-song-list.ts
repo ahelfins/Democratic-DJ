@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController} from 'ionic-angular';
+import { AlertController, IonicPage, NavController} from 'ionic-angular';
 import { AddSongPage } from "../add-song/add-song";
 import { FirebaseProvider } from "../../providers/firebase/firebase"
 import { SessionDataProvider } from "../../providers/session-data/session-data";
+import {HostGuestPage} from "../host-guest/host-guest";
 
 
 /**
@@ -26,7 +27,8 @@ export class HostSongListPage {
   title: String;
 
   constructor(public navCtrl: NavController,
-    public fBProvider: FirebaseProvider,
+              public alertCtrl: AlertController,
+              public fBProvider: FirebaseProvider,
     private sDProvider: SessionDataProvider) {
     this.addSongButton = AddSongPage;
     this.roomId = this.sDProvider.getRoomCode(); //Gets the roomId from the Session Data Provider
@@ -48,6 +50,40 @@ export class HostSongListPage {
     this.navCtrl.push(AddSongPage, {roomId: this.roomId});
   }
 
+  /**
+   * Takes an user to the main page (host-guest) and deletes the room.
+   */
+  exitRoom() {
+    console.log("exiting room " + this.roomId);
+    this.fBProvider.deleteRoom(this.roomId);
+    this.navCtrl.insert(0, HostGuestPage).then(() => {
+      this.navCtrl.popToRoot();
+    });
+  }
+
+  exitConfirm() {
+    let alert = this.alertCtrl.create({
+      title: 'Confirm Exit Room',
+      message: 'Do you want to end the party? Exiting room will remove the room.',
+      buttons: [
+        {
+          text: 'Cancel',
+          role: 'cancel',
+          handler: () => {
+            console.log('Cancel clicked');
+          }
+        },
+        {
+          text: 'Exit',
+          handler: () => {
+            console.log('Exit clicked');
+            this.exitRoom();
+          }
+        }
+      ]
+    });
+    alert.present();
+  }
 
 
   /**
