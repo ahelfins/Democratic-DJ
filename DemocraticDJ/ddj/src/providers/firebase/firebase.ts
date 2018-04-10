@@ -91,12 +91,16 @@ export class FirebaseProvider {
     * @param isUpVote - boolean, true if the vote is an upvote, false if down vote
     */
   updateVote(song, roomId, isUpVote){
-    if(isUpVote){
-      this.afDB.database.ref('/').child('rooms').child(roomId).child('songs').child(song.title).update({votes: +1});
-    }
-    else{
+    if(isUpVote) {
+      this.afDB.database.ref('/').child('rooms').child(roomId).child('songs').child(song.title).child('votes').transaction(function (currentVotes) {
+        return (currentVotes || 0) + 1;
+      });
+    }else{
       console.log("song " + this.afDB.database.ref('/').child('rooms').child(roomId).child('songs').child(song.title));
-      this.afDB.database.ref('/').child('rooms').child(roomId).child('songs').child(song.title).update({votes: -1});
+      // this.afDB.database.ref('/').child('rooms').child(roomId).child('songs').child(song.title).update({votes: -1});
+      this.afDB.database.ref('/').child('rooms').child(roomId).child('songs').child(song.title).child('votes').transaction(function(currentVotes) {
+        return (currentVotes || 0) - 1;
+      });
     }
   }
 

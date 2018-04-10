@@ -72,6 +72,7 @@
 
 .votebutton {
   background-color: map-get($colors, background);
+  color: map-get($colors, text);
 }
 
 .votebutton:hover {
