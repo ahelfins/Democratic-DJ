@@ -63,8 +63,8 @@ export class HostSongListPage {
 
   exitConfirm() {
     let alert = this.alertCtrl.create({
-      title: 'Confirm Exit Room',
-      message: 'Do you want to end the party? Exiting room will remove the room.',
+      title: 'End Party',
+      message: 'Are you sure you want to close the room?',
       buttons: [
         {
           text: 'Cancel',

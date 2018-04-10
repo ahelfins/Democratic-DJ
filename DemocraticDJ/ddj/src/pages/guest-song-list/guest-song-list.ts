@@ -41,7 +41,7 @@ export class GuestSongListPage {
     console.log('Current room: '+this.roomId);
     console.log('Host?: '+this.sDProvider.isHost());
     this.title = "Guest: "+this.roomId;
-    this.songList = this.fBProvider.getAngularSongList(this.roomId).valueChanges() as Observable<Song>;
+    // this.songList = this.fBProvider.getAngularSongList(this.roomId).valueChanges() as Observable<Song>;
 
 
   }
@@ -63,8 +63,8 @@ export class GuestSongListPage {
 
   exitConfirm() {
     let alert = this.alertCtrl.create({
-      title: 'Confirm Exit Room',
-      message: 'Do you want to end the party?',
+      title: 'Exit Room',
+      message: 'Are you sure you want to exit the room?',
       buttons: [
         {
           text: 'Cancel',
