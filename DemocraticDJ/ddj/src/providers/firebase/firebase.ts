@@ -91,6 +91,7 @@ export class FirebaseProvider {
     * @param isUpVote - boolean, true if the vote is an upvote, false if down vote
     */
   updateVote(song, roomId, isUpVote){
+    // TODO: Get this to access the song given by the push id created by firebase
     if(isUpVote) {
       this.afDB.database.ref('/').child('rooms').child(roomId).child('songs').child(song.title).child('votes').transaction(function (currentVotes) {
         return (currentVotes || 0) + 1;
