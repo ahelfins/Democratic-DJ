@@ -111,4 +111,12 @@ export class HostSongListPage {
   //   this.songList.push(song);
   //  }
 
+  downVote(song) {
+    this.fBProvider.updateVote(song, this.roomId, false);
+  }
+
+  upVote(song) {
+    this.fBProvider.updateVote(song, this.roomId, true);
+  }
+
 }

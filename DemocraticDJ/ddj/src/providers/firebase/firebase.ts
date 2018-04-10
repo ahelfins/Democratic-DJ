@@ -91,11 +91,11 @@ export class FirebaseProvider {
     */
   updateVote(song, roomId, isUpVote){
     if(isUpVote){
-      this.afDB.object("/rooms/"+roomId+"/songs/"+song.update({upVotes: +1}));
+      this.afDB.database.ref('/').child('rooms').child(roomId).child('songs').child(song.title).update({votes: +1});
     }
     else{
       console.log("song " + this.afDB.database.ref('/').child('rooms').child(roomId).child('songs').child(song.title));
-      this.afDB.database.ref('/').child('rooms').child(roomId).child('songs').child(song.title).update({downVotes: +1});
+      this.afDB.database.ref('/').child('rooms').child(roomId).child('songs').child(song.title).update({votes: -1});
     }
   }
 
