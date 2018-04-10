@@ -22,14 +22,14 @@ import {HostGuestPage} from "../host-guest/host-guest";
 })
 export class HostSongListPage {
   addSongButton: any;
-  roomId: string;
+  public roomId: string;
   songList: any;
   title: String;
 
   constructor(public navCtrl: NavController,
               public alertCtrl: AlertController,
               public fBProvider: FirebaseProvider,
-    private sDProvider: SessionDataProvider) {
+              private sDProvider: SessionDataProvider) {
     this.addSongButton = AddSongPage;
     this.roomId = this.sDProvider.getRoomCode(); //Gets the roomId from the Session Data Provider
   }
@@ -37,6 +37,7 @@ export class HostSongListPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad HostSongListPage');
     console.log('Current room: ' +this.roomId);
+    console.log('Host?: '+this.sDProvider.isHost());
     this.title = "Host: "+ this.roomId;
     this.songList = this.fBProvider.getAngularSongList(this.roomId).valueChanges();
 
