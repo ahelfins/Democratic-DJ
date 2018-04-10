@@ -66,9 +66,13 @@ export class AddSongPage {
   goToSongListPage(){
     console.log("Trying to go to Song List page with "+this.roomId);
     if (this.sDProvider.isHost() == true) {
-      this.navCtrl.push(HostSongListPage, {roomId: this.roomId});
+      this.navCtrl.insert(0, HostSongListPage, {roomId: this.roomId}).then(() => {
+        this.navCtrl.popToRoot();
+      });
     } else {
-      this.navCtrl.push(GuestSongListPage, {roomId: this.roomId});
+      this.navCtrl.insert(0, GuestSongListPage, {roomId: this.roomId}).then(() => {
+        this.navCtrl.popToRoot();
+      });
     }
   }
 

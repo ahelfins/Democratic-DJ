@@ -8,6 +8,14 @@
 
   <ion-navbar>
     <ion-title id="room">{{title}}</ion-title>
+
+    <ion-buttons end>
+      <button ion-button icon-only (click)="exitConfirm()">
+        <!--https://ionicframework.com/docs/ionicons/-->
+        <ion-icon name="close-circle"></ion-icon>
+      </button>
+    </ion-buttons>
+
   </ion-navbar>
 
 </ion-header>
