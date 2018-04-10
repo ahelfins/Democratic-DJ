@@ -56,7 +56,7 @@ export class AddSongPage {
    */
   addSongToFB(songInput) {
     console.log("songName: " + songInput + ", and roomCode: " +this.roomId); // DEBUG
-    let song: Song = {title: songInput, upVotes: 0, downVotes: 0}; // converts the song to a Song object
+    let song: Song = {title: songInput, votes: 0}; // converts the song to a Song object
     this.fBProvider.pushSong(song, this.roomId); // pushes the song to the Firebase
   }
 

@@ -29,9 +29,9 @@
     <!--<ion-item-sliding [ngStyle]="{'background-color': darkgrey}" *ngFor="let song of songList">
     <ion-item-sliding  #item > -->
     <ion-item-sliding *ngFor="let song of songList | async">
-
       <ion-item>
         {{song.title}}
+        <div item-right>{{song.votes}}</div>
         <button clear item-right ion-button icon-only (click)="upVote(song)" class="votebutton"><ion-icon name="arrow-dropup-circle"></ion-icon></button>
         <button clear item-right ion-button icon-only (click)="downVote(song)" class="votebutton"><ion-icon name="arrow-dropdown-circle"></ion-icon></button>
       </ion-item>

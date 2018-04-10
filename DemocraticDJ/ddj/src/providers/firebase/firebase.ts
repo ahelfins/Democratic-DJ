@@ -87,6 +87,7 @@ export class FirebaseProvider {
   /**
     * Updates the up or down votes in firebase
     * @param song - a Song object
+    * @param roomId - ID of current room
     * @param isUpVote - boolean, true if the vote is an upvote, false if down vote
     */
   updateVote(song, roomId, isUpVote){
