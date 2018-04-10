@@ -50,11 +50,11 @@ export class GuestSongListPage {
   upVote(song){
     // console.log("Up vote for " + song.title);
     // song.upVotes++;
-    let i = 0
+    let i = 0;
     this.songList.subscribe(list => {
       list.forEach(item => {
         if (item.title == song.title) {
-          console.log("title: "+item.title)
+          console.log("title: "+item.title);
 
           // item.upVotes++;
           // this.fBProvider.getSongList(this.roomId).
@@ -62,11 +62,11 @@ export class GuestSongListPage {
           // // this.songList.child(item).child('upVotes').update(item.key, item['upVotes'])
           // console.log("this.songList.object(item): "+this.songList.ref(item))
           // this.songList.object(item).assign("upVotes", {upVotes: 1})
-          console.log("songList type: "+typeof(this.songList))
+          console.log("songList type: "+typeof(this.songList));
           // const newSongRef = this.fBProvider.
           //
           // console.log(newSongRef)
-          item['upVotes'] = 2
+          item['upVotes'] = 2;
           console.log(item['upVotes'])
           // this.songList.child(item).update({upVotes: 1})
           // item.upVotes = item.upVotes + 1;
