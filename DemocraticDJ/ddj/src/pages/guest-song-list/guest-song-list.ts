@@ -83,7 +83,14 @@ export class GuestSongListPage {
     alert.present();
   }
 
-
+  /**
+   * Deletes a song from the list (and the Firebase)
+   * @param song
+   */
+  deleteSong(song) {
+    // console.log("guestSongListPage deleteSong(song): "+song.fbKey); // DEBUG
+    this.fBProvider.deleteSong(song, this.roomId);
+  }
 
 
   upVote(song){
