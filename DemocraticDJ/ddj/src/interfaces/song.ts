@@ -7,4 +7,5 @@ export interface Song {
   album?: any; //'?' for optional
   artist?: any;
   votes: any;
+  fbKey?: any; 
 }

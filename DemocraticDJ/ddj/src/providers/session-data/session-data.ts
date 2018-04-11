@@ -16,7 +16,7 @@ export class SessionDataProvider {
   hostBool: boolean;
   private baseUrl: string='https://api.spotify.com/v1';
   private searchUrl: string=this.baseUrl + '/search?q=';
-  private auth_token: string= 'Bearer BQCCmYuVaaLMb62T2tjAmH5bAu9IbbBDrStKCuGLo23UjFIetL0uYWnZpnELgQM27L-s9hLNxmgdfu_V6dwivefm8g3aXBuGyNahxHmJnmqANGygHwZpc4F85b94xx_uvO16O5UQE7pa_Yw';
+  private auth_token: string= 'Bearer BQCeySnyIb6SN1Vabp0y6tQ7N9NjKhOK7OROCqWUgM47QzTQ-Lhi7PC_mysBRZOYHDg-mlQpAZQ0-qKuFoq4IdogqzeQNikGqMaYdwErie3ioGLKKF90CUvDdqFz8PcxAxZEpq-JkH49TyU';
   private requestHeader= new HttpHeaders().set('Content-Type', 'application/json').append('Authorization', this.auth_token);
 
   constructor(public http: HttpClient) {

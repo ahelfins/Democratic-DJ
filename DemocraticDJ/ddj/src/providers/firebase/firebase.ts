@@ -80,8 +80,11 @@ export class FirebaseProvider {
    * @param roomId - roomId of the room that the host or the quest is in
    */
   pushSong(song, roomId){
-    this.afDB.list("rooms/"+roomId+"/songs").push(song);
-    console.log("Attempted to push: " + song);
+    let promise = this.afDB.list("rooms/"+roomId+"/songs").push(song);
+    song.fbKey = promise.key;
+    this.afDB.database.ref('/').child('rooms').child(roomId).child('songs').child(promise.key).update({fbKey: promise.key});
+    console.log("Attempted to push: " + song.title);
+    return promise;
   }
 
   /**
@@ -93,15 +96,16 @@ export class FirebaseProvider {
   updateVote(song, roomId, isUpVote){
     // TODO: Get this to access the song given by the push id created by firebase
     if(isUpVote) {
-      this.afDB.database.ref('/').child('rooms').child(roomId).child('songs').child(song.title).child('votes').transaction(function (currentVotes) {
-        return (currentVotes || 0) + 1;
-      });
+      // this.afDB.database.ref('/').child('rooms').child(roomId).child('songs').child(song.title).child('votes').transaction(function (currentVotes) {
+      //   return (currentVotes || 0) + 1;
+      // });
     }else{
-      console.log("song " + this.afDB.database.ref('/').child('rooms').child(roomId).child('songs').child(song.title));
-      // this.afDB.database.ref('/').child('rooms').child(roomId).child('songs').child(song.title).update({votes: -1});
-      this.afDB.database.ref('/').child('rooms').child(roomId).child('songs').child(song.title).child('votes').transaction(function(currentVotes) {
-        return (currentVotes || 0) - 1;
-      });
+      console.log(song.fbKey);
+      console.log(this.afDB.database.ref('/').child('rooms').child(roomId).child('songs').child(song.fbKey));
+      //console.log("song " + this.afDB.database.ref('/rooms/'+roomId+'/songs').child(song.fbKey));
+      // this.afDB.database.ref('/').child('rooms').child(roomId).child('songs').child(song.fbKey).child('votes').transaction(function(currentVotes) {
+      //   return (currentVotes || 0) - 1;
+      // });
     }
   }
 
