@@ -125,7 +125,7 @@ export class FirebaseProvider {
    * @param roomId - user input of the room code
    */
   deleteSong(song, roomId) {
-    const songRef = this.afDB.database.ref('/').child('rooms').child(roomId).child('songs').child(song.fbKey)
+    const songRef = this.afDB.database.ref('/').child('rooms').child(roomId).child('songs').child(song.fbKey);
     // console.log("firebase.ts deleteSong: "+ songRef); //DEBUG
     songRef.remove();
 
