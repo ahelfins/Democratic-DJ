@@ -99,13 +99,15 @@ export class HostSongListPage {
    * Deletes a song from the list (and the Firebase)
    * @param song
    */
-  delete(song) {
-    //remove from Spotify here
-    //also remove from firebase List
-   //  let index = this.songList.indexOf(song);
-   //  if(index > -1){
-   //    this.songList.splice(index, 1);
-   //  }
+  deleteSong(song) {
+    // also remove from firebase List
+    console.log("hostSongListPage deleteSong(song): "+song.fbKey);
+    this.fBProvider.deleteSong(song, this.roomId);
+
+    // let index = this.songList.indexOf(song);
+    // if(index > -1){
+    //   this.songList.splice(index, 1);
+    // }
    }
 
   // add(song){

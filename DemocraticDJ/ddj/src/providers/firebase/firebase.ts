@@ -114,7 +114,6 @@ export class FirebaseProvider {
    * @param roomId
    */
   deleteRoom(roomId) {
-    // TODO: Complete this method
     const roomRef = this.afDB.database.ref('/').child('rooms').child(roomId);
     console.log("roomId: "+ roomId + " roomRef on deleteRoom: "+ roomRef);
     roomRef.remove();
@@ -122,11 +121,14 @@ export class FirebaseProvider {
 
   /**
    * Deletes the specified song from the unique room.
-   * @param songName  - user input of the song name
-   * @param roomCode  - user input of the room code
+   * @param song  - user input of the song name
+   * @param roomId - user input of the room code
    */
-  deleteSong(songName, roomCode) {
-    // TODO: Complete this method
+  deleteSong(song, roomId) {
+    const songRef = this.afDB.database.ref('/').child('rooms').child(roomId).child('songs').child(song.fbKey)
+    // console.log("firebase.ts deleteSong: "+ songRef); //DEBUG
+    songRef.remove();
+
   }
 
   /**
