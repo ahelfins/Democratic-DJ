@@ -94,23 +94,12 @@ export class FirebaseProvider {
     * @param isUpVote - boolean, true if the vote is an upvote, false if down vote
     */
   updateVote(song, roomId, isUpVote){
-    // TODO: Get this to access the song given by the push id created by firebase
+    const songRef = this.afDB.database.ref('/').child('rooms').child(roomId).child('songs').child(song.fbKey);
     if(isUpVote) {
-      // this.afDB.database.ref('/').child('rooms').child(roomId).child('songs').child(song.title).child('votes').transaction(function (currentVotes) {
-      //   return (currentVotes || 0) + 1;
-      // });
-    }else{
-      // console.log(song.fbKey);
-      const songRef = this.afDB.database.ref('/').child('rooms').child(roomId).child('songs').child(song.fbKey);
-      let currDownVotes = song.downVotes;
-      console.log("currDownVotes: "+currDownVotes);
+      songRef.update({upVotes:song.upVotes++})
+    }
+    else{
       songRef.update({downVotes:song.downVotes++});
-
-
-      //console.log("song " + this.afDB.database.ref('/rooms/'+roomId+'/songs').child(song.fbKey));
-      // this.afDB.database.ref('/').child('rooms').child(roomId).child('songs').child(song.fbKey).child('votes').transaction(function(currentVotes) {
-      //   return (currentVotes || 0) - 1;
-      // });
     }
   }
 
