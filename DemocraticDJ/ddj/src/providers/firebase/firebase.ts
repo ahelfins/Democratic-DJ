@@ -48,7 +48,7 @@ export class FirebaseProvider {
    * @returns {Array}
    */
   getSongList(roomCode) {
-    let angularSongList = this.getAngularSongList(roomCode)
+    let angularSongList = this.getAngularSongList(roomCode);
 
     let songList = [];
     let i = 0;
@@ -100,8 +100,13 @@ export class FirebaseProvider {
       //   return (currentVotes || 0) + 1;
       // });
     }else{
-      console.log(song.fbKey);
-      console.log(this.afDB.database.ref('/').child('rooms').child(roomId).child('songs').child(song.fbKey));
+      // console.log(song.fbKey);
+      const songRef = this.afDB.database.ref('/').child('rooms').child(roomId).child('songs').child(song.fbKey);
+      let currDownVotes = song.downVotes;
+      console.log("currDownVotes: "+currDownVotes);
+      songRef.update({downVotes:song.downVotes++});
+
+
       //console.log("song " + this.afDB.database.ref('/rooms/'+roomId+'/songs').child(song.fbKey));
       // this.afDB.database.ref('/').child('rooms').child(roomId).child('songs').child(song.fbKey).child('votes').transaction(function(currentVotes) {
       //   return (currentVotes || 0) - 1;
