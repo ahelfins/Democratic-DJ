@@ -62,7 +62,7 @@ export class GuestPage {
    */
   isCorrectRoomInput(roomInput: string, idList: String[]) {
     let lowerRoomInput = roomInput.toLowerCase(); // Make the input case-insensitive
-    console.log("Inside START isCorrectRoomInput(" + lowerRoomInput +", " + idList +")");
+    // console.log("Inside START isCorrectRoomInput(" + lowerRoomInput +", " + idList +")"); //DEBUG
     console.log("roomInput", lowerRoomInput);
     let found = idList.indexOf(lowerRoomInput);
     console.log("found", found);
@@ -70,7 +70,10 @@ export class GuestPage {
     if (found >= 0) {     //if roomCode matches a room, push to room, otherwise show an alert
       this.sDProvider.setRoomCode(lowerRoomInput);
       this.sDProvider.setHost(false);
-      this.navCtrl.push(GuestSongListPage, {roomId: idList[found]});
+      //Set GuestSongPage as root https://stackoverflow.com/questions/37296999/ionic-2-disabling-back-button-for-a-specific-view
+      this.navCtrl.insert(0, GuestSongListPage, {roomId: idList[found]}).then(() => {
+        this.navCtrl.popToRoot();
+      });
     } else {
       let alert = this.alertCtrl.create({
         title: 'Room not found!',
@@ -79,7 +82,7 @@ export class GuestPage {
       });
       alert.present();
     }
-    console.log("Inside END isCorrectRoomInput()");
+    // console.log("Inside END isCorrectRoomInput()");  //DEBUG
 
   }
 
