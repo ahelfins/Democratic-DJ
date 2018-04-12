@@ -31,8 +31,8 @@
       <ion-item>
         {{song.title}}
         <div item-right>{{song.votes}}</div>
-        <button clear item-right ion-button icon-only (click)="upVote(song)" class="votebutton"><ion-icon name="arrow-dropup-circle"></ion-icon></button>
-        <button clear item-right ion-button icon-only (click)="downVote(song)" class="votebutton"><ion-icon name="arrow-dropdown-circle"></ion-icon></button>
+        <button clear item-right ion-button icon-only (click)="vote(song, true)" class="votebutton"><ion-icon name="arrow-dropup-circle"></ion-icon></button>
+        <button clear item-right ion-button icon-only (click)="vote(song, false)" class="votebutton"><ion-icon name="arrow-dropdown-circle"></ion-icon></button>
       </ion-item>
 
       <ion-item-options side="left">

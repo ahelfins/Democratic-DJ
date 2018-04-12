@@ -60,7 +60,8 @@ export class FirebaseProvider {
           i++;
         });
       });
-    console.log("about to return song list: " + songList);
+    console.log("about to return song list: ");
+    console.log(songList);
     return songList;
   }
 
