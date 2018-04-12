@@ -48,7 +48,7 @@ export class FirebaseProvider {
    * @returns {Array}
    */
   getSongList(roomCode) {
-    let angularSongList = this.getAngularSongList(roomCode)
+    let angularSongList = this.getAngularSongList(roomCode);
 
     let songList = [];
     let i = 0;
@@ -95,18 +95,12 @@ export class FirebaseProvider {
     * @param isUpVote - boolean, true if the vote is an upvote, false if down vote
     */
   updateVote(song, roomId, isUpVote){
-    // TODO: Get this to access the song given by the push id created by firebase
+    const songRef = this.afDB.database.ref('/').child('rooms').child(roomId).child('songs').child(song.fbKey);
     if(isUpVote) {
-      // this.afDB.database.ref('/').child('rooms').child(roomId).child('songs').child(song.title).child('votes').transaction(function (currentVotes) {
-      //   return (currentVotes || 0) + 1;
-      // });
-    }else{
-      console.log(song.fbKey);
-      console.log(this.afDB.database.ref('/').child('rooms').child(roomId).child('songs').child(song.fbKey));
-      //console.log("song " + this.afDB.database.ref('/rooms/'+roomId+'/songs').child(song.fbKey));
-      // this.afDB.database.ref('/').child('rooms').child(roomId).child('songs').child(song.fbKey).child('votes').transaction(function(currentVotes) {
-      //   return (currentVotes || 0) - 1;
-      // });
+      songRef.update({upVotes:song.upVotes++})
+    }
+    else{
+      songRef.update({downVotes:song.downVotes++});
     }
   }
 
@@ -115,7 +109,6 @@ export class FirebaseProvider {
    * @param roomId
    */
   deleteRoom(roomId) {
-    // TODO: Complete this method
     const roomRef = this.afDB.database.ref('/').child('rooms').child(roomId);
     console.log("roomId: "+ roomId + " roomRef on deleteRoom: "+ roomRef);
     roomRef.remove();
@@ -123,11 +116,14 @@ export class FirebaseProvider {
 
   /**
    * Deletes the specified song from the unique room.
-   * @param songName  - user input of the song name
-   * @param roomCode  - user input of the room code
+   * @param song  - user input of the song name
+   * @param roomId - user input of the room code
    */
-  deleteSong(songName, roomCode) {
-    // TODO: Complete this method
+  deleteSong(song, roomId) {
+    const songRef = this.afDB.database.ref('/').child('rooms').child(roomId).child('songs').child(song.fbKey);
+    // console.log("firebase.ts deleteSong: "+ songRef); //DEBUG
+    songRef.remove();
+
   }
 
   /**

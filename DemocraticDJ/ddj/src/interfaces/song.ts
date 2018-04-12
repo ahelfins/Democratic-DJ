@@ -6,6 +6,7 @@ export interface Song {
   title: any;
   album?: any; //'?' for optional
   artist?: any;
-  votes: any;
-  fbKey?: any; 
+  upVotes: number;
+  downVotes: number;
+  fbKey?: any;
 }

@@ -59,6 +59,7 @@ export class HostSongListPage {
     this.fBProvider.deleteRoom(this.roomId);
     this.navCtrl.insert(0, HostGuestPage).then(() => {
       this.navCtrl.popToRoot();
+
     });
   }
 
@@ -99,13 +100,9 @@ export class HostSongListPage {
    * Deletes a song from the list (and the Firebase)
    * @param song
    */
-  delete(song) {
-    //remove from Spotify here
-    //also remove from firebase List
-   //  let index = this.songList.indexOf(song);
-   //  if(index > -1){
-   //    this.songList.splice(index, 1);
-   //  }
+  deleteSong(song) {
+    // console.log("hostSongListPage deleteSong(song): "+song.fbKey); // DEBUG
+    this.fBProvider.deleteSong(song, this.roomId);
    }
 
   // add(song){
