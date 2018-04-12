@@ -59,6 +59,7 @@ export class HostSongListPage {
     this.fBProvider.deleteRoom(this.roomId);
     this.navCtrl.insert(0, HostGuestPage).then(() => {
       this.navCtrl.popToRoot();
+
     });
   }
 
