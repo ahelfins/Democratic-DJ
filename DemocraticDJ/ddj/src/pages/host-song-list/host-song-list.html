@@ -26,10 +26,28 @@
   </ion-fab>
 
   <ion-list>
-    <!--<ion-item-sliding [ngStyle]="{'background-color': darkgrey}" *ngFor="let song of songList">
-    <ion-item-sliding  #item > -->
-    <ion-item-sliding *ngFor="let song of songList | async">
-      <ion-item class="bottom-border">
+<!----------------------------------BUTTONS FOR DELETE AND ENQUEUE--------------------------------->
+    <!--<ion-item-sliding *ngFor="let song of songList | async">-->
+      <!--<ion-item class="bottom-border">-->
+        <!--{{song.title}}-->
+        <!--<div item-right>{{song.upVotes}}</div>-->
+        <!--<div item-right>UP</div>-->
+        <!--<div item-right>|</div>-->
+        <!--<div item-right>DOWN</div>-->
+        <!--<div item-right>{{song.downVotes}}</div>-->
+      <!--</ion-item>-->
+      <!--<ion-item-options side="left">-->
+        <!--<button ion-button class="delete" (click)="deleteSong(song)">Delete</button>-->
+      <!--</ion-item-options>-->
+
+      <!--<ion-item-options side="right">-->
+        <!--<button ion-button (click)="addToQueue(song)">+Queue</button>-->
+      <!--</ion-item-options>-->
+    <!--</ion-item-sliding>-->
+    <!--------------------------------------------------------------------------------------------------->
+    <!------------------------SWIPE TO DELETE AND ENQUEUE------------------------------------------------>
+    <ion-list *ngFor="let song of songList | async">
+      <ion-item (swiperight)="deleteSong(song)" (swipeleft)="addToQueue(song)" class="bottom-border">
         {{song.title}}
         <div item-right>{{song.upVotes}}</div>
         <div item-right>UP</div>
@@ -37,13 +55,7 @@
         <div item-right>DOWN</div>
         <div item-right>{{song.downVotes}}</div>
       </ion-item>
-      <ion-item-options side="left">
-        <button ion-button class="delete" (click)="deleteSong(song)">Delete</button>
-      </ion-item-options>
-
-      <ion-item-options side="right">
-        <button ion-button (click)="addToQueue(song)">+Queue</button>
-      </ion-item-options>
-    </ion-item-sliding>
+    </ion-list>
+    <!--------------------------------------------------------------------------------------------------->
   </ion-list>
 </ion-content>
