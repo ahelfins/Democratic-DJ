@@ -1,6 +1,6 @@
 {
   "name": "ddj",
-  "app_id": "",
+  "app_id": "f756908f",
   "type": "ionic-angular",
   "integrations": {
     "cordova": {}
