@@ -11,7 +11,7 @@
         <img src="../../assets/imgs/logo.png" alt="logo">
       </ion-row>
       <ion-row>
-        <button ion-button block [navPush]="HostButton" class="button">Host</button>
+        <button ion-button block (click)="makeRoomAndEnter();" class="button">Host</button>
       </ion-row>
       <ion-row>
         <button ion-button block [navPush]="GuestButton" class="button">Guest</button>
