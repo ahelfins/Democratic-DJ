@@ -17,7 +17,7 @@ export class SessionDataProvider {
   songVotes : Object;
   private baseUrl: string='https://api.spotify.com/v1';
   private searchUrl: string=this.baseUrl + '/search?q=';
-  private auth_token: string= 'Bearer BQDV0c7w0UzE7URut6fpt62LYZWZH87cDjwz0l6N4ueXdFo9PdrgREfi2W-I6qjAuNn8Lwrz8HAPmJu_RDonWyamwAw3Hh-p5xofYNqN8qvqgOHgg7xhda1mYFNF1ieye7zdQu5ytvyD5QU';
+  private auth_token: string= 'Bearer BQBb1REW4NqLpCYaZCTRRr5RATzkrr-TQFMP8mL1GjsKALuaxBqhymRylmaydBSp_0XmNvN5SZFu_go35U9SuoDotHyZ0T0sVM4EIDBgIX4QvZVHiUVGP_ozVjRRhFJzIsjEX37Ct-J1wd8';
   private requestHeader= new HttpHeaders().set('Content-Type', 'application/json').append('Authorization', this.auth_token);
 
   constructor(public http: HttpClient, public fBProvider: FirebaseProvider) {
