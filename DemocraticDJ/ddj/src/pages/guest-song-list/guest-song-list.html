@@ -27,22 +27,17 @@
 
   <ion-list>
     <!--<ion-item-sliding #item [ngStyle]="{'background-color': darkgrey}">-->
-    <ion-item-sliding *ngFor="let song of songList | async">
-      <ion-item>
+    <ion-list *ngFor="let song of songList | async">
+      <ion-item (swipeleft)="vote(song, true)" (swiperight)="vote(song, false)" class="bottom-border">
         {{song.title}}
         <div item-right>{{song.upVotes}}</div>
-        <button clear item-right ion-button icon-only (click)="vote(song, true)" class="votebutton"><ion-icon name="arrow-dropup-circle"></ion-icon></button>
-        <button clear item-right ion-button icon-only (click)="vote(song, false)" class="votebutton"><ion-icon name="arrow-dropdown-circle"></ion-icon></button>
+        <!--<button clear item-right ion-button icon-only (click)="vote(song, true)" class="votebutton"><ion-icon name="arrow-dropup-circle"></ion-icon></button>-->
+        <!--<button clear item-right ion-button icon-only (click)="vote(song, false)" class="votebutton"><ion-icon name="arrow-dropdown-circle"></ion-icon></button>-->
+        <div item-right>UP</div>
+        <div item-right>|</div>
+        <div item-right>DOWN</div>
         <div item-right>{{song.downVotes}}</div>
       </ion-item>
-
-      <ion-item-options side="left">
-        <button ion-button class="delete" (click)="deleteSong(song)">Delete</button>
-      </ion-item-options>
-
-      <ion-item-options side="right">
-        <button ion-button (click)="addToQueue(song)">+Queue</button>
-      </ion-item-options>
-    </ion-item-sliding>
+    </ion-list>
   </ion-list>
 </ion-content>

@@ -58,6 +58,10 @@
   color: map-get($colors, text);
 }
 
+.bottom-border {
+  border-bottom: 2px solid grey;
+}
+
 .delete {
   background-color: #f53d3d;
 }
@@ -77,4 +81,13 @@
 
 .votebutton:hover {
   background-color: map-get($colors, background) !important;
+}
+
+.list {
+  margin: 0;
+}
+
+.item-inner {
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
