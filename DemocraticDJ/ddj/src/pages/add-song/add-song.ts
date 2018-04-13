@@ -82,8 +82,9 @@ export class AddSongPage {
     console.log(searchTerm);
     this.sDProvider.searchSpotify(searchTerm).subscribe(
       data=>{
-        //this.searchResults=data.artists.items;
-        console.log(this.searchResults);
+        //this.searchResults=data.tracks.items;
+        this.searchResults=data['tracks'].items;
+        //console.log(this.searchResults);
       },
       error=>{
         console.log(error);

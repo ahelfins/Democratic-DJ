@@ -17,7 +17,7 @@ export class SessionDataProvider {
   songVotes : Object;
   private baseUrl: string='https://api.spotify.com/v1';
   private searchUrl: string=this.baseUrl + '/search?q=';
-  private auth_token: string= 'Bearer BQCeySnyIb6SN1Vabp0y6tQ7N9NjKhOK7OROCqWUgM47QzTQ-Lhi7PC_mysBRZOYHDg-mlQpAZQ0-qKuFoq4IdogqzeQNikGqMaYdwErie3ioGLKKF90CUvDdqFz8PcxAxZEpq-JkH49TyU';
+  private auth_token: string= 'Bearer BQDV0c7w0UzE7URut6fpt62LYZWZH87cDjwz0l6N4ueXdFo9PdrgREfi2W-I6qjAuNn8Lwrz8HAPmJu_RDonWyamwAw3Hh-p5xofYNqN8qvqgOHgg7xhda1mYFNF1ieye7zdQu5ytvyD5QU';
   private requestHeader= new HttpHeaders().set('Content-Type', 'application/json').append('Authorization', this.auth_token);
 
   constructor(public http: HttpClient, public fBProvider: FirebaseProvider) {
@@ -26,7 +26,7 @@ export class SessionDataProvider {
   }
 
   searchSpotify(name) {
-    return this.http.get(this.searchUrl+name+'&type=artist&limit=10', {headers:this.requestHeader});
+    return this.http.get(this.searchUrl+name+'&type=track&limit=10', {headers:this.requestHeader});
   }
 
   //user of method should input an int 1 for upvote or -1 for downvote
