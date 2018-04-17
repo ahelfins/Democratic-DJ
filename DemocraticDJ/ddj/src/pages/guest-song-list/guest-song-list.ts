@@ -108,6 +108,20 @@ export class GuestSongListPage {
       }
       this.fBProvider.updateVote(song, this.roomId, isUpVote);
     }
+    else if(votes==1){
+      console.log("song has up vote");
+      if(!isUpVote){
+        this.sDProvider.updateSongVotes(song, -1);
+        this.fBProvider.switchVote(song, this.roomId, isUpVote);
+      }
+    }
+    else{
+      console.log("song has down vote");
+      if(isUpVote){
+        this.sDProvider.updateSongVotes(song, 1);
+        this.fBProvider.switchVote(song, this.roomId, isUpVote);
+      }
+    }
     console.log(song.title + " has "+ this.sDProvider.getSongVotes(song));
   }
 

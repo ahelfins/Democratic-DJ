@@ -57,6 +57,15 @@ export class HostPage {
     return this.id;
   }
 
+  checkUniqueRoomCode(code){
+    let roomCodeList = this.fBProvider.getRoomIdList();
+    if(code in roomCodeList){
+      console.log("room code generated was not unique");
+      return false;
+    }
+    return true;
+  }
+
   /**
    * Generate an alphanumeric string of length 5 to be used as a room code.
    * @returns {string}
@@ -69,6 +78,9 @@ export class HostPage {
     for (var i = 0; i < 5; i++)
       text += possible.charAt(Math.floor(Math.random() * possible.length));
 
+    // if(!checkUniqueRoomCode(text)){
+    //   text = makeId();
+    // }
     return text;
   }
 
