@@ -34,6 +34,15 @@ export class FirebaseProvider {
   }
 
   /**
+   * Getter for the room object from the firebase
+   * @param roomCode
+   * @returns
+   */
+  getRoom(roomCode) {
+    return this.afDB.object('/rooms/'+roomCode);
+  }
+
+  /**
    * Getter for the list of songs from the Firebase
    * @param roomCode
    * @returns {AngularFireList<Song[]>}

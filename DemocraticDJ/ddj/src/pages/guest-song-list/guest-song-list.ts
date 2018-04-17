@@ -26,7 +26,10 @@ export class GuestSongListPage {
   addSongButton: any;
   public roomId: string;
   title: String;
-  songList: any;
+  // songList: any;
+
+
+  room: any;
 
   constructor(public navCtrl: NavController,
               public alertCtrl: AlertController,
@@ -34,6 +37,8 @@ export class GuestSongListPage {
               private sDProvider: SessionDataProvider) {
     this.addSongButton = AddSongPage;
     this.roomId = this.sDProvider.getRoomCode();
+    this.room = this.fBProvider.getRoom(this.roomId).valueChanges();
+    this.room.subscribe((e) => { console.log(e) });
   }
 
   ionViewDidLoad() {
@@ -41,7 +46,8 @@ export class GuestSongListPage {
     console.log('Current room: '+this.roomId);
     console.log('Host?: '+this.sDProvider.isHost());
     this.title = "Guest: "+this.roomId;
-    this.songList = this.fBProvider.getSongList(this.roomId).valueChanges();
+
+    // this.songList = this.fBProvider.getSongList(this.roomId).valueChanges();
   }
 
   goToAddSongPage() {
