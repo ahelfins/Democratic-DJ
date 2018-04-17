@@ -38,34 +38,9 @@ export class FirebaseProvider {
    * @param roomCode
    * @returns {AngularFireList<Song[]>}
    */
-  getAngularSongList(roomCode) {
+  getSongList(roomCode) {
     return this.afDB.list<Song []>('/rooms/'+roomCode+'/songs');
   }
-
-  /**
-   * Converts an AngularFireList of songs to an array and returns it.
-   * @param roomCode
-   * @returns {Array}
-   */
-  getSongList(roomCode) {
-    let angularSongList = this.getAngularSongList(roomCode);
-
-    let songList = [];
-    let i = 0;
-    angularSongList.valueChanges()
-      .subscribe(list =>{
-        list.forEach(song => {
-          songList[i] = song;
-          console.log("I is: "+ i); //DEBUG
-          i++;
-        });
-      });
-    console.log("about to return song list: ");
-    console.log(songList);
-    return songList;
-  }
-
-
 
   /**
    * Generates room with the roomCode
