@@ -94,74 +94,21 @@ export class GuestSongListPage {
 
 
   vote(song, isUpVote){
-    let votes = this.sDProvider.getSongVotes(song);
-    if(votes == 0){
+    // let votes = this.sDProvider.getSongVotes(song);
+    // console.log(song.title + " is the song that we are getting votes for "+votes);
+    // if(votes == 0){
+    //   console.log("song has no votes");
+    //   if(isUpVote){
+    //     this.sDProvider.updateSongVotes(song, 1);
+    //     console.log("was an up vote so "+song.title+" has "+this.sDProvider.getSongVotes(song));
+    //   }
+    //   else{
+    //     this.sDProvider.updateSongVotes(song, -1);
+    //     console.log("was a down vote so "+song.title+" has "+this.sDProvider.getSongVotes(song));
+    //   }
       this.fBProvider.updateVote(song, this.roomId, isUpVote);
-      if(isUpVote)
-        this.sDProvider.updateSongVotes(song, 1);
-      else
-        this.sDProvider.updateSongVotes(song, -1);
-    }
-    console.log(song + " has "+ this.sDProvider.getSongVotes(song));
-    // console.log("Up vote for " + song.title);
-    // song.upVotes++;
-    // let i = 0;
-    // this.songList.subscribe(list => {
-    //   list.forEach(item => {
-    //     if (item.title == song.title) {
-    //       console.log("title: "+item.title);
-    //
-    //       // item.upVotes++;
-    //       // this.fBProvider.getSongList(this.roomId).
-    //       // item.upVotes.set(10)
-    //       // // this.songList.child(item).child('upVotes').update(item.key, item['upVotes'])
-    //       // console.log("this.songList.object(item): "+this.songList.ref(item))
-    //       // this.songList.object(item).assign("upVotes", {upVotes: 1})
-    //       console.log("songList type: "+typeof(this.songList));
-    //       // const newSongRef = this.fBProvider.
-    //       //
-    //       // console.log(newSongRef)
-    //       item['upVotes'] = 2;
-    //       console.log(item['upVotes'])
-    //       // this.songList.child(item).update({upVotes: 1})
-    //       // item.upVotes = item.upVotes + 1;
-    //       // console.log("item.upvote: "+item.upVotes)
-    //     }
-    //   });
-    // });
-    // console.log("key: "+this.songList[0].valueOf());
-    // for (let i = 0; i < this.songList.size; i++) {
-    //   if (this.songList[i].title == song.title) {
-    //     console.log('songList item title: ' + this.songList[i])
-    //     console.log('song title: ' + song.title)
-    //
-    //   }
     // }
-
-    // this.songList.forEach(item => {
-    //   console.log('songList item title: ' + item.title)
-    //   console.log('song title: ' + song.title)
-    //
-    //   if (item == song) {
-    //     console.log(item);
-    //   }
-    // })
-
-    // song.upVotes.set(song.upVotes++)
-
-    // song.update({song: song.upVotes});
-
-   // this.fBProvider.updateVote(song, this.roomId, true);
-   //  console.log(song.title + " has " + song.upVotes + " up votes.")
+    // console.log(song.title + " has "+ this.sDProvider.getSongVotes(song));
   }
-
-  // downVote(song){
-  //
-  //   this.fBProvider.updateVote(song, this.roomId, false);
-  //   console.log("Down vote for " + song.title);
-  //   song.downVotes++;
-  // //  this.fBProvider.updateVote(song, this.roomId, false);
-  //   console.log(song.title + " has " + song.downVotes + " down votes.")
-  // }
 
 }
