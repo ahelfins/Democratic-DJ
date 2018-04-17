@@ -14,7 +14,7 @@ import { FirebaseProvider } from '../firebase/firebase';
 export class SessionDataProvider {
   roomCode: string;
   hostBool: boolean;
-  songVotes : Array<Song>;
+  songVotes : Object;
   private baseUrl: string='https://api.spotify.com/v1';
   private searchUrl: string=this.baseUrl + '/search?q=';
   private auth_token: string= 'Bearer BQBb1REW4NqLpCYaZCTRRr5RATzkrr-TQFMP8mL1GjsKALuaxBqhymRylmaydBSp_0XmNvN5SZFu_go35U9SuoDotHyZ0T0sVM4EIDBgIX4QvZVHiUVGP_ozVjRRhFJzIsjEX37Ct-J1wd8';
@@ -22,7 +22,7 @@ export class SessionDataProvider {
 
   constructor(public http: HttpClient, public fBProvider: FirebaseProvider) {
     console.log('Hello SessionDataProvider Provider');
-    this.songVotes = new Array();
+    this.songVotes = {};
   }
 
   searchSpotify(name) {
@@ -32,19 +32,19 @@ export class SessionDataProvider {
   //user of method should input an int 1 for upvote or -1 for downvote
   updateSongVotes(song, isUpVote){
     //1 is up vote, 0 is for no vote, -1 is down vote
-    this.songVotes[song] = isUpVote;
+    this.songVotes[song.title] = isUpVote;
     console.log("songVotes list has "+song.title+" "+isUpVote);
   }
 
   getSongVotes(song){
     console.log(this.songVotes);
-    console.log("!(song in this.songVotes)"+(!(song in this.songVotes))+" "+song.title+" "+this.songVotes);
-    if (!(song in this.songVotes)){
+    console.log("!(song in this.songVotes)"+(!(song.title in this.songVotes))+" "+song.title+" "+this.songVotes);
+    if (!(song.title in this.songVotes)){
       console.log(song.title+" not in song votes so added");
       this.updateSongVotes(song, 0);
     }
     console.log(this.songVotes);
-    return this.songVotes[song];
+    return this.songVotes[song.title];
   }
 
 
