@@ -7,7 +7,7 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title id="room">{{title}}</ion-title>
+    <ion-title id="room">Guest: {{(room | async)?.id}}</ion-title>
 
     <ion-buttons end>
       <button ion-button icon-only (click)="exitConfirm()">
@@ -30,7 +30,7 @@
   Room ID: {{(room | async)?.id}}
   <ion-list>
     <!--<ion-item-sliding #item [ngStyle]="{'background-color': darkgrey}">-->
-    <ion-list *ngFor="let song of room.songs | async">
+    <ion-list *ngFor="let song of (room | async)?.songs">
       <ion-item (swipeleft)="vote(song, true)" (swiperight)="vote(song, false)" class="bottom-border">
         {{song.title}}
         <div item-right>{{song.upVotes}}</div>
