@@ -39,7 +39,7 @@ export class HostSongListPage {
     console.log('Current room: ' +this.roomId);
     console.log('Host?: '+this.sDProvider.isHost());
     this.title = "Host: "+ this.roomId;
-    this.songList = this.fBProvider.getAngularSongList(this.roomId).valueChanges();
+    this.songList = this.fBProvider.getSongList(this.roomId).valueChanges();
 
   }
 
@@ -103,12 +103,11 @@ export class HostSongListPage {
   deleteSong(song) {
     // console.log("hostSongListPage deleteSong(song): "+song.fbKey); // DEBUG
     this.fBProvider.deleteSong(song, this.roomId);
-   }
+  }
 
   // add(song){
   //   this.songList.push(song);
   //  }
-
   downVote(song) {
     this.fBProvider.updateVote(song, this.roomId, false);
   }
