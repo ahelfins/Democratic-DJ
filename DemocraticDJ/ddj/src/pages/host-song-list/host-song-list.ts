@@ -87,15 +87,6 @@ export class HostSongListPage {
     alert.present();
   }
 
-
-  /**
-   * Adds a song to the Queue that integrates with Spotify
-   * @param song
-   */
-  addToQueue(song) {
-    //add to spotify here
-  }
-
   /**
    * Deletes a song from the list (and the Firebase)
    * @param song
@@ -104,10 +95,6 @@ export class HostSongListPage {
     // console.log("hostSongListPage deleteSong(song): "+song.fbKey); // DEBUG
     this.fBProvider.deleteSong(song, this.roomId);
    }
-
-  // add(song){
-  //   this.songList.push(song);
-  //  }
 
   downVote(song) {
     this.fBProvider.updateVote(song, this.roomId, false);

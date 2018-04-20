@@ -4,7 +4,6 @@ import { Song } from '../../interfaces/song';
 
 /*
   Generated class for the FirebaseProvider provider.
-
   See https://angular.io/guide/dependency-injection for more info on providers
   and Angular DI.
 */
@@ -12,7 +11,6 @@ import { Song } from '../../interfaces/song';
 
 @Injectable()
 export class FirebaseProvider {
-  // songs: AngularFireList<Song>;
   constructor(public afDB: AngularFireDatabase) {
     console.log('Hello FirebaseProvider Provider');
   }
@@ -72,11 +70,11 @@ export class FirebaseProvider {
   }
 
   /**
-    * Updates the up or down votes in firebase
-    * @param song - a Song object
-    * @param roomId - ID of current room
-    * @param isUpVote - boolean, true if the vote is an upvote, false if down vote
-    */
+   * Updates the up or down votes in firebase
+   * @param song - a Song object
+   * @param roomId - ID of current room
+   * @param isUpVote - boolean, true if the vote is an upvote, false if down vote
+   */
   updateVote(song, roomId, isUpVote){
     const songRef = this.afDB.database.ref('/').child('rooms').child(roomId).child('songs').child(song.fbKey);
     console.log("updating song in firebase");

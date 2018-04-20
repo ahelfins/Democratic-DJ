@@ -7,7 +7,7 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title id="room">Guest: {{(room | async)?.id}}</ion-title>
+    <ion-title id="room">{{title}}</ion-title>
 
     <ion-buttons end>
       <button ion-button icon-only (click)="exitConfirm()">
@@ -31,8 +31,8 @@
   <!--{{let songs = (room | async)?.songs}}-->
   <ion-list>
     <!--<ion-item-sliding #item [ngStyle]="{'background-color': darkgrey}">-->
-    <ion-list *ngFor="let song of songList | async">
-      <ion-item (swipeleft)="vote(song, true)" (swiperight)="vote(song, false)" class="bottom-border">
+    <ion-list *ngFor="let song of songList | async; let i = index">
+      <ion-item (swipeleft)="vote(song, true); toggleUpvoteAnim(i)" (swiperight)="vote(song, false)" class="bottom-border" [@myupvote]="upvoteState">
         {{song.title}}
         <div item-right>{{song.upVotes}}</div>
         <!--<button clear item-right ion-button icon-only (click)="vote(song, true)" class="votebutton"><ion-icon name="arrow-dropup-circle"></ion-icon></button>-->

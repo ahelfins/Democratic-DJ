@@ -1,15 +1,16 @@
 import { Component } from '@angular/core';
-import { AlertController, IonicPage, NavController, NavParams } from 'ionic-angular';
+import { AlertController, IonicPage, NavController } from 'ionic-angular';
 import { AddSongPage } from "../add-song/add-song";
 import { FirebaseProvider } from "../../providers/firebase/firebase"
 import { SessionDataProvider } from "../../providers/session-data/session-data";
+
 import { HostGuestPage } from "../host-guest/host-guest";
+import { trigger, state, style, transition, animate, keyframes } from '@angular/animations';
 
 
 /**
  * Generated class for the GuestSongListPage page. Displays the room-specific
- * song list for Guest (Identical to Host's but NOT has a functionality to add
- * songs to Spotify Queue.
+ * song list for Guest
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
@@ -19,12 +20,32 @@ import { HostGuestPage } from "../host-guest/host-guest";
 @Component({
   selector: 'page-guest-song-list',
   templateUrl: 'guest-song-list.html',
+  animations: [
+    trigger('myupvote', [
+      state('noupvote', style({
+        backgroundColor: '#191414'
+      })),
+      state('upvote', style({
+        backgroundColor: '#191414'
+      })),
+      transition('* => *',
+        animate('.25s', keyframes([
+        style({backgroundColor: '#191414', offset: 0}),
+        style({backgroundColor: '#1db954', offset: 0.25}),
+        style({backgroundColor: '#191414', offset: 1})
+        ]))
+      )
+    ])
+  ]
 })
 export class GuestSongListPage {
   addSongButton: any;
   public roomId: string;
   title: String;
   songList: any;
+
+  upvoteState = new Array<string>();
+
   room: any;
 
   constructor(public navCtrl: NavController,
@@ -33,6 +54,7 @@ export class GuestSongListPage {
               private sDProvider: SessionDataProvider) {
     this.addSongButton = AddSongPage;
     this.roomId = this.sDProvider.getRoomCode();
+
     this.room = this.fBProvider.getRoom(this.roomId).valueChanges();
   }
 
@@ -41,6 +63,7 @@ export class GuestSongListPage {
     console.log('Current room: '+this.roomId);
     console.log('Host?: '+this.sDProvider.isHost());
     this.title = "Guest: "+this.roomId;
+
     this.songList = this.fBProvider.getSongList(this.roomId).valueChanges();
 
     this.room.subscribe((room) => {
@@ -68,6 +91,10 @@ export class GuestSongListPage {
 
 
   }
+
+  toggleUpvoteAnim(i: number) {
+    this.upvoteState[i] = (this.upvoteState[i] == 'upvote') ? 'noupvote ' : 'upvote';
+    }
 
   goToAddSongPage() {
     this.navCtrl.push(AddSongPage, {roomId: this.roomId});
