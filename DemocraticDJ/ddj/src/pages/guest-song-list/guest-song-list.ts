@@ -6,6 +6,7 @@ import { SessionDataProvider } from "../../providers/session-data/session-data";
 import { Observable } from 'rxjs/Observable';
 import { Song } from '../../interfaces/song';
 import {HostGuestPage} from "../host-guest/host-guest";
+import { trigger, state, style, transition, animate, keyframes } from '@angular/animations';
 
 
 /**
@@ -21,12 +22,30 @@ import {HostGuestPage} from "../host-guest/host-guest";
 @Component({
   selector: 'page-guest-song-list',
   templateUrl: 'guest-song-list.html',
+  animations: [
+    trigger('myupvote', [
+      state('noupvote', style({
+        backgroundColor: '#191414'
+      })),
+      state('upvote', style({
+        backgroundColor: '#191414'
+      })),
+      transition('* => *',
+        animate('.25s', keyframes([
+        style({backgroundColor: '#191414', offset: 0}),
+        style({backgroundColor: '#1db954', offset: 0.25}),
+        style({backgroundColor: '#191414', offset: 1})
+        ]))
+      )
+    ])
+  ]
 })
 export class GuestSongListPage {
   addSongButton: any;
   public roomId: string;
   title: String;
   songList: any;
+  upvoteState = new Array<string>();
 
 
   room: any;
@@ -37,6 +56,7 @@ export class GuestSongListPage {
               private sDProvider: SessionDataProvider) {
     this.addSongButton = AddSongPage;
     this.roomId = this.sDProvider.getRoomCode();
+
     this.room = this.fBProvider.getRoom(this.roomId).valueChanges();
     // this.room.subscribe((e) => { console.log(e) });
   }
@@ -46,7 +66,6 @@ export class GuestSongListPage {
     console.log('Current room: '+this.roomId);
     console.log('Host?: '+this.sDProvider.isHost());
     this.title = "Guest: "+this.roomId;
-
     // this.songList = this.room.child("songs");
     this.songList = this.fBProvider.getSongList(this.roomId).valueChanges();
     const roomRef = this.fBProvider.getRoomRef(this.roomId);
@@ -58,6 +77,10 @@ export class GuestSongListPage {
       }
     });
   }
+
+  toggleUpvoteAnim(i: number) {
+    this.upvoteState[i] = (this.upvoteState[i] == 'upvote') ? 'noupvote ' : 'upvote';
+    }
 
   goToAddSongPage() {
     this.navCtrl.push(AddSongPage, {roomId: this.roomId});
