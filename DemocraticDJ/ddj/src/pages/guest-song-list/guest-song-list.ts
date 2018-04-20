@@ -26,7 +26,7 @@ export class GuestSongListPage {
   addSongButton: any;
   public roomId: string;
   title: String;
-  // songList: any;
+  songList: any;
 
 
   room: any;
@@ -38,7 +38,7 @@ export class GuestSongListPage {
     this.addSongButton = AddSongPage;
     this.roomId = this.sDProvider.getRoomCode();
     this.room = this.fBProvider.getRoom(this.roomId).valueChanges();
-    this.room.subscribe((e) => { console.log(e) });
+    // this.room.subscribe((e) => { console.log(e) });
   }
 
   ionViewDidLoad() {
@@ -47,7 +47,16 @@ export class GuestSongListPage {
     console.log('Host?: '+this.sDProvider.isHost());
     this.title = "Guest: "+this.roomId;
 
-    // this.songList = this.fBProvider.getSongList(this.roomId).valueChanges();
+    // this.songList = this.room.child("songs");
+    this.songList = this.fBProvider.getSongList(this.roomId).valueChanges();
+    const roomRef = this.fBProvider.getRoomRef(this.roomId);
+    roomRef.once("value", snapshot => { //https://stackoverflow.com/questions/37910008/check-if-value-exists-in-firebase-db
+      const roomExists = snapshot.val();
+      if (!roomExists){
+        console.log("room does NOT exit anymore")
+        this.exitRoom();
+      }
+    });
   }
 
   goToAddSongPage() {
@@ -62,8 +71,16 @@ export class GuestSongListPage {
     this.navCtrl.insert(0, HostGuestPage).then(() => {
       this.navCtrl.popToRoot();
     });
-
   }
+
+  kickOutGuestOnRoomDeletion() {
+    const roomRef = this.fBProvider.getRoomRef(this.roomId);
+
+    if (!this.room.exists()) {
+      this.exitRoom()
+    }
+  }
+
 
   exitConfirm() {
     let alert = this.alertCtrl.create({

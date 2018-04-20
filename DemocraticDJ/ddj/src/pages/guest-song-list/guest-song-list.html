@@ -25,12 +25,13 @@
     <button ion-fab class="fab" (click)="goToAddSongPage()"><ion-icon name="add"></ion-icon></button>
   </ion-fab>
 
-  Full room data: {{room | async | json}}
+  <!--Full room data: {{room | async | json}}-->
 
-  Room ID: {{(room | async)?.id}}
+  <!--Room ID: {{(room | async)?.id}}-->
+  <!--{{let songs = (room | async)?.songs}}-->
   <ion-list>
     <!--<ion-item-sliding #item [ngStyle]="{'background-color': darkgrey}">-->
-    <ion-list *ngFor="let song of (room | async)?.songs">
+    <ion-list *ngFor="let song of songList | async">
       <ion-item (swipeleft)="vote(song, true)" (swiperight)="vote(song, false)" class="bottom-border">
         {{song.title}}
         <div item-right>{{song.upVotes}}</div>

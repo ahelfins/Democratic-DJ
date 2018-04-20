@@ -33,11 +33,10 @@ export class FirebaseProvider {
     return this.afDB.list('/rooms/');
   }
 
-  /**
-   * Getter for the room object from the firebase
-   * @param roomCode
-   * @returns
-   */
+  getRoomRef(roomCode) {
+    return this.afDB.database.ref('/rooms/').child(roomCode);
+  }
+
   getRoom(roomCode) {
     return this.afDB.object('/rooms/'+roomCode);
   }
@@ -82,7 +81,7 @@ export class FirebaseProvider {
     const songRef = this.afDB.database.ref('/').child('rooms').child(roomId).child('songs').child(song.fbKey);
     console.log("updating song in firebase");
     if(isUpVote) {
-      console.log("is up vote")
+      console.log("is up vote");
       songRef.update({upVotes:++song.upVotes});
     }
     else{
