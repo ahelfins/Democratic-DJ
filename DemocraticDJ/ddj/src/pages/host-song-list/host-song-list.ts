@@ -3,7 +3,7 @@ import { AlertController, IonicPage, NavController} from 'ionic-angular';
 import { AddSongPage } from "../add-song/add-song";
 import { FirebaseProvider } from "../../providers/firebase/firebase"
 import { SessionDataProvider } from "../../providers/session-data/session-data";
-import {HostGuestPage} from "../host-guest/host-guest";
+import { HostGuestPage } from "../host-guest/host-guest";
 
 
 /**

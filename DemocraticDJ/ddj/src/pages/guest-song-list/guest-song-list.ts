@@ -3,8 +3,6 @@ import { AlertController, IonicPage, NavController, NavParams } from 'ionic-angu
 import { AddSongPage } from "../add-song/add-song";
 import { FirebaseProvider } from "../../providers/firebase/firebase"
 import { SessionDataProvider } from "../../providers/session-data/session-data";
-import { Observable } from 'rxjs/Observable';
-import { Song } from '../../interfaces/song';
 import { HostGuestPage } from "../host-guest/host-guest";
 
 
@@ -36,8 +34,6 @@ export class GuestSongListPage {
     this.addSongButton = AddSongPage;
     this.roomId = this.sDProvider.getRoomCode();
     this.room = this.fBProvider.getRoom(this.roomId).valueChanges();
-    // this.room.subscribe((e) => { console.log(e) });
-
   }
 
   ionViewDidLoad() {
@@ -45,12 +41,7 @@ export class GuestSongListPage {
     console.log('Current room: '+this.roomId);
     console.log('Host?: '+this.sDProvider.isHost());
     this.title = "Guest: "+this.roomId;
-
-    // this.songList = this.room.child("songs");
     this.songList = this.fBProvider.getSongList(this.roomId).valueChanges();
-    // const roomRef = this.fBProvider.getRoomRef(this.roomId);
-    //
-    // console.log("roomRef.valueOf(): "+roomRef.valueOf());
 
     this.room.subscribe((room) => {
       if (room == null) {
@@ -90,14 +81,6 @@ export class GuestSongListPage {
     this.navCtrl.insert(0, HostGuestPage).then(() => {
       this.navCtrl.popToRoot();
     });
-  }
-
-  kickOutGuestOnRoomDeletion() {
-    const roomRef = this.fBProvider.getRoomRef(this.roomId);
-
-    if (!this.room.exists()) {
-      this.exitRoom()
-    }
   }
 
 
