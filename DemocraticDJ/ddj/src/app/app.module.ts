@@ -11,7 +11,6 @@ import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { MyApp } from './app.component';
 import { HostGuestPage } from '../pages/host-guest/host-guest';
-import { HostPage } from '../pages/host/host';
 import { GuestPage } from '../pages/guest/guest';
 import { GuestSongListPage } from '../pages/guest-song-list/guest-song-list';
 import { HostSongListPage } from '../pages/host-song-list/host-song-list';
@@ -59,8 +58,11 @@ export const firebaseConfig = {
   declarations: [
     MyApp,
     HostGuestPage,
+<<<<<<< HEAD
     HowtoPage,
     HostPage,
+=======
+>>>>>>> 5517f405f22ffeb07ad702b659eeeecd1ffe512d
     GuestPage,
     GuestSongListPage,
     HostSongListPage,
@@ -79,7 +81,6 @@ export const firebaseConfig = {
     MyApp,
     HowtoPage,
     HostGuestPage,
-    HostPage,
     GuestPage,
     GuestSongListPage,
     HostSongListPage,
