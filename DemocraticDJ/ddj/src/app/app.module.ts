@@ -58,11 +58,7 @@ export const firebaseConfig = {
   declarations: [
     MyApp,
     HostGuestPage,
-<<<<<<< HEAD
     HowtoPage,
-    HostPage,
-=======
->>>>>>> 5517f405f22ffeb07ad702b659eeeecd1ffe512d
     GuestPage,
     GuestSongListPage,
     HostSongListPage,

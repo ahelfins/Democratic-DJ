@@ -4,7 +4,6 @@ import { Song } from '../../interfaces/song';
 
 /*
   Generated class for the FirebaseProvider provider.
-
   See https://angular.io/guide/dependency-injection for more info on providers
   and Angular DI.
 */
@@ -42,29 +41,13 @@ export class FirebaseProvider {
   }
 
   /**
-   * Converts an AngularFireList of songs to an array and returns it.
+   * Getter for the list of songs from the Firebase
    * @param roomCode
-   * @returns {Array}
+   * @returns {AngularFireList<Song[]>}
    */
   getSongList(roomCode) {
-    let angularSongList = this.getAngularSongList(roomCode);
-
-    let songList = [];
-    let i = 0;
-    angularSongList.valueChanges()
-      .subscribe(list =>{
-        list.forEach(song => {
-          songList[i] = song;
-          console.log("I is: "+ i); //DEBUG
-          i++;
-        });
-      });
-    console.log("about to return song list: ");
-    console.log(songList);
-    return songList;
+    return this.afDB.list<Song []>('/rooms/'+roomCode+'/songs');
   }
-
-
 
   /**
    * Generates room with the roomCode
@@ -88,11 +71,11 @@ export class FirebaseProvider {
   }
 
   /**
-    * Updates the up or down votes in firebase
-    * @param song - a Song object
-    * @param roomId - ID of current room
-    * @param isUpVote - boolean, true if the vote is an upvote, false if down vote
-    */
+   * Updates the up or down votes in firebase
+   * @param song - a Song object
+   * @param roomId - ID of current room
+   * @param isUpVote - boolean, true if the vote is an upvote, false if down vote
+   */
   updateVote(song, roomId, isUpVote){
     const songRef = this.afDB.database.ref('/').child('rooms').child(roomId).child('songs').child(song.fbKey);
     console.log("updating song in firebase");
