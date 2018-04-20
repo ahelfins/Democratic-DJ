@@ -5,7 +5,7 @@ import { FirebaseProvider } from "../../providers/firebase/firebase"
 import { SessionDataProvider } from "../../providers/session-data/session-data";
 import { Observable } from 'rxjs/Observable';
 import { Song } from '../../interfaces/song';
-import {HostGuestPage} from "../host-guest/host-guest";
+import { HostGuestPage } from "../host-guest/host-guest";
 
 
 /**
@@ -27,8 +27,6 @@ export class GuestSongListPage {
   public roomId: string;
   title: String;
   songList: any;
-
-
   room: any;
 
   constructor(public navCtrl: NavController,
@@ -39,6 +37,7 @@ export class GuestSongListPage {
     this.roomId = this.sDProvider.getRoomCode();
     this.room = this.fBProvider.getRoom(this.roomId).valueChanges();
     // this.room.subscribe((e) => { console.log(e) });
+
   }
 
   ionViewDidLoad() {
@@ -49,14 +48,34 @@ export class GuestSongListPage {
 
     // this.songList = this.room.child("songs");
     this.songList = this.fBProvider.getSongList(this.roomId).valueChanges();
-    const roomRef = this.fBProvider.getRoomRef(this.roomId);
-    roomRef.once("value", snapshot => { //https://stackoverflow.com/questions/37910008/check-if-value-exists-in-firebase-db
-      const roomExists = snapshot.val();
-      if (!roomExists){
-        console.log("room does NOT exit anymore")
-        this.exitRoom();
+    // const roomRef = this.fBProvider.getRoomRef(this.roomId);
+    //
+    // console.log("roomRef.valueOf(): "+roomRef.valueOf());
+
+    this.room.subscribe((room) => {
+      if (room == null) {
+        let alert = this.alertCtrl.create({
+          title: 'Party Ended',
+          message: 'The host has ended the party. The room will be closed and you will be directed to the main page. Hope you had a wonderful time!',
+          buttons: [{
+            text: 'OK',
+            role: 'ok',
+            handler: () => {
+              console.log('OK clicked');
+              alert.dismiss().then(()=> {
+                this.navCtrl.insert(0, HostGuestPage).then(() => {
+                  this.navCtrl.popToRoot();
+                });
+              });
+              return false;
+            }
+          }]
+        });
+        alert.present()
       }
     });
+
+
   }
 
   goToAddSongPage() {
