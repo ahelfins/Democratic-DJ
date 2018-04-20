@@ -77,20 +77,20 @@ export class AddSongPage {
     }
   }
 
-  searchSpotify(event:any) {
-    let searchTerm = event.target.value;
-    console.log(searchTerm);
-    this.sDProvider.searchSpotify(searchTerm).subscribe(
-      data=>{
-        //this.searchResults=data.tracks.items;
-        this.searchResults=data['tracks'].items;
-        //console.log(this.searchResults);
-      },
-      error=>{
-        console.log(error);
-      }
-    )
-  }
+  // searchSpotify(event:any) {
+  //   let searchTerm = event.target.value;
+  //   console.log(searchTerm);
+  //   this.sDProvider.searchSpotify(searchTerm).subscribe(
+  //     data=>{
+  //       //this.searchResults=data.tracks.items;
+  //       this.searchResults=data['tracks'].items;
+  //       //console.log(this.searchResults);
+  //     },
+  //     error=>{
+  //       console.log(error);
+  //     }
+  //   )
+  // }
 
 
 
