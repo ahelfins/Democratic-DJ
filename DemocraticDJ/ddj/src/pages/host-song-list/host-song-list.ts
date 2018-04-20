@@ -94,7 +94,7 @@ export class HostSongListPage {
   deleteSong(song) {
     // console.log("hostSongListPage deleteSong(song): "+song.fbKey); // DEBUG
     this.fBProvider.deleteSong(song, this.roomId);
-   }
+  }
 
   downVote(song) {
     this.fBProvider.updateVote(song, this.roomId, false);

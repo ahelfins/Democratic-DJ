@@ -27,9 +27,16 @@
           <ion-input class="input" id="songInput" type="text" [(ngModel)]="songName"></ion-input>
         </ion-item>
       </ion-row>
+      <ion-row>
+        <ion-item>
+          <ion-label floating>Artist Name</ion-label>
+          <ion-input class="input" id="artistInput" type="text" [(ngModel)]="artistName"></ion-input>
+        </ion-item>
+      </ion-row>
+
       <ion-row id="blank2"></ion-row>
       <ion-row>
-        <button ion-button block type="submit" (click)="addSongToFB(songName);" (click)="goToSongListPage()">Add to Song List</button>
+        <button ion-button block type="submit" (click)="addSongToFB(songName, artistName);" (click)="goToSongListPage()">Add to Song List</button>
       </ion-row>
       <!-- <ion-row>
         <ion-searchbar (ionInput)="searchSpotify($event)"></ion-searchbar>
