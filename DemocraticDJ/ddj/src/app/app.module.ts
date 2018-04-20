@@ -1,3 +1,4 @@
+///<reference path="../pages/howto/howto.ts"/>
 import { BrowserModule } from '@angular/platform-browser';
 // import { Pro } from '@ionic/pro';
 import { Injectable, Injector } from '@angular/core';
@@ -14,10 +15,13 @@ import { HostPage } from '../pages/host/host';
 import { GuestPage } from '../pages/guest/guest';
 import { GuestSongListPage } from '../pages/guest-song-list/guest-song-list';
 import { HostSongListPage } from '../pages/host-song-list/host-song-list';
+import { HowtoPage } from '../pages/howto/howto';
 import { AddSongPage } from '../pages/add-song/add-song';
 import { FirebaseProvider } from "../providers/firebase/firebase"
 import { SessionDataProvider } from '../providers/session-data/session-data';
 import { HttpClient, HttpClientModule } from '@angular/common/http'
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 // Pro.init('f756908f', {
 //   appVersion: '0.0.1'
 // })
@@ -55,6 +59,7 @@ export const firebaseConfig = {
   declarations: [
     MyApp,
     HostGuestPage,
+    HowtoPage,
     HostPage,
     GuestPage,
     GuestSongListPage,
@@ -63,6 +68,7 @@ export const firebaseConfig = {
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     IonicModule.forRoot(MyApp),
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireDatabaseModule,
@@ -71,6 +77,7 @@ export const firebaseConfig = {
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
+    HowtoPage,
     HostGuestPage,
     HostPage,
     GuestPage,

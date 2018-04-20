@@ -39,7 +39,7 @@ export class HostSongListPage {
     console.log('Current room: ' +this.roomId);
     console.log('Host?: '+this.sDProvider.isHost());
     this.title = "Host: "+ this.roomId;
-    this.songList = this.fBProvider.getSongList(this.roomId).valueChanges();
+    this.songList = this.fBProvider.getAngularSongList(this.roomId).valueChanges();
 
   }
 
