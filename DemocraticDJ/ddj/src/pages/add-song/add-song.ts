@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
+
 import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
-import { AngularFireDatabase, AngularFireList } from 'angularfire2/database';
 import { GuestSongListPage } from '../guest-song-list/guest-song-list';
 import { HostSongListPage} from '../host-song-list/host-song-list';
 import { FirebaseProvider } from "../../providers/firebase/firebase";

@@ -11,7 +11,6 @@ import { Song } from '../../interfaces/song';
 
 @Injectable()
 export class FirebaseProvider {
-  // songs: AngularFireList<Song>;
   constructor(public afDB: AngularFireDatabase) {
     console.log('Hello FirebaseProvider Provider');
   }

@@ -1,18 +1,16 @@
 import { Component } from '@angular/core';
-import { AlertController, IonicPage, NavController, NavParams } from 'ionic-angular';
+import { AlertController, IonicPage, NavController } from 'ionic-angular';
 import { AddSongPage } from "../add-song/add-song";
 import { FirebaseProvider } from "../../providers/firebase/firebase"
 import { SessionDataProvider } from "../../providers/session-data/session-data";
-import { Observable } from 'rxjs/Observable';
-import { Song } from '../../interfaces/song';
-import {HostGuestPage} from "../host-guest/host-guest";
+
+import { HostGuestPage } from "../host-guest/host-guest";
 import { trigger, state, style, transition, animate, keyframes } from '@angular/animations';
 
 
 /**
  * Generated class for the GuestSongListPage page. Displays the room-specific
- * song list for Guest (Identical to Host's but NOT has a functionality to add
- * songs to Spotify Queue.
+ * song list for Guest
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
@@ -45,8 +43,8 @@ export class GuestSongListPage {
   public roomId: string;
   title: String;
   songList: any;
-  upvoteState = new Array<string>();
 
+  upvoteState = new Array<string>();
 
   room: any;
 
@@ -58,7 +56,6 @@ export class GuestSongListPage {
     this.roomId = this.sDProvider.getRoomCode();
 
     this.room = this.fBProvider.getRoom(this.roomId).valueChanges();
-    // this.room.subscribe((e) => { console.log(e) });
   }
 
   ionViewDidLoad() {
@@ -66,16 +63,33 @@ export class GuestSongListPage {
     console.log('Current room: '+this.roomId);
     console.log('Host?: '+this.sDProvider.isHost());
     this.title = "Guest: "+this.roomId;
-    // this.songList = this.room.child("songs");
+
     this.songList = this.fBProvider.getSongList(this.roomId).valueChanges();
-    const roomRef = this.fBProvider.getRoomRef(this.roomId);
-    roomRef.once("value", snapshot => { //https://stackoverflow.com/questions/37910008/check-if-value-exists-in-firebase-db
-      const roomExists = snapshot.val();
-      if (!roomExists){
-        console.log("room does NOT exit anymore")
-        this.exitRoom();
+
+    this.room.subscribe((room) => {
+      if (room == null) {
+        let alert = this.alertCtrl.create({
+          title: 'Party Ended',
+          message: 'The host has ended the party. The room will be closed and you will be directed to the main page. Hope you had a wonderful time!',
+          buttons: [{
+            text: 'OK',
+            role: 'ok',
+            handler: () => {
+              console.log('OK clicked');
+              alert.dismiss().then(()=> {
+                this.navCtrl.insert(0, HostGuestPage).then(() => {
+                  this.navCtrl.popToRoot();
+                });
+              });
+              return false;
+            }
+          }]
+        });
+        alert.present()
       }
     });
+
+
   }
 
   toggleUpvoteAnim(i: number) {
@@ -94,14 +108,6 @@ export class GuestSongListPage {
     this.navCtrl.insert(0, HostGuestPage).then(() => {
       this.navCtrl.popToRoot();
     });
-  }
-
-  kickOutGuestOnRoomDeletion() {
-    const roomRef = this.fBProvider.getRoomRef(this.roomId);
-
-    if (!this.room.exists()) {
-      this.exitRoom()
-    }
   }
 
 

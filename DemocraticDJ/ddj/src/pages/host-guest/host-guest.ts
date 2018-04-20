@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
-import {AlertController, IonicPage, NavController, NavParams} from 'ionic-angular';
+import { AlertController, IonicPage, NavController } from 'ionic-angular';
 import { GuestPage } from '../guest/guest';
 import { HostSongListPage } from "../host-song-list/host-song-list";
 import { HowtoPage } from '../howto/howto';
 import { FirebaseProvider } from "../../providers/firebase/firebase";
 import { SessionDataProvider } from "../../providers/session-data/session-data";
-import {Observable} from "rxjs/Observable";
-import {AngularFireDatabase, AngularFireList} from "angularfire2/database";
+import { Observable } from "rxjs/Observable";
+import { AngularFireDatabase, AngularFireList } from "angularfire2/database";
 
 /**
  * Generated class for the HostGuestPage page. A user can select either 'host'

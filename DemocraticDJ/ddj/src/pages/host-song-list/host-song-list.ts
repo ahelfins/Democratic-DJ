@@ -3,7 +3,7 @@ import { AlertController, IonicPage, NavController} from 'ionic-angular';
 import { AddSongPage } from "../add-song/add-song";
 import { FirebaseProvider } from "../../providers/firebase/firebase"
 import { SessionDataProvider } from "../../providers/session-data/session-data";
-import {HostGuestPage} from "../host-guest/host-guest";
+import { HostGuestPage } from "../host-guest/host-guest";
 
 
 /**
@@ -87,15 +87,6 @@ export class HostSongListPage {
     alert.present();
   }
 
-
-  /**
-   * Adds a song to the Queue that integrates with Spotify
-   * @param song
-   */
-  addToQueue(song) {
-    //add to spotify here
-  }
-
   /**
    * Deletes a song from the list (and the Firebase)
    * @param song
@@ -105,9 +96,6 @@ export class HostSongListPage {
     this.fBProvider.deleteSong(song, this.roomId);
   }
 
-  // add(song){
-  //   this.songList.push(song);
-  //  }
   downVote(song) {
     this.fBProvider.updateVote(song, this.roomId, false);
   }

@@ -48,7 +48,8 @@
     <!------------------------SWIPE TO DELETE AND ENQUEUE------------------------------------------------>
     <ion-list *ngFor="let song of songList | async">
       <ion-item (swiperight)="deleteSong(song)" (swipeleft)="addToQueue(song)" class="bottom-border">
-        {{song.title}} - {{song.artist}}
+        <div>{{song.title}}<br/>
+          - <small>{{song.artist}}</small></div>
         <div item-right>{{song.upVotes}}</div>
         <div item-right>UP</div>
         <div item-right>|</div>
