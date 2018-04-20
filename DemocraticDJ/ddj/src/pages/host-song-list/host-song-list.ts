@@ -103,12 +103,11 @@ export class HostSongListPage {
   deleteSong(song) {
     // console.log("hostSongListPage deleteSong(song): "+song.fbKey); // DEBUG
     this.fBProvider.deleteSong(song, this.roomId);
-   }
+  }
 
   // add(song){
   //   this.songList.push(song);
   //  }
-
   downVote(song) {
     this.fBProvider.updateVote(song, this.roomId, false);
   }
