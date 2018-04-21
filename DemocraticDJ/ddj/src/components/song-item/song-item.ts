@@ -1,8 +1,6 @@
-import { Component } from '@angular/core';
-import { FirebaseProvider } from "../../providers/firebase/firebase"
-import { SessionDataProvider } from "../../providers/session-data/session-data";
+import { Component, Input, OnInit } from '@angular/core';
 import { trigger, state, style, transition, animate, keyframes } from '@angular/animations';
-import { GuestSongListPage } from "../../pages/guest-song-list/guest-song-list";
+import { Song } from "../../interfaces/song";
 
 /**
  * Generated class for the SongItemComponent component.
@@ -28,31 +26,45 @@ import { GuestSongListPage } from "../../pages/guest-song-list/guest-song-list";
           style({backgroundColor: '#191414', offset: 1})
         ]))
       )
+    ]),
+    trigger('mydownvote', [
+      state('nodownvote', style({
+        backgroundColor: '#191414'
+      })),
+      state('downvote', style({
+        backgroundColor: '#191414'
+      })),
+      transition('* => *',
+        animate('.25s', keyframes([
+          style({backgroundColor: '#191414', offset: 0}),
+          style({backgroundColor: '#1db954', offset: 0.25}),
+          style({backgroundColor: '#191414', offset: 1})
+        ]))
+      )
     ])
   ]
 })
+
+
 export class SongItemComponent {
 
-  public roomId: string;
-  title: String;
-  song: any;
-  room: any;
-  upvoteState = 'noupvote'
+  @Input() song: Song;
+
+  upvoteState = 'noupvote';
+  downvoteState = 'nodownvote';
 
 
-  constructor(public fBProvider: FirebaseProvider,
-              private sDProvider: SessionDataProvider,
-              public guestSongList: GuestSongListPage) {
-    console.log('Hello SongItemComponent Component');
-    this.roomId = this.sDProvider.getRoomCode();
-    this.room = this.fBProvider.getRoom(this.roomId).valueChanges();
-
+  constructor() {
   }
 
-
+  ngOnInit() {}
 
   toggleUpvoteAnim() {
-    this.upvoteState = (this.upvoteState == 'upvote') ? 'noupvote ' : 'upvote';
+    this.upvoteState = (this.upvoteState == 'upvote') ? 'noupvote' : 'upvote';
+  }
+
+  toggleDownvoteAnim() {
+    this.downvoteState = (this.downvoteState == 'downvote') ? 'nodownvote' : 'upvote';
   }
 
 }

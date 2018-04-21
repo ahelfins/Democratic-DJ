@@ -1,4 +1,4 @@
-<ion-item (swipe)="toggleUpvoteAnim()" [@myupvote]="upvoteState">
+<ion-item (swipeleft)="toggleUpvoteAnim()" (swiperight)="toggleDownvoteAnim()" [@myupvote]="upvoteState">
   <div>{{song.title}}<br/>
   - <small>{{song.artist}}</small></div>
   <div item-right>{{song.upVotes}}</div>

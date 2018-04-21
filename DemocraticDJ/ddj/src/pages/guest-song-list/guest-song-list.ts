@@ -6,6 +6,7 @@ import { SessionDataProvider } from "../../providers/session-data/session-data";
 
 import { HostGuestPage } from "../host-guest/host-guest";
 import { trigger, state, style, transition, animate, keyframes } from '@angular/animations';
+import { SongItemComponent } from "../../components/song-item/song-item";
 
 
 /**
@@ -19,40 +20,8 @@ import { trigger, state, style, transition, animate, keyframes } from '@angular/
 @IonicPage()
 @Component({
   selector: 'page-guest-song-list',
-  templateUrl: 'guest-song-list.html',
-  animations: [
-    trigger('myupvote', [
-      state('noupvote', style({
-        backgroundColor: '#191414'
-      })),
-      state('upvote', style({
-        backgroundColor: '#191414'
-      })),
-      transition('* => *',
-        animate('.25s', keyframes([
-        style({backgroundColor: '#191414', offset: 0}),
-        style({backgroundColor: '#f53d3d', offset: 0.25}),
-        style({backgroundColor: '#191414', offset: 1})
-        ]))
-      )
-    ]),
-    trigger('mydownvote', [
-      state('nodownvote', style({
-        backgroundColor: '#191414'
-      })),
-      state('downvote', style({
-        backgroundColor: '#191414'
-      })),
-      transition('* => *',
-        animate('.25s', keyframes([
-          style({backgroundColor: '#191414', offset: 0}),
-          style({backgroundColor: '#1db954', offset: 0.25}),
-          style({backgroundColor: '#191414', offset: 1})
-        ]))
-      )
-    ])
-  ]
-})
+  templateUrl: 'guest-song-list.html'})
+
 export class GuestSongListPage {
   addSongButton: any;
   public roomId: string;
@@ -60,7 +29,7 @@ export class GuestSongListPage {
   songList: any;
 
   upvoteState = 'noupvote';
-  downvoteState = 'nodownvote'
+  downvoteState = 'nodownvote';
 
   room: any;
 
@@ -70,7 +39,6 @@ export class GuestSongListPage {
               private sDProvider: SessionDataProvider) {
     this.addSongButton = AddSongPage;
     this.roomId = this.sDProvider.getRoomCode();
-
     this.room = this.fBProvider.getRoom(this.roomId).valueChanges();
   }
 
@@ -179,12 +147,12 @@ export class GuestSongListPage {
       if(isUpVote){
         this.sDProvider.updateSongVotes(song, 1);
         console.log("was an up vote so "+song.title+" has "+this.sDProvider.getSongVotes(song));
-        this.toggleDownvoteAnim();
+        // this.toggleDownvoteAnim();
       }
       else{
         this.sDProvider.updateSongVotes(song, -1);
         console.log("was a down vote so "+song.title+" has "+this.sDProvider.getSongVotes(song));
-        this.toggleUpvoteAnim();
+        // this.toggleUpvoteAnim();
       }
       this.fBProvider.updateVote(song, this.roomId, isUpVote);
     }
@@ -193,7 +161,7 @@ export class GuestSongListPage {
       if(!isUpVote){
         this.sDProvider.updateSongVotes(song, -1);
         this.fBProvider.switchVote(song, this.roomId, isUpVote);
-        this.toggleUpvoteAnim();
+        // this.toggleUpvoteAnim();
       }
     }
     else{
@@ -201,7 +169,7 @@ export class GuestSongListPage {
       if(isUpVote){
         this.sDProvider.updateSongVotes(song, 1);
         this.fBProvider.switchVote(song, this.roomId, isUpVote);
-        this.toggleDownvoteAnim();
+        // this.toggleDownvoteAnim();
       }
     }
     console.log(song.title + " has "+ this.sDProvider.getSongVotes(song));
