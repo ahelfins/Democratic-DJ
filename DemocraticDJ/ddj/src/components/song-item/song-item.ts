@@ -46,7 +46,6 @@ export class SongItemComponent {
     console.log('Hello SongItemComponent Component');
     this.roomId = this.sDProvider.getRoomCode();
     this.room = this.fBProvider.getRoom(this.roomId).valueChanges();
-    this.song = this.guestSongList[index];
 
   }
 

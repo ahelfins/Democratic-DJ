@@ -87,6 +87,10 @@ export class HostSongListPage {
     alert.present();
   }
 
+  trackByTitle(index, song) {
+    return song.title;
+  }
+
   /**
    * Deletes a song from the list (and the Firebase)
    * @param song

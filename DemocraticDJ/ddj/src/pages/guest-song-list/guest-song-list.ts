@@ -94,11 +94,17 @@ export class GuestSongListPage {
 
   toggleUpvoteAnim() {
     this.upvoteState = (this.upvoteState == 'upvote') ? 'noupvote ' : 'upvote';
-    }
+  }
+
+  trackByTitle(index, song) {
+    return song.title;
+  }
 
   goToAddSongPage() {
     this.navCtrl.push(AddSongPage, {roomId: this.roomId});
   }
+
+
 
   /**
    * Takes an user to the main page (host-guest) and deletes the room.
