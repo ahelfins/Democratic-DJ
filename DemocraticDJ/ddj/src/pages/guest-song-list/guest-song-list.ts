@@ -179,10 +179,12 @@ export class GuestSongListPage {
       if(isUpVote){
         this.sDProvider.updateSongVotes(song, 1);
         console.log("was an up vote so "+song.title+" has "+this.sDProvider.getSongVotes(song));
+        this.toggleDownvoteAnim();
       }
       else{
         this.sDProvider.updateSongVotes(song, -1);
         console.log("was a down vote so "+song.title+" has "+this.sDProvider.getSongVotes(song));
+        this.toggleUpvoteAnim();
       }
       this.fBProvider.updateVote(song, this.roomId, isUpVote);
     }
@@ -191,6 +193,7 @@ export class GuestSongListPage {
       if(!isUpVote){
         this.sDProvider.updateSongVotes(song, -1);
         this.fBProvider.switchVote(song, this.roomId, isUpVote);
+        this.toggleUpvoteAnim();
       }
     }
     else{
@@ -198,6 +201,7 @@ export class GuestSongListPage {
       if(isUpVote){
         this.sDProvider.updateSongVotes(song, 1);
         this.fBProvider.switchVote(song, this.roomId, isUpVote);
+        this.toggleDownvoteAnim();
       }
     }
     console.log(song.title + " has "+ this.sDProvider.getSongVotes(song));
