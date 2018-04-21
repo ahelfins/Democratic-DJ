@@ -23,6 +23,16 @@
   color: map-get($colors, text);
 }
 
+ion-app.md [padding] .scroll-content {
+  padding: 0px;
+}
+ion-app.ios [padding] .scroll-content {
+  padding: 0px;
+}
+ion-app.wp [padding] .scroll-content {
+  padding: 0px;
+}
+
 .fab {
   background-color: map-get($colors, button);
 }

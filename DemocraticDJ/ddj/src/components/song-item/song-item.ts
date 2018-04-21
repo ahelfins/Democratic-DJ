@@ -12,46 +12,57 @@ import { Song } from "../../interfaces/song";
   selector: 'song-item',
   templateUrl: 'song-item.html',
   animations: [
-    trigger('myupvote', [
-      state('noupvote', style({
+    trigger('myvote', [
+      state('novote', style({
         backgroundColor: '#191414'
       })),
       state('upvote', style({
         backgroundColor: '#191414'
       })),
-      transition('* => *',
+      state('downvote', style({
+        backgroundColor: '#191414'
+      })),
+      transition('* => upvote',
         animate('.25s', keyframes([
           style({backgroundColor: '#191414', offset: 0}),
           style({backgroundColor: '#1db954', offset: 0.25}),
           style({backgroundColor: '#191414', offset: 1})
         ]))
-      )
-    ]),
-    trigger('mydownvote', [
-      state('nodownvote', style({
-        backgroundColor: '#191414'
-      })),
-      state('downvote', style({
-        backgroundColor: '#191414'
-      })),
-      transition('* => *',
+      ),
+      transition('* => downvote',
         animate('.25s', keyframes([
           style({backgroundColor: '#191414', offset: 0}),
-          style({backgroundColor: '#1db954', offset: 0.25}),
+          style({backgroundColor: '#f53d3d', offset: 0.25}),
           style({backgroundColor: '#191414', offset: 1})
         ]))
       )
     ])
   ]
 })
+    // trigger('mydownvote', [
+    //   state('nodownvote', style({
+    //     backgroundColor: '#191414'
+    //   })),
+    //   state('downvote', style({
+    //     backgroundColor: '#191414'
+    //   })),
+    //   transition('* => *',
+//         animate('.25s', keyframes([
+//           style({backgroundColor: '#191414', offset: 0}),
+//           style({backgroundColor: '#1db954', offset: 0.25}),
+//           style({backgroundColor: '#191414', offset: 1})
+//         ]))
+//       )
+//     ])
+//   ]
+// })
 
 
 export class SongItemComponent {
 
   @Input() song: Song;
 
-  upvoteState = 'noupvote';
-  downvoteState = 'nodownvote';
+  voteState = 'novote';
 
 
   constructor() {
@@ -59,12 +70,27 @@ export class SongItemComponent {
 
   ngOnInit() {}
 
-  toggleUpvoteAnim() {
-    this.upvoteState = (this.upvoteState == 'upvote') ? 'noupvote' : 'upvote';
+  toggleVoteAnim(dir) {
+    if (dir == -1) {
+      if (this.voteState == 'novote') {
+        this.voteState = (this.voteState == 'novote') ? 'upvote' : 'novote';
+      }
+      if (this.voteState == 'downvote') {
+        this.voteState = (this.voteState == 'downvote') ? 'upvote' : 'downvote';
+      }
+      if (this.voteState == 'upvote') {
+        this.voteState = (this.voteState == 'upvote') ? 'upvote' : 'upvote';
+      }
+    } else if (dir == 1) {
+      if (this.voteState == 'novote') {
+        this.voteState = (this.voteState == 'novote') ? 'downvote' : 'novote';
+      }
+      if (this.voteState == 'downvote') {
+        this.voteState = (this.voteState == 'downvote') ? 'downvote' : 'downvote';
+      }
+      if (this.voteState == 'upvote') {
+        this.voteState = (this.voteState == 'upvote') ? 'downvote' : 'upvote';
+      }
+    }
   }
-
-  toggleDownvoteAnim() {
-    this.downvoteState = (this.downvoteState == 'downvote') ? 'nodownvote' : 'upvote';
-  }
-
 }
