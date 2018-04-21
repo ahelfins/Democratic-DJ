@@ -15,6 +15,7 @@ import { HowtoPage } from '../pages/howto/howto';
 import { AddSongPage } from '../pages/add-song/add-song';
 import { FirebaseProvider } from "../providers/firebase/firebase"
 import { SessionDataProvider } from '../providers/session-data/session-data';
+import { SongItemComponent } from '../components/song-item/song-item'
 
 import { HttpClientModule } from '@angular/common/http'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -36,7 +37,8 @@ export const firebaseConfig = {
     GuestPage,
     GuestSongListPage,
     HostSongListPage,
-    AddSongPage
+    AddSongPage,
+    SongItemComponent
   ],
   imports: [
     BrowserModule,

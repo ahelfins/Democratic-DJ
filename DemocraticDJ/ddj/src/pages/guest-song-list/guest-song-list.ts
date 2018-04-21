@@ -44,7 +44,7 @@ export class GuestSongListPage {
   title: String;
   songList: any;
 
-  upvoteState = new Array<string>();
+  upvoteState = 'noupvote';
 
   room: any;
 
@@ -92,8 +92,8 @@ export class GuestSongListPage {
 
   }
 
-  toggleUpvoteAnim(i: number) {
-    this.upvoteState[i] = (this.upvoteState[i] == 'upvote') ? 'noupvote ' : 'upvote';
+  toggleUpvoteAnim() {
+    this.upvoteState = (this.upvoteState == 'upvote') ? 'noupvote ' : 'upvote';
     }
 
   goToAddSongPage() {
