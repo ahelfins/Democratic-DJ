@@ -91,13 +91,19 @@ export class HostSongListPage {
     return song.title;
   }
 
+  delay(ms: number) {
+    return new Promise( resolve => setTimeout(resolve, ms) );
+  }
+
   /**
    * Deletes a song from the list (and the Firebase)
    * @param song
    */
-  deleteSong(song) {
+  async deleteSong(song) {
     // console.log("hostSongListPage deleteSong(song): "+song.fbKey); // DEBUG
+    await this.delay(300);
     this.fBProvider.deleteSong(song, this.roomId);
+    // setTimeout(this.deleteSong(song), '1s');
   }
 
   downVote(song) {

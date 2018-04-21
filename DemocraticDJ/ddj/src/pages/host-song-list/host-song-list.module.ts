@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { IonicPageModule } from 'ionic-angular';
 import { HostSongListPage } from './host-song-list';
+import { HostSongItemComponentModule } from '../../components/host-song-item/host-song-item.module'
+
 
 @NgModule({
   declarations: [
@@ -8,6 +10,7 @@ import { HostSongListPage } from './host-song-list';
   ],
   imports: [
     IonicPageModule.forChild(HostSongListPage),
+    HostSongItemComponentModule
   ],
 })
 export class HostSongListPageModule {}

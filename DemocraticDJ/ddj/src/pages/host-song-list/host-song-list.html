@@ -46,16 +46,15 @@
     <!--</ion-item-sliding>-->
     <!--------------------------------------------------------------------------------------------------->
     <!------------------------SWIPE TO DELETE AND ENQUEUE------------------------------------------------>
-    <ion-list *ngFor="let song of songList | async; trackBy: trackByTitle">
-      <ion-item (swiperight)="deleteSong(song)" (swipeleft)="addToQueue(song)" class="bottom-border">
-        <div>&nbsp;&nbsp;&nbsp;&nbsp; {{song.title}}<br/>
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- <small>{{song.artist}}</small></div>
-        <div item-right>{{song.upVotes}}</div>
-        <div item-right>UP</div>
-        <div item-right>|</div>
-        <div item-right>DOWN</div>
-        <div item-right>{{song.downVotes}}</div>
-      </ion-item>
+    <ion-list *ngFor="let song of songList | async" [class.selected]="song" >
+      <host-song-item [song]="song" (swipe)="deleteSong(song)" class="bottom-border"></host-song-item>
+        <!--<div>&nbsp;&nbsp;&nbsp;&nbsp; {{song.title}}<br/>-->
+          <!--&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- <small>{{song.artist}}</small></div>-->
+        <!--<div item-right>{{song.upVotes}}</div>-->
+        <!--<div item-right>UP</div>-->
+        <!--<div item-right>|</div>-->
+        <!--<div item-right>DOWN</div>-->
+        <!--<div item-right>{{song.downVotes}}</div>-->
     </ion-list>
     <!--------------------------------------------------------------------------------------------------->
   </ion-list>
