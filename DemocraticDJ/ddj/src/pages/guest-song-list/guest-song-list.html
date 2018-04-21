@@ -32,7 +32,7 @@
   <ion-list>
     <!--<ion-item-sliding #item [ngStyle]="{'background-color': darkgrey}">-->
     <ion-list *ngFor="let song of songList | async; trackBy: trackByTitle">
-      <ion-item (swipeleft)="vote(song, true)" (swiperight)="vote(song, false)" class="bottom-border" (swipe)="toggleUpvoteAnim()" [@myupvote]="upvoteState">
+      <ion-item (swipeleft)="vote(song, true); toggleDownvoteAnim()" (swiperight)="vote(song, false); toggleUpvoteAnim()" class="bottom-border" [@myupvote]="upvoteState" [@mydownvote]="downvoteState">
         <div>{{song.title}}<br/>
           - <small>{{song.artist}}</small></div>
         <div item-right>{{song.upVotes}}</div>

@@ -31,8 +31,23 @@ import { trigger, state, style, transition, animate, keyframes } from '@angular/
       transition('* => *',
         animate('.25s', keyframes([
         style({backgroundColor: '#191414', offset: 0}),
-        style({backgroundColor: '#1db954', offset: 0.25}),
+        style({backgroundColor: '#f53d3d', offset: 0.25}),
         style({backgroundColor: '#191414', offset: 1})
+        ]))
+      )
+    ]),
+    trigger('mydownvote', [
+      state('nodownvote', style({
+        backgroundColor: '#191414'
+      })),
+      state('downvote', style({
+        backgroundColor: '#191414'
+      })),
+      transition('* => *',
+        animate('.25s', keyframes([
+          style({backgroundColor: '#191414', offset: 0}),
+          style({backgroundColor: '#1db954', offset: 0.25}),
+          style({backgroundColor: '#191414', offset: 1})
         ]))
       )
     ])
@@ -45,6 +60,7 @@ export class GuestSongListPage {
   songList: any;
 
   upvoteState = 'noupvote';
+  downvoteState = 'nodownvote'
 
   room: any;
 
@@ -93,7 +109,11 @@ export class GuestSongListPage {
   }
 
   toggleUpvoteAnim() {
-    this.upvoteState = (this.upvoteState == 'upvote') ? 'noupvote ' : 'upvote';
+    this.upvoteState = (this.upvoteState == 'upvote') ? 'noupvote' : 'upvote';
+  }
+
+  toggleDownvoteAnim() {
+    this.downvoteState = (this.downvoteState == 'downvote') ? 'nodownvote' : 'downvote';
   }
 
   trackByTitle(index, song) {
