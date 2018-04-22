@@ -49,6 +49,12 @@ export class AddSongPage {
     console.log('Add Song Room: ' + this.roomId); // DEBUG
   }
 
+  /**
+   * Checks if the input song and artist are valid inputs.
+   * @param {string} song
+   * @param {string} artist
+   * @returns {boolean}
+   */
   isValidInput(song:string, artist:string) {
     if(song != null || artist != null) {
       if(song == null) {
@@ -67,6 +73,11 @@ export class AddSongPage {
     }
   }
 
+  /**
+   * Cleans the input artist string. Returns "Unknown" if no artist input.
+   * @param {string} artist
+   * @returns {string}
+   */
   cleanArtist(artist:string) {
     if(artist == null) {
       artist = "Unknown";
@@ -74,6 +85,11 @@ export class AddSongPage {
     return artist;
   }
 
+  /**
+   * Cleans the input song title string. Returns "Any Song" if no song title input.
+   * @param {string} song
+   * @returns {string}
+   */
   cleanSong(song: string) {
     if(song == null) {
       song = "Any Song";
@@ -81,6 +97,9 @@ export class AddSongPage {
     return song;
   }
 
+  /**
+   * Displays an alert if the input is not valid.
+   */
   badSongAlert() {
     let alert = this.alertCtrl.create({
       title: 'Invalid Input',

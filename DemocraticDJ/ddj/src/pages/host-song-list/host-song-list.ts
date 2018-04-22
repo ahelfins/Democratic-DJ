@@ -63,6 +63,9 @@ export class HostSongListPage {
     });
   }
 
+  /**
+   * Confirms the user wants to close the room.
+   */
   exitConfirm() {
     let alert = this.alertCtrl.create({
       title: 'End Party',
@@ -87,10 +90,11 @@ export class HostSongListPage {
     alert.present();
   }
 
-  trackByTitle(index, song) {
-    return song.title;
-  }
-
+  /**
+   * Delays async functions
+   * @param {number} ms
+   * @returns {Promise<any>}
+   */
   delay(ms: number) {
     return new Promise( resolve => setTimeout(resolve, ms) );
   }
@@ -105,13 +109,4 @@ export class HostSongListPage {
     this.fBProvider.deleteSong(song, this.roomId);
     // setTimeout(this.deleteSong(song), '1s');
   }
-
-  downVote(song) {
-    this.fBProvider.updateVote(song, this.roomId, false);
-  }
-
-  upVote(song) {
-    this.fBProvider.updateVote(song, this.roomId, true);
-  }
-
 }

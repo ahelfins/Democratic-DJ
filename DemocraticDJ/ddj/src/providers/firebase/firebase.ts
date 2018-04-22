@@ -31,10 +31,20 @@ export class FirebaseProvider {
     return this.afDB.list('/rooms/');
   }
 
+  /**
+   * Getter for the Firebase reference of the given room
+   * @param roomCode
+   * @returns {firebase.database.Reference}
+   */
   getRoomRef(roomCode) {
     return this.afDB.database.ref('/rooms/').child(roomCode);
   }
 
+  /**
+   * Getter for the Room object of the given room from Firebase
+   * @param roomCode
+   * @returns {AngularFireObject<any>}
+   */
   getRoom(roomCode) {
     return this.afDB.object('/rooms/'+roomCode);
   }
@@ -49,7 +59,7 @@ export class FirebaseProvider {
   }
 
   /**
-   * Generates room with the roomCode
+   * Generates room with the roomCode on Firebase
    * @param roomCode
    */
   pushRoom(roomCode) {
@@ -59,7 +69,7 @@ export class FirebaseProvider {
   /**
    * Push the song that the user provided
    * @param song - a Song object
-   * @param roomId - roomId of the room that the host or the quest is in
+   * @param roomId - roomId of the room that the host or the guest is in
    */
   pushSong(song, roomId){
     let promise = this.afDB.list("rooms/"+roomId+"/songs").push(song);
@@ -70,7 +80,7 @@ export class FirebaseProvider {
   }
 
   /**
-   * Updates the up or down votes in firebase
+   * Updates the up or down votes of a song in firebase
    * @param song - a Song object
    * @param roomId - ID of current room
    * @param isUpVote - boolean, true if the vote is an upvote, false if down vote
@@ -87,6 +97,12 @@ export class FirebaseProvider {
     }
   }
 
+  /**
+   * Switches the vote of a song that the user already has voted on.
+   * @param song - a Song object
+   * @param roomId - ID of current room
+   * @param switchToUpVote - boolean, true if switching to an upvote, false if switching to a downvote
+   */
   switchVote(song, roomId, switchToUpVote){
     const songRef = this.afDB.database.ref('/').child('rooms').child(roomId).child('songs').child(song.fbKey);
     if(switchToUpVote){
@@ -101,7 +117,7 @@ export class FirebaseProvider {
 
   /**
    * Deletes the room when the party is over.
-   * @param roomId
+   * @param roomId - ID of the room to be deleted
    */
   deleteRoom(roomId) {
     const roomRef = this.afDB.database.ref('/').child('rooms').child(roomId);
@@ -111,8 +127,8 @@ export class FirebaseProvider {
 
   /**
    * Deletes the specified song from the unique room.
-   * @param song  - user input of the song name
-   * @param roomId - user input of the room code
+   * @param song  - Song object to be deleted
+   * @param roomId - ID of room the song to be deleted from
    */
   deleteSong(song, roomId) {
     const songRef = this.afDB.database.ref('/').child('rooms').child(roomId).child('songs').child(song.fbKey);

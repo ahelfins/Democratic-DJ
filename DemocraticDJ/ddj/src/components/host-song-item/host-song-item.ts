@@ -60,6 +60,10 @@ export class HostSongItemComponent {
 
   ngOnInit() {}
 
+  /**
+   *Toggles the delete animation
+   * @param dir - the direction of the swipe. -1 for left, 1 for right
+   */
   toggleDeleteAnim(dir) {
     if (dir == -1) {
       this.visibleState = (this.visibleState == 'in') ? 'outLeft' : 'in';

@@ -39,23 +39,6 @@ import { Song } from "../../interfaces/song";
     ])
   ]
 })
-    // trigger('mydownvote', [
-    //   state('nodownvote', style({
-    //     backgroundColor: '#191414'
-    //   })),
-    //   state('downvote', style({
-    //     backgroundColor: '#191414'
-    //   })),
-    //   transition('* => *',
-//         animate('.25s', keyframes([
-//           style({backgroundColor: '#191414', offset: 0}),
-//           style({backgroundColor: '#1db954', offset: 0.25}),
-//           style({backgroundColor: '#191414', offset: 1})
-//         ]))
-//       )
-//     ])
-//   ]
-// })
 
 
 export class SongItemComponent {
@@ -70,6 +53,10 @@ export class SongItemComponent {
 
   ngOnInit() {}
 
+  /**
+   * Toggles the vote animation
+   * @param dir - direction of the swipe. -1 is left (upvote), 1 is right (downvote)
+   */
   toggleVoteAnim(dir) {
     if (dir == -1) {
       if (this.voteState == 'novote') {

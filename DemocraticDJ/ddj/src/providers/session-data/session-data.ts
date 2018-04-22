@@ -19,13 +19,23 @@ export class SessionDataProvider {
     this.songVotes = {};
   }
 
-  //user of method should input an int 1 for upvote or -1 for downvote
+  /**
+   * Updates the up or down votes of a song
+   * @param song - a Song object
+   * @param roomId - ID of current room
+   * @param isUpVote - boolean, true if the vote is an upvote, false if down vote
+   */
   updateSongVotes(song, isUpVote){
     //1 is up vote, 0 is for no vote, -1 is down vote
     this.songVotes[song.title] = isUpVote;
     console.log("songVotes list has "+song.title+" "+isUpVote);
   }
 
+  /**
+   * Gets the number of votes of a song. If the song hasn't been voted on, gives it 0 votes.
+   * @param song - a Song object
+   * @returns {any} - number of votes a song has recieved
+   */
   getSongVotes(song){
     console.log(this.songVotes);
     console.log("!(song in this.songVotes)"+(!(song.title in this.songVotes))+" "+song.title+" "+this.songVotes);
@@ -37,19 +47,34 @@ export class SessionDataProvider {
     return this.songVotes[song.title];
   }
 
-
+  /**
+   * Is the current user a host or a guest?
+   * @returns {boolean} - true if host, false if guest
+   */
   isHost() {
     return this.hostBool;
   }
 
+  /**
+   * Sets the current user as the host
+   * @param hostBoolIn
+   */
   setHost(hostBoolIn) {
     this.hostBool = hostBoolIn;
   }
 
+  /**
+   * Getter for the current session's room code
+   * @returns {string}
+   */
   getRoomCode() {
     return this.roomCode;
   }
 
+  /**
+   * Setter for the current session's room code
+   * @param roomCodeIn
+   */
   setRoomCode(roomCodeIn) {
     this.roomCode = roomCodeIn;
   }

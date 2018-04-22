@@ -76,18 +76,9 @@ export class GuestSongListPage {
 
   }
 
-  toggleUpvoteAnim() {
-    this.upvoteState = (this.upvoteState == 'upvote') ? 'noupvote' : 'upvote';
-  }
-
-  toggleDownvoteAnim() {
-    this.downvoteState = (this.downvoteState == 'downvote') ? 'nodownvote' : 'downvote';
-  }
-
-  trackByTitle(index, song) {
-    return song.title;
-  }
-
+  /**
+   * Takes user to the add song page of the current room.
+   */
   goToAddSongPage() {
     this.navCtrl.push(AddSongPage, {roomId: this.roomId});
   }
@@ -95,7 +86,7 @@ export class GuestSongListPage {
 
 
   /**
-   * Takes an user to the main page (host-guest) and deletes the room.
+   * Takes user to the main page and deletes the room.
    */
   exitRoom() {
     console.log("exiting room " + this.roomId);
@@ -104,7 +95,9 @@ export class GuestSongListPage {
     });
   }
 
-
+  /**
+   * Confirms the user wants to exit the room.
+   */
   exitConfirm() {
     let alert = this.alertCtrl.create({
       title: 'Exit Room',
@@ -131,14 +124,18 @@ export class GuestSongListPage {
 
   /**
    * Deletes a song from the list (and the Firebase)
-   * @param song
+   * @param song - Song object
    */
   deleteSong(song) {
     // console.log("guestSongListPage deleteSong(song): "+song.fbKey); // DEBUG
     this.fBProvider.deleteSong(song, this.roomId);
   }
 
-
+  /**
+   * Votes on a song.
+   * @param song - Song object
+   * @param isUpVote - Boolean. True if an upvote, false if a downvote.
+   */
   vote(song, isUpVote){
     let votes = this.sDProvider.getSongVotes(song);
     console.log(song.title + " is the song that we are getting votes for "+votes);

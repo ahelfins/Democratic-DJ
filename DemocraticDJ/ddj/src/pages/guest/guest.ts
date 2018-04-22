@@ -43,6 +43,9 @@ export class GuestPage {
     this.idList = this.fBProvider.getRoomIdList();
   }
 
+  /**
+   * Creates a list of available room IDs
+   */
   makeIdList() {
     let i = 0;
     this.afDB.list("/rooms").valueChanges()
@@ -57,8 +60,8 @@ export class GuestPage {
 
   /**
    * Checks if the user input of room code is one of the room codes in the Firebase.
-   * @param roomInput
-   * @param idList
+   * @param roomInput - User input room code
+   * @param idList - list of room codes
    */
   isCorrectRoomInput(roomInput: string, idList: String[]) {
     let lowerRoomInput = roomInput.toLowerCase(); // Make the input case-insensitive
