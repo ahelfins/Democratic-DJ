@@ -20,10 +20,10 @@ export class SessionDataProvider {
   }
 
   /**
-   * Updates the up or down votes of a song
+   * Updates the vote on a song from the current session user.
    * @param song - a Song object
    * @param roomId - ID of current room
-   * @param isUpVote - int, 1 if is up vote, 0 for no vote, -1 for down vote
+   * @param isUpVote - 1 for an upvote, 0 for no vote, -1 for downvote
    */
   updateSongVotes(song, isUpVote){
 
@@ -32,9 +32,9 @@ export class SessionDataProvider {
   }
 
   /**
-   * Gets the number of votes of a song. If the song hasn't been voted on, gives it 0 votes.
+   * Gets the current session user's vote on a song. If the song hasn't been voted on, gives it 0 votes.
    * @param song - a Song object
-   * @returns {any} - number of votes a song has recieved
+   * @returns {any} - current session user's votes
    */
   getSongVotes(song){
     console.log(this.songVotes);

@@ -16,7 +16,8 @@ import { AddSongPage } from '../pages/add-song/add-song';
 import { FirebaseProvider } from "../providers/firebase/firebase"
 import { SessionDataProvider } from '../providers/session-data/session-data';
 import { SongItemComponent } from '../components/song-item/song-item'
-import { HostSongItemComponent } from '../components/host-song-item/host-song-item'
+import { HostSongItemComponent } from '../components/host-song-item/host-song-item';
+import 'web-animations-js/web-animations.min';
 
 
 import { HttpClientModule } from '@angular/common/http'
