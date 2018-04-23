@@ -50,31 +50,20 @@ export class GuestSongListPage {
 
     this.songList = this.fBProvider.getSongList(this.roomId).valueChanges();
 
-    // Alert pops up BEFORE exiting the guest song list room
-    // this.room.subscribe((room) => {
-    //   if (room == null) {
-    //     let alert = this.alertCtrl.create({
-    //       title: 'Party Ended',
-    //       message: 'The host has ended the party. The room will be closed and you will be directed to the main page. Hope you had a wonderful time!',
-    //       buttons: [{
-    //         text: 'OK',
-    //         role: 'ok',
-    //         handler: () => {
-    //           console.log('OK clicked');
-    //           alert.dismiss().then(()=> {
-    //             this.navCtrl.insert(0, HostGuestPage).then(() => {
-    //               this.navCtrl.popToRoot();
-    //             });
-    //           });
-    //           return false;
-    //         }
-    //       }]
-    //     });
-    //     alert.present()
-    //   }
-    // });
+    this.kickedoutConfirm(); // kick out the guest if the party has ended
+  }
 
-    // Alert pops up AFTER exiting the guest song list room
+  /**
+   * Takes user to the add song page of the current room.
+   */
+  goToAddSongPage() {
+    this.navCtrl.push(AddSongPage, {roomId: this.roomId});
+  }
+
+  /**
+   * Alert pops up AFTER exiting the guest song list room
+   */
+  kickedoutConfirm() {
     this.room.subscribe((room) => {
       if (room == null) {
         let alert = this.alertCtrl.create({
@@ -96,14 +85,6 @@ export class GuestSongListPage {
         });
       }
     });
-
-  }
-
-  /**
-   * Takes user to the add song page of the current room.
-   */
-  goToAddSongPage() {
-    this.navCtrl.push(AddSongPage, {roomId: this.roomId});
   }
 
 
