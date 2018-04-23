@@ -136,11 +136,21 @@ export class GuestSongListPage {
   }
 
   /**
+   * Delays async functions
+   * @param {number} ms
+   * @returns {Promise<any>}
+   */
+  delay(ms: number) {
+    return new Promise( resolve => setTimeout(resolve, ms) );
+  }
+
+  /**
    * Votes on a song.
    * @param song - Song object
    * @param isUpVote - Boolean. True if an upvote, false if a downvote.
    */
-  vote(song, isUpVote){
+  async vote(song, isUpVote){
+    await this.delay(500);
     let votes = this.sDProvider.getSongVotes(song);
     console.log(song.title + " is the song that we are getting votes for "+votes);
     if(votes == 0){
