@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { trigger, state, style, transition, animate, keyframes } from '@angular/animations';
 import { Song } from "../../interfaces/song";
+import 'web-animations-js/web-animations.min';
 
 /**
  * Generated class for the SongItemComponent component.
