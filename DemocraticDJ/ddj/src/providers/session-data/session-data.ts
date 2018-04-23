@@ -23,10 +23,10 @@ export class SessionDataProvider {
    * Updates the up or down votes of a song
    * @param song - a Song object
    * @param roomId - ID of current room
-   * @param isUpVote - boolean, true if the vote is an upvote, false if down vote
+   * @param isUpVote - int, 1 if is up vote, 0 for no vote, -1 for down vote
    */
   updateSongVotes(song, isUpVote){
-    //1 is up vote, 0 is for no vote, -1 is down vote
+
     this.songVotes[song.title] = isUpVote;
     console.log("songVotes list has "+song.title+" "+isUpVote);
   }
