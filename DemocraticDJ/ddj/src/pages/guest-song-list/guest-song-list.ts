@@ -50,29 +50,52 @@ export class GuestSongListPage {
 
     this.songList = this.fBProvider.getSongList(this.roomId).valueChanges();
 
+    // Alert pops up BEFORE exiting the guest song list room
+    // this.room.subscribe((room) => {
+    //   if (room == null) {
+    //     let alert = this.alertCtrl.create({
+    //       title: 'Party Ended',
+    //       message: 'The host has ended the party. The room will be closed and you will be directed to the main page. Hope you had a wonderful time!',
+    //       buttons: [{
+    //         text: 'OK',
+    //         role: 'ok',
+    //         handler: () => {
+    //           console.log('OK clicked');
+    //           alert.dismiss().then(()=> {
+    //             this.navCtrl.insert(0, HostGuestPage).then(() => {
+    //               this.navCtrl.popToRoot();
+    //             });
+    //           });
+    //           return false;
+    //         }
+    //       }]
+    //     });
+    //     alert.present()
+    //   }
+    // });
+
+    // Alert pops up AFTER exiting the guest song list room
     this.room.subscribe((room) => {
       if (room == null) {
         let alert = this.alertCtrl.create({
           title: 'Party Ended',
-          message: 'The host has ended the party. The room will be closed and you will be directed to the main page. Hope you had a wonderful time!',
+          message: 'The host has ended the party. Hope you had a wonderful time!',
           buttons: [{
             text: 'OK',
             role: 'ok',
             handler: () => {
               console.log('OK clicked');
-              alert.dismiss().then(()=> {
-                this.navCtrl.insert(0, HostGuestPage).then(() => {
-                  this.navCtrl.popToRoot();
-                });
-              });
+              alert.dismiss();
               return false;
             }
           }]
         });
-        alert.present()
+        alert.present();
+        this.navCtrl.insert(0, HostGuestPage).then(() => {
+          this.navCtrl.popToRoot();
+        });
       }
     });
-
 
   }
 
