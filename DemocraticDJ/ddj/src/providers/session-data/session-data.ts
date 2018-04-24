@@ -26,24 +26,23 @@ export class SessionDataProvider {
    * @param isUpVote - 1 for an upvote, 0 for no vote, -1 for downvote
    */
   updateSongVotes(song, isUpVote){
-
     this.songVotes[song.title] = isUpVote;
-    console.log("songVotes list has "+song.title+" "+isUpVote);
+    // console.log("songVotes list has "+song.title+" "+isUpVote);
   }
 
   /**
    * Gets the current session user's vote on a song. If the song hasn't been voted on, gives it 0 votes.
    * @param song - a Song object
-   * @returns {any} - current session user's votes
+   * @returns {number} - current session user's votes
    */
   getSongVotes(song){
-    console.log(this.songVotes);
-    console.log("!(song in this.songVotes)"+(!(song.title in this.songVotes))+" "+song.title+" "+this.songVotes);
+    // console.log(this.songVotes);
+    // console.log("!(song in this.songVotes)"+(!(song.title in this.songVotes))+" "+song.title+" "+this.songVotes);
     if (!(song.title in this.songVotes)){
-      console.log(song.title+" not in song votes so added");
+      // console.log(song.title+" not in song votes so added");
       this.updateSongVotes(song, 0);
     }
-    console.log(this.songVotes);
+    // console.log(this.songVotes);
     return this.songVotes[song.title];
   }
 

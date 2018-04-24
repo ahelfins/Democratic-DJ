@@ -23,6 +23,22 @@
   color: map-get($colors, text);
 }
 
+.fit-thumbnail {
+  object-fit: cover;
+  width: 15%;
+  length: 15%;
+}
+
+.titleicon div{
+  display:inline-block;
+  margin-top:10px;
+}
+
+.flex {
+  display: flex !important;
+  align-items: center !important;
+}
+
 ion-app.md [padding] .scroll-content {
   padding: 0px;
 }
@@ -31,6 +47,24 @@ ion-app.ios [padding] .scroll-content {
 }
 ion-app.wp [padding] .scroll-content {
   padding: 0px;
+}
+
+.logo {
+  height:0;
+  width:200px;
+  //padding-bottom: 27.85%;
+  padding-top: 25vh;
+}
+
+
+.homebuttons {
+  padding-top: 50vh;
+}
+
+.centering {
+  height: 100%;
+  align-items: center;
+  align-content: center;
 }
 
 .fab {
@@ -59,7 +93,7 @@ ion-app.wp [padding] .scroll-content {
 }
 
 .toolbar-background {
-  background-color: #191419;
+  background-color: map-get($colors, background);
   color: map-get($colors, text);
 }
 
@@ -78,6 +112,7 @@ ion-app.wp [padding] .scroll-content {
 
 .center {
   align-items: center;
+  align-content: center;
 }
 
 .item {

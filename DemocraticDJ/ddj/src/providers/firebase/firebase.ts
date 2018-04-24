@@ -87,9 +87,9 @@ export class FirebaseProvider {
    */
   updateVote(song, roomId, isUpVote){
     const songRef = this.afDB.database.ref('/').child('rooms').child(roomId).child('songs').child(song.fbKey);
-    console.log("updating song in firebase");
+    // console.log("updating song in firebase");
     if(isUpVote) {
-      console.log("is up vote");
+      // console.log("is up vote");
       // songRef.update({upVotes:++song.upVotes});
       songRef.update({upVotes:song.upVotes});
     }
@@ -107,7 +107,7 @@ export class FirebaseProvider {
    */
   switchVote(song, roomId, switchToUpVote){
     const songRef = this.afDB.database.ref('/').child('rooms').child(roomId).child('songs').child(song.fbKey);
-    console.log("song ref in switch vote "+this.afDB.object(songRef));
+    // console.log("song ref in switch vote "+this.afDB.object(songRef));
     songRef.update({downVotes:song.downVotes});
     songRef.update({upVotes:song.upVotes});
     // if(switchToUpVote){

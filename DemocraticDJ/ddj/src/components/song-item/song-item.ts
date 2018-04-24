@@ -1,6 +1,8 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 import { trigger, state, style, transition, animate, keyframes } from '@angular/animations';
 import { Song } from "../../interfaces/song";
+import { FirebaseProvider } from "../../providers/firebase/firebase"
+import { SessionDataProvider } from "../../providers/session-data/session-data";
 import 'web-animations-js/web-animations.min';
 
 /**
@@ -42,43 +44,72 @@ import 'web-animations-js/web-animations.min';
 })
 
 
-export class SongItemComponent {
+export class SongItemComponent implements OnInit {
 
+  @Output() change: EventEmitter<Boolean> = new EventEmitter<Boolean>();
   @Input() song: Song;
-
+  room: any;
+  roomId: any;
   voteState = 'novote';
+  songList: any;
 
 
-  constructor() {
+  constructor(public fBProvider: FirebaseProvider,
+              private sDProvider: SessionDataProvider) {
+    this.roomId = this.sDProvider.getRoomCode();
+    this.room = this.fBProvider.getRoom(this.roomId).valueChanges();
+    this.songList = this.fBProvider.getSongList(this.roomId).valueChanges();
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+  }
 
   /**
-   * Toggles the vote animation
-   * @param dir - direction of the swipe. -1 is left (upvote), 1 is right (downvote)
+   * Delays async functions
+   * @param {number} ms
+   * @returns {Promise<any>}
    */
-  toggleVoteAnim(dir) {
-    if (dir == -1) {
-      if (this.voteState == 'novote') {
-        this.voteState = (this.voteState == 'novote') ? 'upvote' : 'novote';
+  delay(ms: number) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+  }
+
+  /**
+   * Toggles the voting animation.
+   * @param {Boolean} isUpVote - true if an upvote, false if a downvote
+   */
+  toggleVoteAnim(isUpVote: Boolean) {
+    console.log('Current vote state: ' + this.voteState);
+    this.change.emit(isUpVote);
+    if (isUpVote) {
+      console.log('direction is: ' + isUpVote);
+      if (this.voteState === 'novote') {
+        this.voteState = (this.voteState === 'novote') ? 'upvote' : 'novote';
+        console.log(this.song.title + " was novote, now it is: " + this.voteState);
       }
-      if (this.voteState == 'downvote') {
-        this.voteState = (this.voteState == 'downvote') ? 'upvote' : 'downvote';
+      if (this.voteState === 'downvote') {
+        this.voteState = (this.voteState === 'downvote') ? 'upvote' : 'downvote';
+        console.log(this.song.title + " was downvote, now it is: " + this.voteState);
       }
-      if (this.voteState == 'upvote') {
-        this.voteState = (this.voteState == 'upvote') ? 'upvote' : 'upvote';
+      // if (this.voteState === 'upvote') {
+      //   this.voteState = (this.voteState === 'upvote') ? 'upvote' : 'upvote';
+      //   console.log(this.song.title + " was upvote, now it is: " + this.voteState);
+      // }
+    } else if (!isUpVote) {
+      console.log('direction is: ' + isUpVote);
+      if (this.voteState === 'novote') {
+        this.voteState = (this.voteState === 'novote') ? 'downvote' : 'novote';
+        console.log(this.song.title + " was novote, now it is: " + this.voteState);
       }
-    } else if (dir == 1) {
-      if (this.voteState == 'novote') {
-        this.voteState = (this.voteState == 'novote') ? 'downvote' : 'novote';
+      if (this.voteState === 'upvote') {
+        this.voteState = (this.voteState === 'upvote') ? 'downvote' : 'upvote';
+        console.log(this.song.title + " was upvote, now it is: " + this.voteState);
       }
-      if (this.voteState == 'downvote') {
-        this.voteState = (this.voteState == 'downvote') ? 'downvote' : 'downvote';
-      }
-      if (this.voteState == 'upvote') {
-        this.voteState = (this.voteState == 'upvote') ? 'downvote' : 'upvote';
-      }
+      // if (this.voteState === 'downvote') {
+      //   this.voteState = (this.voteState === 'downvote') ? 'downvote' : 'downvote';
+      //   console.log(this.song.title + " was downvote, now it is: " + this.voteState);
+      // }
     }
+    console.log(this.song.title + " final votestate: " + this.voteState);
+    // this.vote(song, )
   }
 }
