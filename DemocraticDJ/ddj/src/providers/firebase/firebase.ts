@@ -73,6 +73,8 @@ export class FirebaseProvider {
    */
   pushSong(song, roomId){
     let promise = this.afDB.list("rooms/"+roomId+"/songs").push(song);
+    // this.afDB.database.ref("rooms/"+roomId+"/songs"+song.fBKey).orderByChild('upVotes');
+    // console.log("trying to order by child");
     song.fbKey = promise.key;
     this.afDB.database.ref('/').child('rooms').child(roomId).child('songs').child(promise.key).update({fbKey: promise.key});
     console.log("Attempted to push: " + song.title);
@@ -97,6 +99,8 @@ export class FirebaseProvider {
       // songRef.update({downVotes:++song.downVotes});
       songRef.update({downVotes:song.downVotes});
     }
+    // this.afDB.database.ref("rooms/"+roomId+"/songs"+song.fBKey).orderByChild('upVotes');
+    // console.log("trying to order by child");
   }
 
   /**
