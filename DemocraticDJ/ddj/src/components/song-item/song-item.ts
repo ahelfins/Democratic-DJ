@@ -79,7 +79,6 @@ export class SongItemComponent implements OnInit {
    */
   toggleVoteAnim(isUpVote: Boolean) {
     console.log('Current vote state: ' + this.voteState);
-    this.change.emit(isUpVote);
     if (isUpVote) {
       console.log('direction is: ' + isUpVote);
       if (this.voteState === 'novote') {
@@ -110,6 +109,6 @@ export class SongItemComponent implements OnInit {
       // }
     }
     console.log(this.song.title + " final votestate: " + this.voteState);
-    // this.vote(song, )
+    this.change.emit(isUpVote);
   }
 }

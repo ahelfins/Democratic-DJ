@@ -3,11 +3,14 @@ page-host-guest {
     justify-content: center;
   }
 
-  .blank1 {
-    height: 10vh;
+  .logo {
+    height:0;
+    width:80vw;
+    padding-top: 20vh;
+    max-width: 400px;
   }
 
-  .blank2 {
-    height: 10vh;
+  .homebuttons {
+    padding-top: 50vh;
   }
 }

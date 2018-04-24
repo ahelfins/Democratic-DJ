@@ -8,7 +8,7 @@
 
   <ion-navbar>
     <ion-thumbnail float-left>
-      <img src="../../assets/imgs/logoicon.png" height="40px"/>
+      <img src="../../assets/imgs/logoicon.png" height="40px" padding-left="1px"/>
     </ion-thumbnail>
     <ion-title item-left class="titleicon" id="room">{{title}}</ion-title>
 
@@ -37,5 +37,6 @@
     <ion-list *ngFor="let song of songList | async" [class.selected]="song">
       <song-item [song]="song" class="bottom-border" (change)="vote(song, $event)"></song-item>
     </ion-list>
+    <ion-item height="100px"></ion-item>
   </ion-list>
 </ion-content>
