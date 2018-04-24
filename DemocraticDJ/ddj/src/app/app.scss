@@ -19,6 +19,10 @@
 //  background-color: #29801c !important;
 //}
 
+ion-icon {
+  color: map-get($colors, text);
+}
+
 .back-button {
   color: map-get($colors, text);
 }
@@ -26,11 +30,6 @@
 .titleicon div{
   display:inline-block;
   margin-top:2px;
-}
-
-.flex {
-  display: flex !important;
-  align-items: center !important;
 }
 
 ion-app.md [padding] .scroll-content {
@@ -52,10 +51,6 @@ ion-app.wp [padding] .scroll-content {
 .fab {
   background-color: map-get($colors, button);
 }
-
-//.fab:hover {
-//  background-color: map-get($colors, hover) !important;
-//}
 
 .button {
   background-color: map-get($colors, button);
