@@ -136,22 +136,34 @@ export class GuestSongListPage {
   }
 
   /**
+   * Delays async functions
+   * @param {number} ms
+   * @returns {Promise<any>}
+   */
+  delay(ms: number) {
+    return new Promise( resolve => setTimeout(resolve, ms) );
+  }
+
+  /**
    * Votes on a song.
    * @param song - Song object
    * @param isUpVote - Boolean. True if an upvote, false if a downvote.
    */
-  vote(song, isUpVote){
+  async vote(song, isUpVote){
+    await this.delay(500);
     let votes = this.sDProvider.getSongVotes(song);
     console.log(song.title + " is the song that we are getting votes for "+votes);
     if(votes == 0){
       console.log("song has no votes");
       if(isUpVote){
         this.sDProvider.updateSongVotes(song, 1);
+        song.upVotes++;
         console.log("was an up vote so "+song.title+" has "+this.sDProvider.getSongVotes(song));
         // this.toggleDownvoteAnim();
       }
       else{
         this.sDProvider.updateSongVotes(song, -1);
+        song.downVotes++;
         console.log("was a down vote so "+song.title+" has "+this.sDProvider.getSongVotes(song));
         // this.toggleUpvoteAnim();
       }
@@ -161,6 +173,8 @@ export class GuestSongListPage {
       console.log("song has up vote");
       if(!isUpVote){
         this.sDProvider.updateSongVotes(song, -1);
+        song.upVotes--;
+        song.downVotes++;
         this.fBProvider.switchVote(song, this.roomId, isUpVote);
         // this.toggleUpvoteAnim();
       }
@@ -169,6 +183,8 @@ export class GuestSongListPage {
       console.log("song has down vote");
       if(isUpVote){
         this.sDProvider.updateSongVotes(song, 1);
+        song.upVotes++;
+        song.downVotes--;
         this.fBProvider.switchVote(song, this.roomId, isUpVote);
         // this.toggleDownvoteAnim();
       }

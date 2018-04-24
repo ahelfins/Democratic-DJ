@@ -31,7 +31,7 @@
   <!--{{let songs = (room | async)?.songs}}-->
   <ion-list>
     <!--<ion-item-sliding #item [ngStyle]="{'background-color': darkgrey}">-->
-      <ion-list *ngFor="let song of songList | async; trackBy: trackByTitle" [class.selected]="song">
+      <ion-list *ngFor="let song of songList | async" [class.selected]="song">
       <song-item (swipeleft)="vote(song, true)" (swiperight)="vote(song, false)" [song]="song" class="bottom-border"></song-item>
     </ion-list>
   </ion-list>

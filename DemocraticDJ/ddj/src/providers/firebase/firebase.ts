@@ -90,10 +90,12 @@ export class FirebaseProvider {
     console.log("updating song in firebase");
     if(isUpVote) {
       console.log("is up vote");
-      songRef.update({upVotes:++song.upVotes});
+      // songRef.update({upVotes:++song.upVotes});
+      songRef.update({upVotes:song.upVotes});
     }
     else{
-      songRef.update({downVotes:++song.downVotes});
+      // songRef.update({downVotes:++song.downVotes});
+      songRef.update({downVotes:song.downVotes});
     }
   }
 
@@ -105,14 +107,17 @@ export class FirebaseProvider {
    */
   switchVote(song, roomId, switchToUpVote){
     const songRef = this.afDB.database.ref('/').child('rooms').child(roomId).child('songs').child(song.fbKey);
-    if(switchToUpVote){
-      songRef.update({downVotes:--song.downVotes});
-      songRef.update({upVotes:++song.upVotes});
-    }
-    else{
-      songRef.update({upVotes:--song.upVotes});
-      songRef.update({downVotes:++song.downVotes});
-    }
+    console.log("song ref in switch vote "+this.afDB.object(songRef));
+    songRef.update({downVotes:song.downVotes});
+    songRef.update({upVotes:song.upVotes});
+    // if(switchToUpVote){
+    //   songRef.update({downVotes:--song.downVotes});
+    //   songRef.update({upVotes:++song.upVotes});
+    // }
+    // else{
+    //   songRef.update({upVotes:--song.upVotes});
+    //   songRef.update({downVotes:++song.downVotes});
+    // }
   }
 
   /**

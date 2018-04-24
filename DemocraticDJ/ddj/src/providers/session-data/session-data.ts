@@ -20,21 +20,21 @@ export class SessionDataProvider {
   }
 
   /**
-   * Updates the up or down votes of a song
+   * Updates the vote on a song from the current session user.
    * @param song - a Song object
    * @param roomId - ID of current room
-   * @param isUpVote - boolean, true if the vote is an upvote, false if down vote
+   * @param isUpVote - 1 for an upvote, 0 for no vote, -1 for downvote
    */
   updateSongVotes(song, isUpVote){
-    //1 is up vote, 0 is for no vote, -1 is down vote
+
     this.songVotes[song.title] = isUpVote;
     console.log("songVotes list has "+song.title+" "+isUpVote);
   }
 
   /**
-   * Gets the number of votes of a song. If the song hasn't been voted on, gives it 0 votes.
+   * Gets the current session user's vote on a song. If the song hasn't been voted on, gives it 0 votes.
    * @param song - a Song object
-   * @returns {any} - number of votes a song has recieved
+   * @returns {any} - current session user's votes
    */
   getSongVotes(song){
     console.log(this.songVotes);

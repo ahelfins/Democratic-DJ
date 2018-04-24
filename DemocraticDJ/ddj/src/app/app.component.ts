@@ -6,6 +6,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database'
 import { HostGuestPage } from '../pages/host-guest/host-guest';
+import 'web-animations-js/web-animations.min';
 
 @Component({
   templateUrl: 'app.html'
