@@ -168,6 +168,10 @@ export class GuestSongListPage {
         this.sDProvider.updateSongVotes(song, -1);
         song.upVotes--;
         song.downVotes++;
+        if(song.upVotes<0){
+          song.upVotes = 0;
+          song.downVotes++;
+        }
         this.fBProvider.switchVote(song, this.roomId, isUpVote);
       }
     }
@@ -177,6 +181,10 @@ export class GuestSongListPage {
         this.sDProvider.updateSongVotes(song, 1);
         song.upVotes++;
         song.downVotes--;
+        if(song.downVotes<0){
+          song.downVotes = 0;
+          song.upVotes++;
+        }
         this.fBProvider.switchVote(song, this.roomId, isUpVote);
       }
     }

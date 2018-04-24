@@ -56,20 +56,55 @@ export class AddSongPage {
    * @returns {boolean}
    */
   isValidInput(song:string, artist:string) {
-    if(song != null || artist != null) {
-      if(song == null) {
-        song = "1";
-      }
-      if(artist == null) {
-        artist = "1";
-      }
-      if(song.length < 21 && artist.length <21) {
-        return true;
-      } else {
-        return false;
-      }
+    var cleanSong;
+    var cleanArtist;
+    if(this.inputIsNotNull(song, artist)) {
+      cleanSong = this.cleanPuncSpaceFromInputItem(song);
+      cleanArtist = this.cleanPuncSpaceFromInputItem(artist);
     } else {
       return false;
+    }
+    if(this.inputIsNotNull(cleanSong, cleanArtist)) {
+      if(cleanSong == null || cleanSong === "") {
+        song = "1";
+      }
+      if(cleanArtist == null || cleanArtist === "") {
+        artist = "1";
+      }
+      console.log("Cleaned inputs are not null")
+      return this.inputIsNotTooLong(song, artist);
+    } else {
+      return false;
+    }
+  }
+
+  inputIsNotNull(song: string, artist: string) {
+    var cleanSong = this.cleanPuncSpaceFromInputItem(song);
+    var cleanArtist = this.cleanPuncSpaceFromInputItem(artist);
+    if(!((cleanSong === "" || cleanSong == null) && (cleanArtist === "" || cleanArtist == null))) {
+      console.log("Is not null: " + "+++"+song+"+++" + " - " + "+++"+artist+"+++");
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  inputIsNotTooLong(song: string, artist: string) {
+    if(song.length < 50 && artist.length < 50) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  cleanPuncSpaceFromInputItem(input: string) {
+    if(input != null && !(input === "")) {
+      var noSpaceInput = input.replace(/\s/g, '');
+      var cleanInput = noSpaceInput.replace(/[^0-9a-z]/gi, '');
+      console.log(cleanInput);
+      return cleanInput;
+    } else {
+      return "";
     }
   }
 
@@ -78,8 +113,9 @@ export class AddSongPage {
    * @param {string} artist
    * @returns {string}
    */
-  cleanArtist(artist:string) {
-    if(artist == null) {
+  replaceEmptyArtist(artist:string) {
+    var cleanArtist = this.cleanPuncSpaceFromInputItem(artist);
+    if(cleanArtist == null || cleanArtist == "") {
       artist = "Unknown";
     }
     return artist;
@@ -90,8 +126,9 @@ export class AddSongPage {
    * @param {string} song
    * @returns {string}
    */
-  cleanSong(song: string) {
-    if(song == null) {
+  replaceEmptySong(song: string) {
+    var cleanSong = this.cleanPuncSpaceFromInputItem(song);
+    if(cleanSong == null || cleanSong == "") {
       song = "Any Song";
     }
     return song;
@@ -118,7 +155,7 @@ export class AddSongPage {
   addSongToFB(songInput, artistInput) {
     if(this.isValidInput(songInput, artistInput)) {
       console.log("songName: " + songInput + ", and roomCode: " +this.roomId); // DEBUG
-      let song: Song = {title: this.cleanSong(songInput), artist: this.cleanArtist(artistInput), upVotes: 0, downVotes: 0}; // converts the song to a Song object
+      let song: Song = {title: this.replaceEmptySong(songInput), artist: this.replaceEmptyArtist(artistInput), upVotes: 0, downVotes: 0}; // converts the song to a Song object
       this.fBProvider.pushSong(song, this.roomId); // pushes the song to the Firebase
       console.log("fbkey "+ song.fbKey);
     } else {
