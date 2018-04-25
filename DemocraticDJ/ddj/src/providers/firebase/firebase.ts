@@ -89,9 +89,9 @@ export class FirebaseProvider {
    */
   updateVote(song, roomId, isUpVote){
     const songRef = this.afDB.database.ref('/').child('rooms').child(roomId).child('songs').child(song.fbKey);
-    console.log("updating song in firebase");
+    // console.log("updating song in firebase");
     if(isUpVote) {
-      console.log("is up vote");
+      // console.log("is up vote");
       // songRef.update({upVotes:++song.upVotes});
       // songRef.update({upVotes:song.upVotes});
       songRef.child('upVotes').transaction(function(currentUpVotes){

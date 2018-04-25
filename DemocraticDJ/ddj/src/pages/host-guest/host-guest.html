@@ -8,15 +8,18 @@
     <button ion-button clear icon-only class="votebutton" [navPush]="HowtoButton"><ion-icon name="information-circle"></ion-icon></button>
   <ion-grid>
     <ion-col>
-      <ion-row>
-        <img src="../../assets/imgs/logo.png" alt="logo">
+      <ion-row class="blank1"></ion-row>
+      <ion-row class="centering">
+        <ion-row class="logo">
+          <div><img src="../../assets/imgs/logo.png" alt="logo"></div>
+        </ion-row>
+        <ion-row class="blank1"></ion-row>
+        <ion-row class="blank1"></ion-row>
       </ion-row>
-      <ion-row>
-        <button ion-button block (click)="makeRoomAndEnter();" class="button">Host</button>
-      </ion-row>
-      <ion-row>
-        <button ion-button block [navPush]="GuestButton" class="button">Guest</button>
-      </ion-row>
+      <div class="homebuttons"><ion-row align-items-center>
+          <button ion-button block (click)="makeRoomAndEnter();" class="button">Host</button>
+          <button ion-button block [navPush]="GuestButton" class="button">Guest</button>
+      </ion-row></div>
     </ion-col>
   </ion-grid>
 </ion-content>

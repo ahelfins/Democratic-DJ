@@ -5,8 +5,6 @@ import { FirebaseProvider } from "../../providers/firebase/firebase"
 import { SessionDataProvider } from "../../providers/session-data/session-data";
 
 import { HostGuestPage } from "../host-guest/host-guest";
-import { trigger, state, style, transition, animate, keyframes } from '@angular/animations';
-import { SongItemComponent } from "../../components/song-item/song-item";
 
 
 /**
@@ -27,10 +25,6 @@ export class GuestSongListPage {
   public roomId: string;
   title: String;
   songList: any;
-
-  upvoteState = 'noupvote';
-  downvoteState = 'nodownvote';
-
   room: any;
 
   constructor(public navCtrl: NavController,
@@ -40,6 +34,7 @@ export class GuestSongListPage {
     this.addSongButton = AddSongPage;
     this.roomId = this.sDProvider.getRoomCode();
     this.room = this.fBProvider.getRoom(this.roomId).valueChanges();
+    this.kickedoutConfirm(); // kick out the guest if the party has ended
   }
 
   ionViewDidLoad() {
@@ -47,10 +42,7 @@ export class GuestSongListPage {
     console.log('Current room: '+this.roomId);
     console.log('Host?: '+this.sDProvider.isHost());
     this.title = "Guest: "+this.roomId;
-
     this.songList = this.fBProvider.getSongList(this.roomId).valueChanges();
-
-    this.kickedoutConfirm(); // kick out the guest if the party has ended
   }
 
   /**
@@ -61,33 +53,32 @@ export class GuestSongListPage {
   }
 
   /**
-   * Alert pops up AFTER exiting the guest song list room
+   * Alert pops up AFTER directing the guest to the host-guest-page
    */
-  kickedoutConfirm() {
-    this.room.subscribe((room) => {
-      if (room == null) {
-        let alert = this.alertCtrl.create({
-          title: 'Party Ended',
-          message: 'The host has ended the party. Hope you had a wonderful time!',
-          buttons: [{
-            text: 'OK',
-            role: 'ok',
-            handler: () => {
-              console.log('OK clicked');
-              alert.dismiss();
-              return false;
-            }
-          }]
-        });
-        alert.present();
-        this.navCtrl.insert(0, HostGuestPage).then(() => {
-          this.navCtrl.popToRoot();
-        });
-      }
-    });
+  async kickedoutConfirm() {
+    if (this.navCtrl.getActive().name == "GuestPage" || this.navCtrl.getActive().name == "GuestSongListPage") {
+      this.room.subscribe((room) => {
+        if (room == null) {
+          let alert = this.alertCtrl.create({
+            title: 'Party Ended',
+            message: 'The host has ended the party. Hope you had a wonderful time!',
+            buttons: [{
+              text: 'OK',
+              role: 'ok',
+              handler: () => {
+                console.log('OK clicked');
+              }
+            }]
+          }).present().then(() => {
+            console.log("alert presented");
+            this.navCtrl.insert(0, HostGuestPage).then(() => {
+              this.navCtrl.popToRoot();
+            });
+          });
+        }
+      });
+    }
   }
-
-
 
   /**
    * Takes user to the main page and deletes the room.
@@ -144,17 +135,18 @@ export class GuestSongListPage {
     return new Promise( resolve => setTimeout(resolve, ms) );
   }
 
+
   /**
    * Votes on a song.
    * @param song - Song object
    * @param isUpVote - Boolean. True if an upvote, false if a downvote.
    */
-  async vote(song, isUpVote){
-    await this.delay(500);
+  vote(song, isUpVote){
+    // await this.delay(500);
     let votes = this.sDProvider.getSongVotes(song);
-    console.log(song.title + " is the song that we are getting votes for "+votes);
+    // console.log(song.title + " is the song that we are getting votes for "+votes);
     if(votes == 0){
-      console.log("song has no votes");
+      // console.log("song has no votes");
       if(isUpVote){
         this.sDProvider.updateSongVotes(song, 1);
         // song.upVotes++;
@@ -170,26 +162,23 @@ export class GuestSongListPage {
       this.fBProvider.updateVote(song, this.roomId, isUpVote);
     }
     else if(votes==1){
-      console.log("song has up vote");
+      // console.log("song has up vote");
       if(!isUpVote){
         this.sDProvider.updateSongVotes(song, -1);
         // song.upVotes--;
         // song.downVotes++;
         this.fBProvider.switchVote(song, this.roomId, isUpVote);
-        // this.toggleUpvoteAnim();
       }
     }
     else{
-      console.log("song has down vote");
+      // console.log("song has down vote");
       if(isUpVote){
         this.sDProvider.updateSongVotes(song, 1);
         // song.upVotes++;
         // song.downVotes--;
         this.fBProvider.switchVote(song, this.roomId, isUpVote);
-        // this.toggleDownvoteAnim();
       }
     }
-    console.log(song.title + " has "+ this.sDProvider.getSongVotes(song));
+    // console.log(song.title + " has "+ this.sDProvider.getSongVotes(song));
   }
-
 }

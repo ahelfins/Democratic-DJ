@@ -7,7 +7,10 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title id="room">{{title}}</ion-title>
+    <ion-thumbnail float-left>
+      <img src="../../assets/imgs/logoicon.png" height="30px" padding-left="1px"/>
+    </ion-thumbnail>
+    <ion-title item-left class="titleicon" id="room">{{title}}</ion-title>
 
     <ion-buttons end>
       <button ion-button icon-only (click)="exitConfirm()">
@@ -31,8 +34,9 @@
   <!--{{let songs = (room | async)?.songs}}-->
   <ion-list>
     <!--<ion-item-sliding #item [ngStyle]="{'background-color': darkgrey}">-->
-      <ion-list *ngFor="let song of songList | async" [class.selected]="song">
-      <song-item (swipeleft)="vote(song, true)" (swiperight)="vote(song, false)" [song]="song" class="bottom-border"></song-item>
+    <ion-list *ngFor="let song of songList | async" [class.selected]="song">
+      <song-item [song]="song" class="bottom-border" (change)="vote(song, $event)"></song-item>
     </ion-list>
+    <ion-item no-lines height="100px"></ion-item>
   </ion-list>
 </ion-content>

@@ -19,8 +19,17 @@
 //  background-color: #29801c !important;
 //}
 
+ion-icon {
+  color: map-get($colors, text)
+}
+
 .back-button {
   color: map-get($colors, text);
+}
+
+.titleicon div{
+  display:inline-block;
+  margin-top:2px;
 }
 
 ion-app.md [padding] .scroll-content {
@@ -33,13 +42,15 @@ ion-app.wp [padding] .scroll-content {
   padding: 0px;
 }
 
+.centering {
+  height: 100%;
+  align-items: center;
+  align-content: center;
+}
+
 .fab {
   background-color: map-get($colors, button);
 }
-
-//.fab:hover {
-//  background-color: map-get($colors, hover) !important;
-//}
 
 .button {
   background-color: map-get($colors, button);
@@ -59,7 +70,7 @@ ion-app.wp [padding] .scroll-content {
 }
 
 .toolbar-background {
-  background-color: #191419;
+  background-color: map-get($colors, background);
   color: map-get($colors, text);
 }
 
@@ -78,6 +89,7 @@ ion-app.wp [padding] .scroll-content {
 
 .center {
   align-items: center;
+  align-content: center;
 }
 
 .item {
