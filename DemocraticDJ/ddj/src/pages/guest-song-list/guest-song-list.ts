@@ -149,13 +149,15 @@ export class GuestSongListPage {
       // console.log("song has no votes");
       if(isUpVote){
         this.sDProvider.updateSongVotes(song, 1);
-        song.upVotes++;
-        // console.log("was an up vote so "+song.title+" has "+this.sDProvider.getSongVotes(song));
+        // song.upVotes++;
+        console.log("was an up vote so "+song.title+" has "+this.sDProvider.getSongVotes(song));
+        // this.toggleDownvoteAnim();
       }
       else{
         this.sDProvider.updateSongVotes(song, -1);
-        song.downVotes++;
-        // console.log("was a down vote so "+song.title+" has "+this.sDProvider.getSongVotes(song));
+        // song.downVotes++;
+        console.log("was a down vote so "+song.title+" has "+this.sDProvider.getSongVotes(song));
+        // this.toggleUpvoteAnim();
       }
       this.fBProvider.updateVote(song, this.roomId, isUpVote);
     }
@@ -163,12 +165,8 @@ export class GuestSongListPage {
       // console.log("song has up vote");
       if(!isUpVote){
         this.sDProvider.updateSongVotes(song, -1);
-        song.upVotes--;
-        song.downVotes++;
-        if(song.upVotes<0){
-          song.upVotes = 0;
-          song.downVotes++;
-        }
+        // song.upVotes--;
+        // song.downVotes++;
         this.fBProvider.switchVote(song, this.roomId, isUpVote);
       }
     }
@@ -176,16 +174,11 @@ export class GuestSongListPage {
       // console.log("song has down vote");
       if(isUpVote){
         this.sDProvider.updateSongVotes(song, 1);
-        song.upVotes++;
-        song.downVotes--;
-        if(song.downVotes<0){
-          song.downVotes = 0;
-          song.upVotes++;
-        }
+        // song.upVotes++;
+        // song.downVotes--;
         this.fBProvider.switchVote(song, this.roomId, isUpVote);
       }
     }
     // console.log(song.title + " has "+ this.sDProvider.getSongVotes(song));
   }
 }
-
