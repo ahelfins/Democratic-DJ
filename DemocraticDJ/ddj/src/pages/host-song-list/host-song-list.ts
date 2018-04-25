@@ -109,4 +109,8 @@ export class HostSongListPage {
     this.fBProvider.deleteSong(song, this.roomId);
     // setTimeout(this.deleteSong(song), '1s');
   }
+
+  trackByFbKey(index, song) {
+    return song.fbKey;
+  }
 }
