@@ -127,16 +127,6 @@ export class GuestSongListPage {
   }
 
   /**
-   * Delays async functions
-   * @param {number} ms
-   * @returns {Promise<any>}
-   */
-  delay(ms: number) {
-    return new Promise( resolve => setTimeout(resolve, ms) );
-  }
-
-
-  /**
    * Votes on a song.
    * @param song - Song object
    * @param isUpVote - Boolean. True if an upvote, false if a downvote.

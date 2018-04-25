@@ -46,7 +46,7 @@ import 'web-animations-js/web-animations.min';
 
 export class SongItemComponent implements OnInit {
 
-  @Output() change: EventEmitter<Boolean> = new EventEmitter<Boolean>(true);
+  @Output() change: EventEmitter<Boolean> = new EventEmitter<Boolean>();
   @Input() song: Song;
   voteState = 'novote';
 
@@ -56,43 +56,25 @@ export class SongItemComponent implements OnInit {
   ngOnInit() {}
 
   /**
-   * Delays async functions
-   * @param {number} ms
-   * @returns {Promise<any>}
-   */
-  delay(ms: number) {
-    return new Promise(resolve => setTimeout(resolve, ms));
-  }
-
-  /**
    * Toggles the voting animation.
    * @param {Boolean} isUpVote - true if an upvote, false if a downvote
    */
     toggleVoteAnim(isUpVote: Boolean) {
-    console.log('Current vote state: ' + this.voteState);
     if (isUpVote) {
-      console.log('direction is: ' + isUpVote);
       if (this.voteState === 'novote') {
         this.voteState = (this.voteState === 'novote') ? 'upvote' : 'novote';
-        console.log(this.song.title + " was novote, now it is: " + this.voteState);
       }
       if (this.voteState === 'downvote') {
         this.voteState = (this.voteState === 'downvote') ? 'upvote' : 'downvote';
-        console.log(this.song.title + " was downvote, now it is: " + this.voteState);
       }
     } else if (!isUpVote) {
-      console.log('direction is: ' + isUpVote);
       if (this.voteState === 'novote') {
         this.voteState = (this.voteState === 'novote') ? 'downvote' : 'novote';
-        console.log(this.song.title + " was novote, now it is: " + this.voteState);
       }
       if (this.voteState === 'upvote') {
         this.voteState = (this.voteState === 'upvote') ? 'downvote' : 'upvote';
-        console.log(this.song.title + " was upvote, now it is: " + this.voteState);
       }
     }
-    console.log(this.song.title + " final votestate: " + this.voteState);
-    // await this.delay(2);
     this.change.emit(isUpVote);
   }
 }
