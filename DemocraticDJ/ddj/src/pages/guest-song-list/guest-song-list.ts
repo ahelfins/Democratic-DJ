@@ -34,6 +34,7 @@ export class GuestSongListPage {
     this.addSongButton = AddSongPage;
     this.roomId = this.sDProvider.getRoomCode();
     this.room = this.fBProvider.getRoom(this.roomId).valueChanges();
+    this.kickedoutConfirm(); // kick out the guest if the party has ended
   }
 
   ionViewDidLoad() {
@@ -41,10 +42,7 @@ export class GuestSongListPage {
     console.log('Current room: '+this.roomId);
     console.log('Host?: '+this.sDProvider.isHost());
     this.title = "Guest: "+this.roomId;
-
     this.songList = this.fBProvider.getSongList(this.roomId).valueChanges();
-
-    this.kickedoutConfirm(); // kick out the guest if the party has ended
   }
 
   /**
@@ -55,33 +53,32 @@ export class GuestSongListPage {
   }
 
   /**
-   * Alert pops up AFTER exiting the guest song list room
+   * Alert pops up AFTER directing the guest to the host-guest-page
    */
-  kickedoutConfirm() {
-    this.room.subscribe((room) => {
-      if (room == null) {
-        let alert = this.alertCtrl.create({
-          title: 'Party Ended',
-          message: 'The host has ended the party. Hope you had a wonderful time!',
-          buttons: [{
-            text: 'OK',
-            role: 'ok',
-            handler: () => {
-              console.log('OK clicked');
-              alert.dismiss();
-              return false;
-            }
-          }]
-        });
-        alert.present();
-        this.navCtrl.insert(0, HostGuestPage).then(() => {
-          this.navCtrl.popToRoot();
-        });
-      }
-    });
+  async kickedoutConfirm() {
+    if (this.navCtrl.getActive().name == "GuestPage" || this.navCtrl.getActive().name == "GuestSongListPage") {
+      this.room.subscribe((room) => {
+        if (room == null) {
+          let alert = this.alertCtrl.create({
+            title: 'Party Ended',
+            message: 'The host has ended the party. Hope you had a wonderful time!',
+            buttons: [{
+              text: 'OK',
+              role: 'ok',
+              handler: () => {
+                console.log('OK clicked');
+              }
+            }]
+          }).present().then(() => {
+            console.log("alert presented");
+            this.navCtrl.insert(0, HostGuestPage).then(() => {
+              this.navCtrl.popToRoot();
+            });
+          });
+        }
+      });
+    }
   }
-
-
 
   /**
    * Takes user to the main page and deletes the room.
@@ -152,13 +149,15 @@ export class GuestSongListPage {
       // console.log("song has no votes");
       if(isUpVote){
         this.sDProvider.updateSongVotes(song, 1);
-        song.upVotes++;
-        // console.log("was an up vote so "+song.title+" has "+this.sDProvider.getSongVotes(song));
+        // song.upVotes++;
+        console.log("was an up vote so "+song.title+" has "+this.sDProvider.getSongVotes(song));
+        // this.toggleDownvoteAnim();
       }
       else{
         this.sDProvider.updateSongVotes(song, -1);
-        song.downVotes++;
-        // console.log("was a down vote so "+song.title+" has "+this.sDProvider.getSongVotes(song));
+        // song.downVotes++;
+        console.log("was a down vote so "+song.title+" has "+this.sDProvider.getSongVotes(song));
+        // this.toggleUpvoteAnim();
       }
       this.fBProvider.updateVote(song, this.roomId, isUpVote);
     }
@@ -166,12 +165,8 @@ export class GuestSongListPage {
       // console.log("song has up vote");
       if(!isUpVote){
         this.sDProvider.updateSongVotes(song, -1);
-        song.upVotes--;
-        song.downVotes++;
-        if(song.upVotes<0){
-          song.upVotes = 0;
-          song.downVotes++;
-        }
+        // song.upVotes--;
+        // song.downVotes++;
         this.fBProvider.switchVote(song, this.roomId, isUpVote);
       }
     }
@@ -179,12 +174,8 @@ export class GuestSongListPage {
       // console.log("song has down vote");
       if(isUpVote){
         this.sDProvider.updateSongVotes(song, 1);
-        song.upVotes++;
-        song.downVotes--;
-        if(song.downVotes<0){
-          song.downVotes = 0;
-          song.upVotes++;
-        }
+        // song.upVotes++;
+        // song.downVotes--;
         this.fBProvider.switchVote(song, this.roomId, isUpVote);
       }
     }
@@ -195,4 +186,3 @@ export class GuestSongListPage {
     return song.fbKey;
   }
 }
-
