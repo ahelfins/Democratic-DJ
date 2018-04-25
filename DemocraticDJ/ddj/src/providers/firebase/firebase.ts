@@ -143,7 +143,7 @@ export class FirebaseProvider {
    * Deletes the room when the party is over.
    * @param roomId - ID of the room to be deleted
    */
-  async deleteRoom(roomId) {
+  deleteRoom(roomId) {
     const roomRef = this.afDB.database.ref('/').child('rooms').child(roomId);
     console.log("roomId: "+ roomId + " roomRef on deleteRoom: "+ roomRef);
     roomRef.remove();
