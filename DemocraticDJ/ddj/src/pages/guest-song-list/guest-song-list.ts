@@ -34,6 +34,7 @@ export class GuestSongListPage {
     this.addSongButton = AddSongPage;
     this.roomId = this.sDProvider.getRoomCode();
     this.room = this.fBProvider.getRoom(this.roomId).valueChanges();
+    this.kickedoutConfirm(); // kick out the guest if the party has ended
   }
 
   ionViewDidLoad() {
@@ -41,10 +42,7 @@ export class GuestSongListPage {
     console.log('Current room: '+this.roomId);
     console.log('Host?: '+this.sDProvider.isHost());
     this.title = "Guest: "+this.roomId;
-
     this.songList = this.fBProvider.getSongList(this.roomId).valueChanges();
-
-    this.kickedoutConfirm(); // kick out the guest if the party has ended
   }
 
   /**
@@ -55,33 +53,32 @@ export class GuestSongListPage {
   }
 
   /**
-   * Alert pops up AFTER exiting the guest song list room
+   * Alert pops up AFTER directing the guest to the host-guest-page
    */
-  kickedoutConfirm() {
-    this.room.subscribe((room) => {
-      if (room == null) {
-        let alert = this.alertCtrl.create({
-          title: 'Party Ended',
-          message: 'The host has ended the party. Hope you had a wonderful time!',
-          buttons: [{
-            text: 'OK',
-            role: 'ok',
-            handler: () => {
-              console.log('OK clicked');
-              alert.dismiss();
-              return false;
-            }
-          }]
-        });
-        alert.present();
-        this.navCtrl.insert(0, HostGuestPage).then(() => {
-          this.navCtrl.popToRoot();
-        });
-      }
-    });
+  async kickedoutConfirm() {
+    if (this.navCtrl.getActive().name == "GuestPage" || this.navCtrl.getActive().name == "GuestSongListPage") {
+      this.room.subscribe((room) => {
+        if (room == null) {
+          let alert = this.alertCtrl.create({
+            title: 'Party Ended',
+            message: 'The host has ended the party. Hope you had a wonderful time!',
+            buttons: [{
+              text: 'OK',
+              role: 'ok',
+              handler: () => {
+                console.log('OK clicked');
+              }
+            }]
+          }).present().then(() => {
+            console.log("alert presented");
+            this.navCtrl.insert(0, HostGuestPage).then(() => {
+              this.navCtrl.popToRoot();
+            });
+          });
+        }
+      });
+    }
   }
-
-
 
   /**
    * Takes user to the main page and deletes the room.
