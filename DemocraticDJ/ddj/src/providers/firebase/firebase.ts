@@ -143,7 +143,7 @@ export class FirebaseProvider {
    * Deletes the room when the party is over.
    * @param roomId - ID of the room to be deleted
    */
-  deleteRoom(roomId) {
+  async deleteRoom(roomId) {
     const roomRef = this.afDB.database.ref('/').child('rooms').child(roomId);
     console.log("roomId: "+ roomId + " roomRef on deleteRoom: "+ roomRef);
     roomRef.remove();
@@ -156,9 +156,7 @@ export class FirebaseProvider {
    */
   deleteSong(song, roomId) {
     const songRef = this.afDB.database.ref('/').child('rooms').child(roomId).child('songs').child(song.fbKey);
-    // console.log("firebase.ts deleteSong: "+ songRef); //DEBUG
     songRef.remove();
-
   }
 
   /**
