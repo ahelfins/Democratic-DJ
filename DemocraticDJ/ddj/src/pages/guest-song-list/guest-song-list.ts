@@ -181,4 +181,8 @@ export class GuestSongListPage {
     }
     // console.log(song.title + " has "+ this.sDProvider.getSongVotes(song));
   }
+
+  trackByFbKey(index, song) {
+    return song.fbKey;
+  }
 }

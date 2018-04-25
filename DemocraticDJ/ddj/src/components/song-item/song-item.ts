@@ -46,23 +46,14 @@ import 'web-animations-js/web-animations.min';
 
 export class SongItemComponent implements OnInit {
 
-  @Output() change: EventEmitter<Boolean> = new EventEmitter<Boolean>();
+  @Output() change: EventEmitter<Boolean> = new EventEmitter<Boolean>(true);
   @Input() song: Song;
-  room: any;
-  roomId: any;
   voteState = 'novote';
-  songList: any;
 
 
-  constructor(public fBProvider: FirebaseProvider,
-              private sDProvider: SessionDataProvider) {
-    this.roomId = this.sDProvider.getRoomCode();
-    this.room = this.fBProvider.getRoom(this.roomId).valueChanges();
-    this.songList = this.fBProvider.getSongList(this.roomId).valueChanges();
-  }
+  constructor() {}
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   /**
    * Delays async functions
@@ -77,7 +68,7 @@ export class SongItemComponent implements OnInit {
    * Toggles the voting animation.
    * @param {Boolean} isUpVote - true if an upvote, false if a downvote
    */
-  toggleVoteAnim(isUpVote: Boolean) {
+    toggleVoteAnim(isUpVote: Boolean) {
     console.log('Current vote state: ' + this.voteState);
     if (isUpVote) {
       console.log('direction is: ' + isUpVote);
@@ -89,10 +80,6 @@ export class SongItemComponent implements OnInit {
         this.voteState = (this.voteState === 'downvote') ? 'upvote' : 'downvote';
         console.log(this.song.title + " was downvote, now it is: " + this.voteState);
       }
-      // if (this.voteState === 'upvote') {
-      //   this.voteState = (this.voteState === 'upvote') ? 'upvote' : 'upvote';
-      //   console.log(this.song.title + " was upvote, now it is: " + this.voteState);
-      // }
     } else if (!isUpVote) {
       console.log('direction is: ' + isUpVote);
       if (this.voteState === 'novote') {
@@ -103,12 +90,9 @@ export class SongItemComponent implements OnInit {
         this.voteState = (this.voteState === 'upvote') ? 'downvote' : 'upvote';
         console.log(this.song.title + " was upvote, now it is: " + this.voteState);
       }
-      // if (this.voteState === 'downvote') {
-      //   this.voteState = (this.voteState === 'downvote') ? 'downvote' : 'downvote';
-      //   console.log(this.song.title + " was downvote, now it is: " + this.voteState);
-      // }
     }
     console.log(this.song.title + " final votestate: " + this.voteState);
+    // await this.delay(2);
     this.change.emit(isUpVote);
   }
 }
