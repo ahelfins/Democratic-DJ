@@ -93,11 +93,17 @@ export class FirebaseProvider {
     if(isUpVote) {
       console.log("is up vote");
       // songRef.update({upVotes:++song.upVotes});
-      songRef.update({upVotes:song.upVotes});
+      // songRef.update({upVotes:song.upVotes});
+      songRef.child('upVotes').transaction(function(currentUpVotes){
+        return currentUpVotes + 1;
+      });
     }
     else{
       // songRef.update({downVotes:++song.downVotes});
-      songRef.update({downVotes:song.downVotes});
+      // songRef.update({downVotes:song.downVotes});
+      songRef.child('downVotes').transaction(function(currentDownVotes){
+        return currentDownVotes + 1;
+      });
     }
     // this.afDB.database.ref("rooms/"+roomId+"/songs"+song.fBKey).orderByChild('upVotes');
     // console.log("trying to order by child");
@@ -111,17 +117,26 @@ export class FirebaseProvider {
    */
   switchVote(song, roomId, switchToUpVote){
     const songRef = this.afDB.database.ref('/').child('rooms').child(roomId).child('songs').child(song.fbKey);
-    console.log("song ref in switch vote "+this.afDB.object(songRef));
-    songRef.update({downVotes:song.downVotes});
-    songRef.update({upVotes:song.upVotes});
-    // if(switchToUpVote){
-    //   songRef.update({downVotes:--song.downVotes});
-    //   songRef.update({upVotes:++song.upVotes});
-    // }
-    // else{
-    //   songRef.update({upVotes:--song.upVotes});
-    //   songRef.update({downVotes:++song.downVotes});
-    // }
+    // songRef.update({downVotes:song.downVotes});
+    // songRef.update({upVotes:song.upVotes});
+    if(switchToUpVote){
+      // songRef.update({downVotes:--song.downVotes});
+      // songRef.update({upVotes:++song.upVotes});
+      songRef.transaction(function(currentSong){
+        currentSong.downVotes-=1;
+        currentSong.upVotes+=1;
+        return currentSong;
+      });
+    }
+    else{
+      // songRef.update({upVotes:--song.upVotes});
+      // songRef.update({downVotes:++song.downVotes});
+      songRef.transaction(function(currentSong){
+        currentSong.downVotes+=1;
+        currentSong.upVotes-=1;
+        return currentSong;
+      });
+    }
   }
 
   /**
